@@ -155,6 +155,28 @@
       "docPath": "commands/catalog.md"
     },
     {
+      "id": "split-editor-right",
+      "title": "向右拆分编辑器",
+      "category": "productivity",
+      "path": "commands/productivity/split-editor-right.json",
+      "summary": "快速把当前编辑区向右拆分，适合对照代码、文档和 diff。",
+      "tags": ["editor", "split", "layout", "productivity"],
+      "platform": ["windows", "macos", "linux"],
+      "requires": ["当前环境提供 workbench.action.splitEditorRight 命令"],
+      "docPath": "commands/catalog.md"
+    },
+    {
+      "id": "toggle-zen-mode",
+      "title": "切换禅模式",
+      "category": "productivity",
+      "path": "commands/productivity/toggle-zen-mode.json",
+      "summary": "快速进入或退出更聚焦的编辑布局，适合长时间阅读、重构或写文档时使用。",
+      "tags": ["zen", "focus", "layout", "productivity"],
+      "platform": ["windows", "macos", "linux"],
+      "requires": ["当前环境提供 workbench.action.toggleZenMode 命令"],
+      "docPath": "commands/catalog.md"
+    },
+    {
       "id": "open-chat-panel",
       "title": "打开 AI Chat 面板",
       "category": "ai-assistant",
@@ -251,6 +273,17 @@
       "tags": ["panel", "layout", "general", "productivity"],
       "platform": ["windows", "macos", "linux"],
       "requires": ["当前环境提供 workbench.action.togglePanel 命令"],
+      "docPath": "commands/catalog.md"
+    },
+    {
+      "id": "close-other-editors",
+      "title": "关闭其他编辑器",
+      "category": "general",
+      "path": "commands/general/close-other-editors.json",
+      "summary": "关闭除当前文件外的其他编辑标签页，适合收拢上下文和聚焦当前任务。",
+      "tags": ["editors", "cleanup", "focus", "general"],
+      "platform": ["windows", "macos", "linux"],
+      "requires": ["当前环境提供 workbench.action.closeOtherEditors 命令"],
       "docPath": "commands/catalog.md"
     }
   ]

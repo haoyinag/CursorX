@@ -15,3 +15,4 @@
 - [`go-to-file.json`](go-to-file.json)
 - [`save-all-files.json`](save-all-files.json)
 - [`toggle-panel.json`](toggle-panel.json)
+- [`close-other-editors.json`](close-other-editors.json)

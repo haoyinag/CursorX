@@ -21,6 +21,8 @@
   - 适合高频维护 README、CHANGELOG 和 release notes
 - [`focus-layout.settings.jsonc`](./focus-layout.settings.jsonc)
   - 适合减少界面噪声，让编辑、检查和终端切换更顺滑
+- [`diagnostics-focus.settings.jsonc`](./diagnostics-focus.settings.jsonc)
+  - 适合集中处理 Problems、搜索结果和底部面板信息
 
 ## 使用建议
 

@@ -1,0 +1,6 @@
+{
+  "title": "向右拆分编辑器",
+  "description": "快速把当前编辑区向右拆分，适合对照代码、文档和 diff 时使用",
+  "command": "workbench.action.splitEditorRight",
+  "tags": ["editor", "split", "layout", "productivity"]
+}

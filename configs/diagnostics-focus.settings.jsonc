@@ -1,0 +1,8 @@
+{
+  // 适合集中处理 Problems、搜索结果和底部面板信息的场景。
+  "problems.visibility": true,
+  "search.defaultViewMode": "tree",
+  "editor.gotoLocation.multipleDefinitions": "peek",
+  "editor.gotoLocation.multipleReferences": "peek",
+  "workbench.panel.defaultLocation": "bottom"
+}

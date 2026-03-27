@@ -20,6 +20,8 @@
 - 推荐先把高频动作沉淀成固定命令或提示词，再考虑更重的自动化
 - [发版前先做一次发布卫生检查](./release-hygiene.md)
 - [先保存，再验证](./save-before-verify.md)
+- [先看 Problems，再决定修法](./problems-first-triage.md)
+- [分享前先做一次预览](./preview-before-share.md)
 
 ## 推荐阅读顺序
 

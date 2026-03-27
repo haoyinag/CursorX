@@ -1,0 +1,6 @@
+{
+  "title": "关闭其他编辑器",
+  "description": "关闭除当前文件外的其他编辑标签页，适合收拢上下文、准备聚焦当前任务时使用",
+  "command": "workbench.action.closeOtherEditors",
+  "tags": ["editors", "cleanup", "focus", "general"]
+}

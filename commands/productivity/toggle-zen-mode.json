@@ -1,0 +1,6 @@
+{
+  "title": "切换禅模式",
+  "description": "快速进入或退出更聚焦的编辑布局，适合长时间阅读、重构或写文档时使用",
+  "command": "workbench.action.toggleZenMode",
+  "tags": ["zen", "focus", "layout", "productivity"]
+}

@@ -51,6 +51,16 @@
 - 把 changelog / release notes / upgrade guidance 固化成更稳定的发布流程
 - 补更多“用户会真实装上或复用”的高价值工作流命令
 
+### P1 收口标准
+
+当下面条件基本满足时，可认为 `P1` 接近完成：
+
+1. `slash-commands/` 已覆盖从开发、review、文档到发布的一条完整核心工作流
+2. `commands/` 已拥有一组足够稳定、跨项目可复用的核心参考命令
+3. `skills/`、`tips/`、`configs/` 各自都不再只是样板，而是至少有数个高频可用条目
+4. `CHANGELOG`、`release notes`、`upgrade guidance` 已形成可持续复用的流程
+5. 新增内容开始明显变少，继续扩充需要更高门槛，而不是为了数量继续堆积
+
 ### P2
 
 状态：未开始

@@ -50,6 +50,7 @@ skills/
 - [Doc Refresh Skill](./custom/doc-refresh-skill.md)
 - [Release Notes Skill](./custom/release-notes-skill.md)
 - [Workspace Rhythm Skill](./custom/workspace-rhythm-skill.md)
+- [Diagnostics Triage Skill](./custom/diagnostics-triage-skill.md)
 
 这些条目当前以“说明文档 + 提示词骨架”为主，更适合先做评估和二次整理，再决定是否纳入你的长期工作流。
 

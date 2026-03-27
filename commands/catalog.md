@@ -111,6 +111,24 @@
 - 主要价值：减少布局切换成本，让阅读和编写更流畅
 - 标签：`sidebar` `layout` `focus` `productivity`
 
+### `split-editor-right`
+
+- 文件：[`commands/productivity/split-editor-right.json`](productivity/split-editor-right.json)
+- 标题：`向右拆分编辑器`
+- 适用场景：需要并排对照代码、文档、diff 或配置文件
+- 前置条件：当前环境支持编辑器拆分命令
+- 主要价值：让对照式工作更顺手，减少手动拖拽布局
+- 标签：`editor` `split` `layout` `productivity`
+
+### `toggle-zen-mode`
+
+- 文件：[`commands/productivity/toggle-zen-mode.json`](productivity/toggle-zen-mode.json)
+- 标题：`切换禅模式`
+- 适用场景：长时间阅读、重构或写文档时，希望降低界面噪声
+- 前置条件：当前环境支持禅模式切换命令
+- 主要价值：快速进入更聚焦的工作状态
+- 标签：`zen` `focus` `layout` `productivity`
+
 ## AI 协作
 
 ### `open-chat-panel`
@@ -196,6 +214,15 @@
 - 主要价值：把布局切换动作固定下来，减少手动找入口
 - 标签：`panel` `layout` `general` `productivity`
 
+### `close-other-editors`
+
+- 文件：[`commands/general/close-other-editors.json`](general/close-other-editors.json)
+- 标题：`关闭其他编辑器`
+- 适用场景：打开了很多标签页，想收拢上下文并聚焦当前任务
+- 前置条件：当前环境支持关闭其他编辑器命令
+- 主要价值：降低上下文噪声，适合进入 review、重构或写文档前的收尾
+- 标签：`editors` `cleanup` `focus` `general`
+
 ## 推荐组合
 
 ### Git 起步组合
@@ -216,6 +243,8 @@
 - `toggle-terminal`
 - `open-markdown-preview`
 - `toggle-sidebar-visibility`
+- `split-editor-right`
+- `toggle-zen-mode`
 
 适合经常用 AI 做结构调整、命名优化、小范围重构和文档维护的用户。
 
@@ -247,5 +276,6 @@
 - `go-to-file`
 - `save-all-files`
 - `toggle-panel`
+- `close-other-editors`
 
-适合希望先把最基础的导航、保存和布局切换动作固定下来的用户。
+适合希望先把最基础的导航、保存、布局切换和上下文收拢动作固定下来的用户。

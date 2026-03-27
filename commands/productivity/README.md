@@ -14,5 +14,7 @@
 - [`toggle-terminal.json`](toggle-terminal.json)
 - [`open-markdown-preview.json`](open-markdown-preview.json)
 - [`toggle-sidebar-visibility.json`](toggle-sidebar-visibility.json)
+- [`split-editor-right.json`](split-editor-right.json)
+- [`toggle-zen-mode.json`](toggle-zen-mode.json)
 
 如果一个命令在多个语言、多个项目里都值得重复使用，优先考虑放在这里。

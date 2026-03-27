@@ -17,3 +17,4 @@
 - [Doc Refresh Skill](./doc-refresh-skill.md)
 - [Release Notes Skill](./release-notes-skill.md)
 - [Workspace Rhythm Skill](./workspace-rhythm-skill.md)
+- [Diagnostics Triage Skill](./diagnostics-triage-skill.md)
