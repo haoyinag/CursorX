@@ -2,8 +2,13 @@ import path from "node:path";
 import fs from "node:fs";
 import { fileURLToPath } from "node:url";
 import {
+  createTerminalUi,
   installSlashCommand,
   listSlashCommands,
+  printTerminalError,
+  printTerminalHeader,
+  printTerminalNextSteps,
+  printTerminalParagraph,
   runDoctor,
   verifySlashCommand,
 } from "./lib.mjs";
@@ -16,29 +21,27 @@ const packageJson = JSON.parse(
 );
 
 function printHelp() {
-  console.log("CursorX CLI");
-  console.log("");
-  console.log("Package name: cursorx-cli");
-  console.log("Binary name: cursorx");
+  const ui = createTerminalUi();
+
+  printTerminalHeader(console, ui, "CursorX CLI", `Package: cursorx-cli  Version: ${packageJson.version}`);
+  printTerminalParagraph(console, ui, "Binary: cursorx");
   console.log("");
   console.log("Usage:");
   console.log("  cursorx list");
   console.log("  cursorx doctor [--scope <global|project>] [--repo <path>]");
   console.log("  cursorx install <command-id> --scope <global|project> [--repo <path>] [--with-scripts]");
   console.log("  cursorx verify <command-id> --scope <global|project> [--repo <path>]");
-  console.log("");
-  console.log("Examples:");
-  console.log("  cursorx list");
-  console.log("  cursorx doctor");
-  console.log("  cursorx doctor --scope project --repo D:/work/code/my-repo");
-  console.log("  cursorx install git-push --scope global");
-  console.log("  cursorx install lint-fix --scope project --repo D:/work/code/my-repo --with-scripts");
-  console.log("  cursorx verify git-push --scope global");
-  console.log("  cursorx verify lint-fix --scope project --repo D:/work/code/my-repo");
-  console.log("  npx cursorx-cli list");
-  console.log("  npx cursorx-cli doctor");
-  console.log("  npx cursorx-cli install git-push --scope global");
-  console.log("  npx cursorx-cli verify git-push --scope global");
+  printTerminalNextSteps(console, ui, [
+    "cursorx list",
+    "cursorx doctor",
+    "cursorx install git-push --scope global",
+    "npx cursorx-cli verify git-push --scope global",
+  ]);
+}
+
+function printCliError(title, detail = "") {
+  const ui = createTerminalUi();
+  printTerminalError(console.error, ui, title, detail, ["cursorx --help"]);
 }
 
 function parseScopedArgs(args, startIndex = 0) {
@@ -116,6 +119,7 @@ export function runCli(argv) {
   if (command === "install") {
     const parsed = parseInstallArgs(rest);
     if (!parsed.commandId || !parsed.scope) {
+      printCliError("Missing required arguments.", "Usage: cursorx install <command-id> --scope <global|project> [--repo <path>] [--with-scripts]");
       printHelp();
       return 1;
     }
@@ -133,6 +137,7 @@ export function runCli(argv) {
   if (command === "verify") {
     const parsed = parseVerifyArgs(rest);
     if (!parsed.commandId || !parsed.scope) {
+      printCliError("Missing required arguments.", "Usage: cursorx verify <command-id> --scope <global|project> [--repo <path>]");
       printHelp();
       return 1;
     }
@@ -146,7 +151,7 @@ export function runCli(argv) {
     return success ? 0 : 1;
   }
 
-  console.error(`Unknown command: ${command}`);
+  printCliError("Unknown command.", `Received: ${command}`);
   printHelp();
   return 1;
 }

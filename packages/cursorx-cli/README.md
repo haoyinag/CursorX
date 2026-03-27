@@ -23,6 +23,8 @@ node packages/cursorx-cli/bin/cursorx.js install lint-fix --scope project --repo
 node packages/cursorx-cli/bin/cursorx.js verify lint-fix --scope project --repo D:/work/code/my-repo
 ```
 
+`cursorx-cli` 现在会对 `help`、`list`、`doctor`、`install`、`verify` 等输出做更适合终端阅读的展示，并在窄终端或无颜色环境下自动降级。
+
 未来发布到 npm 后，推荐这两种用法：
 
 ```bash

@@ -1,6 +1,6 @@
 {
   "name": "cursorx-cli",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "CLI for installing CursorX slash commands",
   "type": "module",
   "homepage": "https://github.com/haoyinag/CursorX/tree/master/packages/cursorx-cli",
