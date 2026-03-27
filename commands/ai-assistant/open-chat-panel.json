@@ -1,0 +1,7 @@
+{
+  "title": "打开 AI Chat 面板",
+  "description": "快速打开聊天面板，适合需要切换到对话式协作、提问或继续上下文时使用",
+  "command": "workbench.action.chat.open",
+  "when": "workspaceFolderCount > 0",
+  "tags": ["ai", "chat", "assistant", "workflow"]
+}

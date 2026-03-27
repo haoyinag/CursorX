@@ -1,0 +1,7 @@
+{
+  "title": "Git 全量暂存",
+  "description": "将当前仓库中的全部已跟踪变更加入暂存区，适合整理提交前快速准备状态",
+  "command": "git.stageAll",
+  "when": "workspaceFolderCount > 0 && gitOpenRepositoryCount > 0",
+  "tags": ["git", "stage", "commit", "workflow"]
+}

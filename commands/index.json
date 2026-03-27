@@ -1,0 +1,191 @@
+{
+  "version": 1,
+  "library": "CursorX Commands",
+  "updatedAt": "2026-03-27",
+  "categories": [
+    {
+      "id": "development",
+      "title": "开发流程",
+      "path": "commands/development",
+      "description": "围绕编码、提交、重构等开发动作的命令。"
+    },
+    {
+      "id": "productivity",
+      "title": "效率工具",
+      "path": "commands/productivity",
+      "description": "帮助减少重复操作、提高日常效率的命令。"
+    },
+    {
+      "id": "ai-assistant",
+      "title": "AI 协作",
+      "path": "commands/ai-assistant",
+      "description": "强化 Cursor AI 协作体验的命令。"
+    },
+    {
+      "id": "general",
+      "title": "通用命令",
+      "path": "commands/general",
+      "description": "不局限于单一工作流的通用命令。"
+    }
+  ],
+  "commands": [
+    {
+      "id": "git-smart-commit",
+      "title": "Git 智能提交",
+      "category": "development",
+      "path": "commands/development/git-smart-commit.json",
+      "summary": "调用 AI 生成提交信息，适合整理变更后快速完成提交描述。",
+      "tags": ["git", "commit", "ai", "workflow", "productivity"],
+      "platform": ["windows", "macos", "linux"],
+      "requires": ["Git 仓库已打开", "Cursor 提供 git.commit.with.ai 命令"],
+      "docPath": "commands/catalog.md"
+    },
+    {
+      "id": "git-open-source-control",
+      "title": "打开源代码管理",
+      "category": "development",
+      "path": "commands/development/git-open-source-control.json",
+      "summary": "快速切到 SCM 视图，集中查看改动、暂存区和提交入口。",
+      "tags": ["git", "scm", "navigation", "workflow"],
+      "platform": ["windows", "macos", "linux"],
+      "requires": ["Git 仓库已打开", "当前环境提供 workbench.view.scm 命令"],
+      "docPath": "commands/catalog.md"
+    },
+    {
+      "id": "git-stage-all-changes",
+      "title": "Git 全量暂存",
+      "category": "development",
+      "path": "commands/development/git-stage-all-changes.json",
+      "summary": "在提交前快速将当前仓库的全部已跟踪改动加入暂存区。",
+      "tags": ["git", "stage", "commit", "workflow"],
+      "platform": ["windows", "macos", "linux"],
+      "requires": ["Git 仓库已打开", "当前环境提供 git.stageAll 命令"],
+      "docPath": "commands/catalog.md"
+    },
+    {
+      "id": "git-sync-current-branch",
+      "title": "Git 同步当前分支",
+      "category": "development",
+      "path": "commands/development/git-sync-current-branch.json",
+      "summary": "在完成提交后快速同步当前分支的拉取和推送动作。",
+      "tags": ["git", "sync", "push", "pull"],
+      "platform": ["windows", "macos", "linux"],
+      "requires": ["Git 仓库已打开", "当前环境提供 git.sync 命令"],
+      "docPath": "commands/catalog.md"
+    },
+    {
+      "id": "code-refactor-assistant",
+      "title": "代码重构助手",
+      "category": "productivity",
+      "path": "commands/productivity/code-refactor-assistant.json",
+      "summary": "在常见编程语言编辑场景中唤起 AI 重构流程。",
+      "tags": ["refactor", "ai", "code-quality", "productivity"],
+      "platform": ["windows", "macos", "linux"],
+      "requires": [
+        "编辑器处于文本焦点",
+        "语言为 JavaScript、TypeScript、Python 或 Java",
+        "Cursor 提供 refactor.with.ai 命令"
+      ],
+      "docPath": "commands/catalog.md"
+    },
+    {
+      "id": "reveal-active-file-in-explorer",
+      "title": "在资源管理器中定位当前文件",
+      "category": "productivity",
+      "path": "commands/productivity/reveal-active-file-in-explorer.json",
+      "summary": "快速在 Explorer 中定位当前文件，便于查看同级文件或继续文件操作。",
+      "tags": ["navigation", "explorer", "file", "productivity"],
+      "platform": ["windows", "macos", "linux"],
+      "requires": ["当前编辑内容来自本地文件", "当前环境提供 showActiveFileInExplorer 命令"],
+      "docPath": "commands/catalog.md"
+    },
+    {
+      "id": "search-in-workspace",
+      "title": "全局搜索当前工作区",
+      "category": "productivity",
+      "path": "commands/productivity/search-in-workspace.json",
+      "summary": "快速打开工作区全文搜索入口，适合定位跨文件引用和配置项。",
+      "tags": ["search", "workspace", "navigation", "productivity"],
+      "platform": ["windows", "macos", "linux"],
+      "requires": ["工作区已打开", "当前环境提供 workbench.action.findInFiles 命令"],
+      "docPath": "commands/catalog.md"
+    },
+    {
+      "id": "open-chat-panel",
+      "title": "打开 AI Chat 面板",
+      "category": "ai-assistant",
+      "path": "commands/ai-assistant/open-chat-panel.json",
+      "summary": "快速进入 AI 对话面板，适合切换到问答、解释和协作模式。",
+      "tags": ["ai", "chat", "assistant", "workflow"],
+      "platform": ["windows", "macos", "linux"],
+      "requires": ["工作区已打开", "当前环境提供 workbench.action.chat.open 命令"],
+      "docPath": "commands/catalog.md"
+    },
+    {
+      "id": "focus-chat-and-new-context",
+      "title": "聚焦 AI 会话",
+      "category": "ai-assistant",
+      "path": "commands/ai-assistant/focus-chat-and-new-context.json",
+      "summary": "在编辑和问答之间快速切换，把注意力拉回 AI 协作入口。",
+      "tags": ["ai", "chat", "focus", "productivity"],
+      "platform": ["windows", "macos", "linux"],
+      "requires": ["工作区或编辑器处于活动状态", "当前环境提供 workbench.action.chat.open 命令"],
+      "docPath": "commands/catalog.md"
+    },
+    {
+      "id": "quick-chat",
+      "title": "打开 Quick Chat",
+      "category": "ai-assistant",
+      "path": "commands/ai-assistant/quick-chat.json",
+      "summary": "在当前视图中打开轻量聊天入口，适合临时提问和快速确认问题。",
+      "tags": ["ai", "chat", "quick-chat", "productivity"],
+      "platform": ["windows", "macos", "linux"],
+      "requires": ["工作区或编辑器处于活动状态", "当前环境提供 workbench.action.quickchat.toggle 命令"],
+      "docPath": "commands/catalog.md"
+    },
+    {
+      "id": "explain-selected-code",
+      "title": "解释当前选中代码",
+      "category": "ai-assistant",
+      "path": "commands/ai-assistant/explain-selected-code.json",
+      "summary": "用预设提示词解释当前选中代码的作用、实现思路和潜在风险。",
+      "tags": ["ai", "explain", "selection", "code-review"],
+      "platform": ["windows", "macos", "linux"],
+      "requires": ["编辑器中存在选区", "当前环境提供支持 query 参数的 workbench.action.chat.open 命令"],
+      "docPath": "commands/catalog.md"
+    },
+    {
+      "id": "generate-tests-for-selection",
+      "title": "为选中代码生成测试思路",
+      "category": "ai-assistant",
+      "path": "commands/ai-assistant/generate-tests-for-selection.json",
+      "summary": "用预设提示词围绕当前选中代码生成测试点、边界条件和测试建议。",
+      "tags": ["ai", "test", "selection", "quality"],
+      "platform": ["windows", "macos", "linux"],
+      "requires": ["编辑器中存在选区", "当前环境提供支持 query 参数的 workbench.action.chat.open 命令"],
+      "docPath": "commands/catalog.md"
+    },
+    {
+      "id": "open-command-palette",
+      "title": "打开命令面板",
+      "category": "general",
+      "path": "commands/general/open-command-palette.json",
+      "summary": "快速打开 Command Palette，适合继续探索更多命令和工作流入口。",
+      "tags": ["commands", "navigation", "general", "productivity"],
+      "platform": ["windows", "macos", "linux"],
+      "requires": ["当前环境提供 workbench.action.showCommands 命令"],
+      "docPath": "commands/catalog.md"
+    },
+    {
+      "id": "go-to-file",
+      "title": "快速打开文件",
+      "category": "general",
+      "path": "commands/general/go-to-file.json",
+      "summary": "快速打开文件选择器，在大型工作区中高效跳转到目标文件。",
+      "tags": ["navigation", "file", "search", "general"],
+      "platform": ["windows", "macos", "linux"],
+      "requires": ["工作区已打开", "当前环境提供 workbench.action.quickOpen 命令"],
+      "docPath": "commands/catalog.md"
+    }
+  ]
+}

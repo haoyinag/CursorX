@@ -1,0 +1,10 @@
+{
+  "title": "代码重构助手",
+  "description": "启动 AI 驱动的代码重构会话，帮助优化代码结构和性能",
+  "command": "cursor.command.execute",
+  "args": {
+    "name": "refactor.with.ai"
+  },
+  "when": "editorTextFocus && editorLangId =~ /javascript|typescript|python|java/",
+  "tags": ["refactor", "ai", "productivity", "code-quality"]
+}

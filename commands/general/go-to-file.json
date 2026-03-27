@@ -1,0 +1,7 @@
+{
+  "title": "快速打开文件",
+  "description": "打开全局文件选择器，适合在大型工作区中快速跳转到目标文件",
+  "command": "workbench.action.quickOpen",
+  "when": "workspaceFolderCount > 0",
+  "tags": ["navigation", "file", "search", "general"]
+}

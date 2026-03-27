@@ -1,0 +1,10 @@
+{
+  "title": "为选中代码生成测试思路",
+  "description": "用预设提示词打开 AI 对话，围绕当前选中代码生成测试点、边界条件和测试建议",
+  "command": "workbench.action.chat.open",
+  "args": {
+    "query": "请基于我当前选中的代码生成测试思路。优先列出核心行为、边界条件、异常路径，并给出建议的测试用例结构。"
+  },
+  "when": "editorHasSelection",
+  "tags": ["ai", "test", "selection", "quality"]
+}

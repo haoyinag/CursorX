@@ -1,0 +1,10 @@
+{
+  "title": "Git 智能提交",
+  "description": "使用 AI 助手生成智能的 Git 提交信息，包括变更总结和类型分类",
+  "command": "cursor.command.execute",
+  "args": {
+    "name": "git.commit.with.ai"
+  },
+  "when": "workspaceFolderCount > 0 && gitOpenRepositoryCount > 0",
+  "tags": ["git", "ai", "productivity", "commit"]
+}

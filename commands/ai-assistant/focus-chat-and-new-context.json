@@ -1,0 +1,7 @@
+{
+  "title": "聚焦 AI 会话",
+  "description": "把注意力快速切换到 AI 对话入口，适合在编辑和问答之间高频来回切换时使用",
+  "command": "workbench.action.chat.open",
+  "when": "editorTextFocus || workspaceFolderCount > 0",
+  "tags": ["ai", "chat", "focus", "productivity"]
+}

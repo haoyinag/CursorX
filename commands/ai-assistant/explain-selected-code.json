@@ -1,0 +1,10 @@
+{
+  "title": "解释当前选中代码",
+  "description": "用预设提示词打开 AI 对话，解释当前选中代码的作用、关键逻辑和潜在风险",
+  "command": "workbench.action.chat.open",
+  "args": {
+    "query": "请解释我当前选中的代码。先说明它解决什么问题，再概括关键实现思路，最后指出潜在风险、边界情况和可优化点。"
+  },
+  "when": "editorHasSelection",
+  "tags": ["ai", "explain", "selection", "code-review"]
+}

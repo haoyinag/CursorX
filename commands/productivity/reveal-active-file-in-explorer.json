@@ -1,0 +1,7 @@
+{
+  "title": "在资源管理器中定位当前文件",
+  "description": "快速在 Explorer 中定位当前正在编辑的文件，适合需要查看同级文件或移动文件时使用",
+  "command": "workbench.files.action.showActiveFileInExplorer",
+  "when": "resourceScheme == 'file'",
+  "tags": ["navigation", "explorer", "file", "productivity"]
+}

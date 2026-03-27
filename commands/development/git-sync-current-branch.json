@@ -1,0 +1,7 @@
+{
+  "title": "Git 同步当前分支",
+  "description": "快速执行当前分支同步动作，适合在完成提交后统一拉取和推送远端变更",
+  "command": "git.sync",
+  "when": "workspaceFolderCount > 0 && gitOpenRepositoryCount > 0",
+  "tags": ["git", "sync", "push", "pull"]
+}

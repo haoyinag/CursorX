@@ -1,0 +1,7 @@
+{
+  "title": "打开 Quick Chat",
+  "description": "在不离开当前编辑视图的情况下打开轻量聊天入口，适合临时提问和快速确认思路",
+  "command": "workbench.action.quickchat.toggle",
+  "when": "editorTextFocus || workspaceFolderCount > 0",
+  "tags": ["ai", "chat", "quick-chat", "productivity"]
+}

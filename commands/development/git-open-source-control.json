@@ -1,0 +1,7 @@
+{
+  "title": "打开源代码管理",
+  "description": "快速切换到 Source Control 视图，集中查看当前仓库的改动、暂存区和提交入口",
+  "command": "workbench.view.scm",
+  "when": "workspaceFolderCount > 0 && gitOpenRepositoryCount > 0",
+  "tags": ["git", "scm", "navigation", "workflow"]
+}

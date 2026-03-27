@@ -1,0 +1,6 @@
+{
+  "title": "打开命令面板",
+  "description": "快速打开 Command Palette，适合继续发现命令、扩展动作和工作流入口",
+  "command": "workbench.action.showCommands",
+  "tags": ["commands", "navigation", "general", "productivity"]
+}

@@ -1,0 +1,7 @@
+{
+  "title": "全局搜索当前工作区",
+  "description": "打开工作区级全文搜索入口，适合快速定位符号、文案、配置项和跨文件引用",
+  "command": "workbench.action.findInFiles",
+  "when": "workspaceFolderCount > 0",
+  "tags": ["search", "workspace", "navigation", "productivity"]
+}
