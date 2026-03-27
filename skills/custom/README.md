@@ -16,3 +16,4 @@
 - [Staged Review Skill](./staged-review-skill.md)
 - [Doc Refresh Skill](./doc-refresh-skill.md)
 - [Release Notes Skill](./release-notes-skill.md)
+- [Workspace Rhythm Skill](./workspace-rhythm-skill.md)

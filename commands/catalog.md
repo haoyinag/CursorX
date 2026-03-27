@@ -102,6 +102,15 @@
 - 主要价值：让文档编写和预览切换更顺手
 - 标签：`markdown` `preview` `docs` `productivity`
 
+### `toggle-sidebar-visibility`
+
+- 文件：[`commands/productivity/toggle-sidebar-visibility.json`](productivity/toggle-sidebar-visibility.json)
+- 标题：`切换侧边栏显示`
+- 适用场景：需要在看目录结构和专注当前编辑区之间快速切换
+- 前置条件：当前环境支持侧边栏切换命令
+- 主要价值：减少布局切换成本，让阅读和编写更流畅
+- 标签：`sidebar` `layout` `focus` `productivity`
+
 ## AI 协作
 
 ### `open-chat-panel`
@@ -169,6 +178,24 @@
 - 主要价值：让文件跳转成为稳定的高频动作入口
 - 标签：`navigation` `file` `search` `general`
 
+### `save-all-files`
+
+- 文件：[`commands/general/save-all-files.json`](general/save-all-files.json)
+- 标题：`保存全部文件`
+- 适用场景：准备运行检查、切换任务或提交前，希望一次性保存当前所有修改
+- 前置条件：当前环境支持保存全部文件命令
+- 主要价值：减少遗漏未保存文件导致的检查偏差
+- 标签：`save` `files` `general` `productivity`
+
+### `toggle-panel`
+
+- 文件：[`commands/general/toggle-panel.json`](general/toggle-panel.json)
+- 标题：`切换底部面板`
+- 适用场景：在终端、输出、问题面板和纯编辑视图之间来回切换
+- 前置条件：当前环境支持底部面板切换命令
+- 主要价值：把布局切换动作固定下来，减少手动找入口
+- 标签：`panel` `layout` `general` `productivity`
+
 ## 推荐组合
 
 ### Git 起步组合
@@ -188,6 +215,7 @@
 - `search-in-workspace`
 - `toggle-terminal`
 - `open-markdown-preview`
+- `toggle-sidebar-visibility`
 
 适合经常用 AI 做结构调整、命名优化、小范围重构和文档维护的用户。
 
@@ -217,5 +245,7 @@
 
 - `open-command-palette`
 - `go-to-file`
+- `save-all-files`
+- `toggle-panel`
 
-适合希望先把最基础的导航和命令发现动作固定下来的用户。
+适合希望先把最基础的导航、保存和布局切换动作固定下来的用户。

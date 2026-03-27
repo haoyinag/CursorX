@@ -1,0 +1,6 @@
+{
+  "title": "保存全部文件",
+  "description": "一次性保存当前工作区中所有已修改文件，适合切换任务、运行检查或提交前收尾",
+  "command": "workbench.action.files.saveAll",
+  "tags": ["save", "files", "general", "productivity"]
+}

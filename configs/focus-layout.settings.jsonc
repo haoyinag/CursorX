@@ -1,0 +1,9 @@
+{
+  // 适合希望减少界面噪声、在编辑和检查之间更顺滑切换的场景。
+  "workbench.sideBar.location": "left",
+  "workbench.activityBar.location": "default",
+  "workbench.panel.defaultLocation": "bottom",
+  "editor.minimap.enabled": false,
+  "breadcrumbs.enabled": true,
+  "workbench.statusBar.visible": true
+}

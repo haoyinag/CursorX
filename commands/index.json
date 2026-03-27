@@ -144,6 +144,17 @@
       "docPath": "commands/catalog.md"
     },
     {
+      "id": "toggle-sidebar-visibility",
+      "title": "切换侧边栏显示",
+      "category": "productivity",
+      "path": "commands/productivity/toggle-sidebar-visibility.json",
+      "summary": "快速显示或隐藏侧边栏，适合在代码阅读和聚焦编辑区之间切换。",
+      "tags": ["sidebar", "layout", "focus", "productivity"],
+      "platform": ["windows", "macos", "linux"],
+      "requires": ["当前环境提供 workbench.action.toggleSidebarVisibility 命令"],
+      "docPath": "commands/catalog.md"
+    },
+    {
       "id": "open-chat-panel",
       "title": "打开 AI Chat 面板",
       "category": "ai-assistant",
@@ -218,6 +229,28 @@
       "tags": ["navigation", "file", "search", "general"],
       "platform": ["windows", "macos", "linux"],
       "requires": ["工作区已打开", "当前环境提供 workbench.action.quickOpen 命令"],
+      "docPath": "commands/catalog.md"
+    },
+    {
+      "id": "save-all-files",
+      "title": "保存全部文件",
+      "category": "general",
+      "path": "commands/general/save-all-files.json",
+      "summary": "一次性保存当前工作区中所有已修改文件，适合运行检查或提交前收尾。",
+      "tags": ["save", "files", "general", "productivity"],
+      "platform": ["windows", "macos", "linux"],
+      "requires": ["当前环境提供 workbench.action.files.saveAll 命令"],
+      "docPath": "commands/catalog.md"
+    },
+    {
+      "id": "toggle-panel",
+      "title": "切换底部面板",
+      "category": "general",
+      "path": "commands/general/toggle-panel.json",
+      "summary": "快速显示或隐藏底部面板，适合在终端、输出和问题面板之间切换。",
+      "tags": ["panel", "layout", "general", "productivity"],
+      "platform": ["windows", "macos", "linux"],
+      "requires": ["当前环境提供 workbench.action.togglePanel 命令"],
       "docPath": "commands/catalog.md"
     }
   ]

@@ -1,0 +1,6 @@
+{
+  "title": "切换底部面板",
+  "description": "快速显示或隐藏底部面板，适合在编辑区、终端、输出和问题面板之间切换",
+  "command": "workbench.action.togglePanel",
+  "tags": ["panel", "layout", "general", "productivity"]
+}

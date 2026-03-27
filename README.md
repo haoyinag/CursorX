@@ -166,6 +166,7 @@ CursorX/
 - [使用技巧](tips/README.md)
 - [配置分享](configs/README.md)
 - [内容地图](docs/content-map.md)
+- [路线图状态](docs/roadmap-status.md)
 
 ## 文档入口
 

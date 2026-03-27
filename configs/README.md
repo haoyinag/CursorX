@@ -19,6 +19,8 @@
   - 适合减少提交噪声，保持工作区和搜索结果更干净
 - [`markdown-release.settings.jsonc`](./markdown-release.settings.jsonc)
   - 适合高频维护 README、CHANGELOG 和 release notes
+- [`focus-layout.settings.jsonc`](./focus-layout.settings.jsonc)
+  - 适合减少界面噪声，让编辑、检查和终端切换更顺滑
 
 ## 使用建议
 

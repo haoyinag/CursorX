@@ -8,6 +8,7 @@
 
 - [小批次重构，比一次性大改更稳](./small-batch-refactor.md)
 - [先写可分享命令，再写项目私有规则](./shareable-command-design.md)
+- [让布局切换也形成节奏](./layout-rhythm.md)
 
 ### AI 助手使用
 
@@ -18,6 +19,7 @@
 
 - 推荐先把高频动作沉淀成固定命令或提示词，再考虑更重的自动化
 - [发版前先做一次发布卫生检查](./release-hygiene.md)
+- [先保存，再验证](./save-before-verify.md)
 
 ## 推荐阅读顺序
 
@@ -25,6 +27,7 @@
 2. 再看 [长对话后及时做上下文交接](./context-handoff.md)
 3. 再看 [小批次重构，比一次性大改更稳](./small-batch-refactor.md)
 4. 如果你准备发布内容，再看 [发版前先做一次发布卫生检查](./release-hygiene.md)
+5. 如果你经常切布局，再看 [让布局切换也形成节奏](./layout-rhythm.md)
 
 ## 贡献
 
