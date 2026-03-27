@@ -76,6 +76,30 @@
 - 主要价值：减少用户因升级路径不清而产生的理解成本
 - 依赖脚本：无
 
+### `/release-notes`
+
+- 文件：[`slash-commands/global/release-notes.md`](global/release-notes.md)
+- 适用范围：`global`、`project`
+- 适用场景：npm 包、命令集或工作流升级后整理面向外部的版本说明
+- 主要价值：把“本次版本带来什么”表达得更清晰，而不是只堆文件列表
+- 依赖脚本：无
+
+### `/changelog-entry`
+
+- 文件：[`slash-commands/global/changelog-entry.md`](global/changelog-entry.md)
+- 适用范围：`global`、`project`
+- 适用场景：为当前版本或当前一组改动补一段结构化 changelog 条目
+- 主要价值：把持续迭代沉淀成可追踪的增量记录
+- 依赖脚本：无
+
+### `/upgrade-checklist`
+
+- 文件：[`slash-commands/global/upgrade-checklist.md`](global/upgrade-checklist.md)
+- 适用范围：`global`、`project`
+- 适用场景：命令集、安装方式或配置变化后整理用户升级步骤
+- 主要价值：把“用户接下来要做什么”显式化，降低升级成本
+- 依赖脚本：无
+
 ## 项目模板
 
 ### `git-push.project-template`
@@ -125,3 +149,11 @@
 - `/migration-note`
 
 适合在发布前、交接前或做兼容性梳理时，快速整理风险、摘要和迁移信息的用户。
+
+### 发布与变更管理流程
+
+- `/changelog-entry`
+- `/release-notes`
+- `/upgrade-checklist`
+
+适合在版本发布前后，把增量记录、对外说明和升级动作串成一个稳定流程的用户。

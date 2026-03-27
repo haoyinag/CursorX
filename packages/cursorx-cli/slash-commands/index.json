@@ -96,6 +96,36 @@
       "scopes": ["global", "project"],
       "scripts": [],
       "tags": ["migration", "docs", "release", "compatibility"]
+    },
+    {
+      "id": "release-notes",
+      "title": "/release-notes",
+      "path": "slash-commands/global/release-notes.md",
+      "installAs": "release-notes.md",
+      "summary": "根据版本范围、文档和变更内容生成适合公告或发布页的 release notes。",
+      "scopes": ["global", "project"],
+      "scripts": [],
+      "tags": ["release", "notes", "docs", "announcement"]
+    },
+    {
+      "id": "changelog-entry",
+      "title": "/changelog-entry",
+      "path": "slash-commands/global/changelog-entry.md",
+      "installAs": "changelog-entry.md",
+      "summary": "把当前版本或当前一组改动整理成适合 changelog 的结构化条目。",
+      "scopes": ["global", "project"],
+      "scripts": [],
+      "tags": ["changelog", "release", "docs", "summary"]
+    },
+    {
+      "id": "upgrade-checklist",
+      "title": "/upgrade-checklist",
+      "path": "slash-commands/global/upgrade-checklist.md",
+      "installAs": "upgrade-checklist.md",
+      "summary": "当命令集、安装方式或配置变化时生成面向用户的升级检查清单。",
+      "scopes": ["global", "project"],
+      "scripts": [],
+      "tags": ["upgrade", "checklist", "release", "compatibility"]
     }
   ],
   "templates": [

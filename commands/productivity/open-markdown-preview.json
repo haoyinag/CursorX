@@ -1,0 +1,7 @@
+{
+  "title": "打开当前 Markdown 预览",
+  "description": "快速预览当前 Markdown 文件，适合检查 README、CHANGELOG 或文档排版效果",
+  "command": "markdown.showPreview",
+  "when": "editorLangId == markdown",
+  "tags": ["markdown", "preview", "docs", "productivity"]
+}

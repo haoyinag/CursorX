@@ -54,6 +54,9 @@
 - [`slash-commands/global/risk-scan.md`](../slash-commands/global/risk-scan.md)
 - [`slash-commands/global/diff-summary.md`](../slash-commands/global/diff-summary.md)
 - [`slash-commands/global/migration-note.md`](../slash-commands/global/migration-note.md)
+- [`slash-commands/global/release-notes.md`](../slash-commands/global/release-notes.md)
+- [`slash-commands/global/changelog-entry.md`](../slash-commands/global/changelog-entry.md)
+- [`slash-commands/global/upgrade-checklist.md`](../slash-commands/global/upgrade-checklist.md)
 
 ## 关于安装方式
 

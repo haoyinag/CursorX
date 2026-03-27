@@ -46,6 +46,15 @@
 - 主要价值：让同步分支成为一个固定的工作流入口
 - 标签：`git` `sync` `push` `pull`
 
+### `open-problems-panel`
+
+- 文件：[`commands/development/open-problems-panel.json`](development/open-problems-panel.json)
+- 标题：`打开 Problems 面板`
+- 适用场景：修复 lint、typecheck 或其他诊断问题时，想快速查看错误和警告列表
+- 前置条件：当前环境支持 Problems 面板命令
+- 主要价值：把“回到错误列表继续修”变成一个稳定入口
+- 标签：`problems` `diagnostics` `quality` `development`
+
 ## 效率工具
 
 ### `code-refactor-assistant`
@@ -74,6 +83,24 @@
 - 前置条件：工作区已打开
 - 主要价值：把全文检索动作固定成一个稳定入口
 - 标签：`search` `workspace` `navigation` `productivity`
+
+### `toggle-terminal`
+
+- 文件：[`commands/productivity/toggle-terminal.json`](productivity/toggle-terminal.json)
+- 标题：`切换终端面板`
+- 适用场景：在写代码、运行命令和查看终端输出之间频繁切换
+- 前置条件：当前环境支持终端切换命令
+- 主要价值：减少在编辑区和终端之间来回找入口的时间
+- 标签：`terminal` `panel` `navigation` `productivity`
+
+### `open-markdown-preview`
+
+- 文件：[`commands/productivity/open-markdown-preview.json`](productivity/open-markdown-preview.json)
+- 标题：`打开当前 Markdown 预览`
+- 适用场景：维护 README、CHANGELOG 或文档时，希望快速检查排版效果
+- 前置条件：当前文件为 Markdown，当前环境支持 Markdown 预览命令
+- 主要价值：让文档编写和预览切换更顺手
+- 标签：`markdown` `preview` `docs` `productivity`
 
 ## AI 协作
 
@@ -150,16 +177,19 @@
 - `git-open-source-control`
 - `git-stage-all-changes`
 - `git-sync-current-branch`
+- `open-problems-panel`
 
-适合刚开始搭建 Cursor Git 工作流、希望把查看改动、暂存、提交和同步串起来的用户。
+适合刚开始搭建 Cursor 开发工作流、希望把查看改动、暂存、提交、同步和问题修复串起来的用户。
 
 ### 重构提效组合
 
 - `code-refactor-assistant`
 - `reveal-active-file-in-explorer`
 - `search-in-workspace`
+- `toggle-terminal`
+- `open-markdown-preview`
 
-适合经常用 AI 做结构调整、命名优化和小范围重构的用户。
+适合经常用 AI 做结构调整、命名优化、小范围重构和文档维护的用户。
 
 ### AI 协作起步组合
 

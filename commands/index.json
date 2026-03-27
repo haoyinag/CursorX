@@ -74,6 +74,17 @@
       "docPath": "commands/catalog.md"
     },
     {
+      "id": "open-problems-panel",
+      "title": "打开 Problems 面板",
+      "category": "development",
+      "path": "commands/development/open-problems-panel.json",
+      "summary": "快速查看当前工作区的错误和警告列表，适合修复诊断问题时使用。",
+      "tags": ["problems", "diagnostics", "quality", "development"],
+      "platform": ["windows", "macos", "linux"],
+      "requires": ["当前环境提供 workbench.actions.view.problems 命令"],
+      "docPath": "commands/catalog.md"
+    },
+    {
       "id": "code-refactor-assistant",
       "title": "代码重构助手",
       "category": "productivity",
@@ -108,6 +119,28 @@
       "tags": ["search", "workspace", "navigation", "productivity"],
       "platform": ["windows", "macos", "linux"],
       "requires": ["工作区已打开", "当前环境提供 workbench.action.findInFiles 命令"],
+      "docPath": "commands/catalog.md"
+    },
+    {
+      "id": "toggle-terminal",
+      "title": "切换终端面板",
+      "category": "productivity",
+      "path": "commands/productivity/toggle-terminal.json",
+      "summary": "快速打开或关闭集成终端，适合在编辑和命令执行之间切换。",
+      "tags": ["terminal", "panel", "navigation", "productivity"],
+      "platform": ["windows", "macos", "linux"],
+      "requires": ["当前环境提供 workbench.action.terminal.toggleTerminal 命令"],
+      "docPath": "commands/catalog.md"
+    },
+    {
+      "id": "open-markdown-preview",
+      "title": "打开当前 Markdown 预览",
+      "category": "productivity",
+      "path": "commands/productivity/open-markdown-preview.json",
+      "summary": "快速预览当前 Markdown 文件，适合检查 README、CHANGELOG 或文档排版。",
+      "tags": ["markdown", "preview", "docs", "productivity"],
+      "platform": ["windows", "macos", "linux"],
+      "requires": ["当前文件为 Markdown", "当前环境提供 markdown.showPreview 命令"],
       "docPath": "commands/catalog.md"
     },
     {

@@ -6,6 +6,7 @@
 
 - [快速开始](./getting-started.md)
 - [内容地图](./content-map.md)
+- [路线图状态](./roadmap-status.md)
 - [Editor Commands 开发规范](./command-development.md)
 - [Slash Commands 开发规范](./slash-command-development.md)
 - [仓库策略说明](./repo-strategy.md)

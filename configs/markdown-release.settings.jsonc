@@ -1,0 +1,13 @@
+{
+  // 适合高频维护 README、CHANGELOG 和发布说明的场景。
+  "editor.wordWrap": "on",
+  "editor.quickSuggestions": {
+    "comments": "on",
+    "strings": "on",
+    "other": "on"
+  },
+  "markdown.preview.scrollEditorWithPreview": true,
+  "markdown.preview.scrollPreviewWithEditor": true,
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true
+}

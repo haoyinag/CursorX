@@ -1,0 +1,6 @@
+{
+  "title": "打开 Problems 面板",
+  "description": "快速查看当前工作区的错误和警告列表，适合修复 lint、typecheck 或诊断问题时使用",
+  "command": "workbench.actions.view.problems",
+  "tags": ["problems", "diagnostics", "quality", "development"]
+}

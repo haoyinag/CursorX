@@ -7,6 +7,7 @@
 ### 编辑技巧
 
 - [小批次重构，比一次性大改更稳](./small-batch-refactor.md)
+- [先写可分享命令，再写项目私有规则](./shareable-command-design.md)
 
 ### AI 助手使用
 
@@ -16,12 +17,14 @@
 ### 生产力提升
 
 - 推荐先把高频动作沉淀成固定命令或提示词，再考虑更重的自动化
+- [发版前先做一次发布卫生检查](./release-hygiene.md)
 
 ## 推荐阅读顺序
 
 1. 先看 [先选中，再提问](./selection-first-prompts.md)
 2. 再看 [长对话后及时做上下文交接](./context-handoff.md)
-3. 最后看 [小批次重构，比一次性大改更稳](./small-batch-refactor.md)
+3. 再看 [小批次重构，比一次性大改更稳](./small-batch-refactor.md)
+4. 如果你准备发布内容，再看 [发版前先做一次发布卫生检查](./release-hygiene.md)
 
 ## 贡献
 

@@ -1,0 +1,6 @@
+{
+  "title": "切换终端面板",
+  "description": "快速打开或关闭集成终端，适合在编辑、运行命令和查看输出之间来回切换",
+  "command": "workbench.action.terminal.toggleTerminal",
+  "tags": ["terminal", "panel", "navigation", "productivity"]
+}

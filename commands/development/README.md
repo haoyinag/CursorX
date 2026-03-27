@@ -13,5 +13,6 @@
 - [`git-open-source-control.json`](git-open-source-control.json)
 - [`git-stage-all-changes.json`](git-stage-all-changes.json)
 - [`git-sync-current-branch.json`](git-sync-current-branch.json)
+- [`open-problems-panel.json`](open-problems-panel.json)
 
 新增命令时，优先考虑是否能减少一个完整工作流中的重复动作，而不是只包装一个低频命令。

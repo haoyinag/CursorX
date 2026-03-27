@@ -17,6 +17,8 @@
   - 适合把命令面板、文件跳转、搜索和 AI 入口固定为快捷键
 - [`workspace-hygiene.settings.jsonc`](./workspace-hygiene.settings.jsonc)
   - 适合减少提交噪声，保持工作区和搜索结果更干净
+- [`markdown-release.settings.jsonc`](./markdown-release.settings.jsonc)
+  - 适合高频维护 README、CHANGELOG 和 release notes
 
 ## 使用建议
 

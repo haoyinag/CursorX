@@ -144,6 +144,9 @@ node scripts/install-slash-command.mjs --command lint-fix --scope project --repo
 - `/risk-scan`
 - `/diff-summary`
 - `/migration-note`
+- `/release-notes`
+- `/changelog-entry`
+- `/upgrade-checklist`
 
 详细说明见 [catalog.md](catalog.md)。
 
@@ -156,6 +159,9 @@ node scripts/install-slash-command.mjs --command lint-fix --scope project --repo
 - 风险梳理：`/risk-scan`
 - 交接摘要：`/diff-summary`
 - 升级说明：`/migration-note`
+- 版本说明：`/release-notes`
+- 增量记录：`/changelog-entry`
+- 升级动作：`/upgrade-checklist`
 
 ## 与 `commands/` 的区别
 
