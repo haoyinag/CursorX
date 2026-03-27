@@ -57,7 +57,9 @@ slash-commands/
 
 ```bash
 node packages/cursorx-cli/bin/cursorx.js list
+node packages/cursorx-cli/bin/cursorx.js doctor
 node packages/cursorx-cli/bin/cursorx.js install git-push --scope global
+node packages/cursorx-cli/bin/cursorx.js verify git-push --scope global
 node packages/cursorx-cli/bin/cursorx.js install lint-fix --scope project --repo D:/work/code/my-repo --with-scripts
 ```
 
@@ -70,8 +72,28 @@ node packages/cursorx-cli/bin/cursorx.js install lint-fix --scope project --repo
 
 ```bash
 npx cursorx-cli list
+npx cursorx-cli doctor
 npx cursorx-cli install git-push --scope global
+npx cursorx-cli verify git-push --scope global
 ```
+
+如果你会长期使用，也可以全局安装：
+
+```bash
+npm i -g cursorx-cli
+cursorx list
+cursorx doctor
+cursorx install git-push --scope global
+cursorx verify git-push --scope global
+```
+
+不推荐在业务项目里执行：
+
+```bash
+npm install cursorx-cli
+```
+
+原因是它的职责是把命令安装到 Cursor 的命令目录，而不是作为项目依赖参与应用构建和运行。
 
 ### 方式二：使用安装脚本
 
@@ -94,6 +116,13 @@ node scripts/install-slash-command.mjs --command lint-fix --scope project --repo
 - `packages/cursorx-cli/` 是新的 CLI 原型
 - `scripts/install-slash-command.*` 是兼容旧入口的包装层
 - 它们的职责都是把命令复制到 Cursor 当前实际识别的目录中
+- `doctor / verify` 用于安装后的自检，不需要重新拆命令体系
+
+推荐安装后的最小验证链路：
+
+1. 执行 `cursorx install git-push --scope global`
+2. 执行 `cursorx verify git-push --scope global`
+3. 去 Cursor chat 里输入 `/git-push`
 
 ### 方式三：手动复制
 
@@ -108,8 +137,25 @@ node scripts/install-slash-command.mjs --command lint-fix --scope project --repo
 
 - `/git-push`
 - `/lint-fix`
+- `/staged-review`
+- `/test-plan`
+- `/pr-summary`
+- `/readme-refresh`
+- `/risk-scan`
+- `/diff-summary`
+- `/migration-note`
 
 详细说明见 [catalog.md](catalog.md)。
+
+推荐按工作流理解这些命令：
+
+- Git 收尾：`/lint-fix` -> `/staged-review` -> `/git-push`
+- 提测前整理：`/test-plan` -> `/staged-review`
+- PR 提交前：`/pr-summary`
+- 文档同步：`/readme-refresh`
+- 风险梳理：`/risk-scan`
+- 交接摘要：`/diff-summary`
+- 升级说明：`/migration-note`
 
 ## 与 `commands/` 的区别
 

@@ -1,0 +1,10 @@
+{
+  // 让 diff、长文件和代码审查场景更稳定。
+  "workbench.editor.enablePreview": false,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "editor.stickyScroll.enabled": true,
+  "breadcrumbs.enabled": true,
+  "editor.minimap.enabled": false,
+  "editor.renderWhitespace": "selection",
+  "editor.guides.bracketPairs": true
+}

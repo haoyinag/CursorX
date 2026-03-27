@@ -10,3 +10,8 @@
 - 已知限制
 
 如果某个 Skill 只适用于单一私有项目，建议不要提交到公共仓库。
+
+## 当前条目
+
+- [Staged Review Skill](./staged-review-skill.md)
+- [Doc Refresh Skill](./doc-refresh-skill.md)

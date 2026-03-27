@@ -10,6 +10,10 @@
 
 如果你的目标是“安装后直接使用命令”，请优先从 `slash-commands/` 和 `cursorx-cli` 进入。
 
+如果你的目标是“快速判断某类内容该去哪个目录找”，请先看：
+
+- [docs/content-map.md](docs/content-map.md)
+
 ## Quick Start
 
 先看可安装命令：
@@ -148,9 +152,25 @@ CursorX/
 - 文档生成与整理
 - 日常高频提效动作
 
+## 当前推荐入口
+
+如果你希望从“直接可用”开始：
+
+- [slash commands 说明](slash-commands/README.md)
+- [slash commands 目录](slash-commands/catalog.md)
+
+如果你希望从“内容层”开始：
+
+- [editor commands 素材库](commands/README.md)
+- [Skills 推荐](skills/README.md)
+- [使用技巧](tips/README.md)
+- [配置分享](configs/README.md)
+- [内容地图](docs/content-map.md)
+
 ## 文档入口
 
 - [slash commands 说明](slash-commands/README.md)
+- [内容地图](docs/content-map.md)
 - [CLI 规划](packages/cursorx-cli/README.md)
 - [editor commands 规范](docs/command-development.md)
 - [仓库策略说明](docs/repo-strategy.md)

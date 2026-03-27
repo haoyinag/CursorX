@@ -10,3 +10,7 @@
 - 为什么值得推荐
 
 如果一个 Skill 只是“看起来不错”但没有清晰使用说明，暂时不要放进这里。
+
+## 当前条目
+
+- [Repo Onboarding Skill](./repo-onboarding-skill.md)

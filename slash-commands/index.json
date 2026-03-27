@@ -26,6 +26,76 @@
         }
       ],
       "tags": ["lint", "eslint", "stylelint", "workflow"]
+    },
+    {
+      "id": "staged-review",
+      "title": "/staged-review",
+      "path": "slash-commands/global/staged-review.md",
+      "installAs": "staged-review.md",
+      "summary": "围绕当前 staged 改动做高信号风险审查，优先发现 bug、回归和测试缺口。",
+      "scopes": ["global", "project"],
+      "scripts": [],
+      "tags": ["review", "staged", "git", "quality"]
+    },
+    {
+      "id": "test-plan",
+      "title": "/test-plan",
+      "path": "slash-commands/global/test-plan.md",
+      "installAs": "test-plan.md",
+      "summary": "基于当前 staged 改动生成 smoke、regression 和 edge case 测试计划。",
+      "scopes": ["global", "project"],
+      "scripts": [],
+      "tags": ["test", "qa", "staged", "quality"]
+    },
+    {
+      "id": "pr-summary",
+      "title": "/pr-summary",
+      "path": "slash-commands/global/pr-summary.md",
+      "installAs": "pr-summary.md",
+      "summary": "根据当前分支相对默认基线的差异生成 PR 摘要、风险说明和测试计划。",
+      "scopes": ["global", "project"],
+      "scripts": [],
+      "tags": ["pull-request", "summary", "review", "workflow"]
+    },
+    {
+      "id": "readme-refresh",
+      "title": "/readme-refresh",
+      "path": "slash-commands/global/readme-refresh.md",
+      "installAs": "readme-refresh.md",
+      "summary": "根据当前代码、目录或改动刷新 README 与说明文档，减少文档过时。",
+      "scopes": ["global", "project"],
+      "scripts": [],
+      "tags": ["docs", "readme", "documentation", "workflow"]
+    },
+    {
+      "id": "risk-scan",
+      "title": "/risk-scan",
+      "path": "slash-commands/global/risk-scan.md",
+      "installAs": "risk-scan.md",
+      "summary": "围绕当前改动扫描逻辑回归、兼容性、配置同步和验证缺口等风险点。",
+      "scopes": ["global", "project"],
+      "scripts": [],
+      "tags": ["risk", "review", "quality", "regression"]
+    },
+    {
+      "id": "diff-summary",
+      "title": "/diff-summary",
+      "path": "slash-commands/global/diff-summary.md",
+      "installAs": "diff-summary.md",
+      "summary": "把 staged、工作区或当前差异整理成适合交接与同步的变更摘要。",
+      "scopes": ["global", "project"],
+      "scripts": [],
+      "tags": ["summary", "diff", "handoff", "workflow"]
+    },
+    {
+      "id": "migration-note",
+      "title": "/migration-note",
+      "path": "slash-commands/global/migration-note.md",
+      "installAs": "migration-note.md",
+      "summary": "当安装方式、配置路径或命令入口变化时生成面向使用者的迁移说明。",
+      "scopes": ["global", "project"],
+      "scripts": [],
+      "tags": ["migration", "docs", "release", "compatibility"]
     }
   ],
   "templates": [

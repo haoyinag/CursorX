@@ -20,6 +20,62 @@
 - 主要价值：避免每次都跑整仓库 lint fix，同时减少手写命令
 - 依赖脚本：[`slash-commands/scripts/lint-fix-changed.mjs`](scripts/lint-fix-changed.mjs)
 
+### `/staged-review`
+
+- 文件：[`slash-commands/global/staged-review.md`](global/staged-review.md)
+- 适用范围：`global`、`project`
+- 适用场景：commit 前只围绕 staged 改动做风险审查
+- 主要价值：把“提交前 review 一遍”沉淀成固定动作，优先发现 bug、回归和测试缺口
+- 依赖脚本：无
+
+### `/test-plan`
+
+- 文件：[`slash-commands/global/test-plan.md`](global/test-plan.md)
+- 适用范围：`global`、`project`
+- 适用场景：基于 staged 改动快速整理 smoke、regression 和 edge case 测试计划
+- 主要价值：把测试思考前移，减少“改完才想起怎么测”的遗漏
+- 依赖脚本：无
+
+### `/pr-summary`
+
+- 文件：[`slash-commands/global/pr-summary.md`](global/pr-summary.md)
+- 适用范围：`global`、`project`
+- 适用场景：提交 Pull Request 前整理分支摘要、风险和测试计划
+- 主要价值：把 PR 描述从“列文件”升级为“讲清为什么改、影响什么”
+- 依赖脚本：无
+
+### `/readme-refresh`
+
+- 文件：[`slash-commands/global/readme-refresh.md`](global/readme-refresh.md)
+- 适用范围：`global`、`project`
+- 适用场景：根据最新代码、目录或 diff 刷新 README 和说明文档
+- 主要价值：减少文档滞后，让使用说明和仓库现状保持同步
+- 依赖脚本：无
+
+### `/risk-scan`
+
+- 文件：[`slash-commands/global/risk-scan.md`](global/risk-scan.md)
+- 适用范围：`global`、`project`
+- 适用场景：在 commit、提测或合并前快速找出当前改动的高风险点
+- 主要价值：把风险识别前移，减少“改完才想起哪里可能出问题”
+- 依赖脚本：无
+
+### `/diff-summary`
+
+- 文件：[`slash-commands/global/diff-summary.md`](global/diff-summary.md)
+- 适用范围：`global`、`project`
+- 适用场景：把 staged、工作区或当前差异整理成交接、同步或日报摘要
+- 主要价值：降低手写变更说明成本，让同步内容更稳定
+- 依赖脚本：无
+
+### `/migration-note`
+
+- 文件：[`slash-commands/global/migration-note.md`](global/migration-note.md)
+- 适用范围：`global`、`project`
+- 适用场景：命令入口、安装方式、配置路径或目录结构变化后整理迁移说明
+- 主要价值：减少用户因升级路径不清而产生的理解成本
+- 依赖脚本：无
+
 ## 项目模板
 
 ### `git-push.project-template`
@@ -33,12 +89,39 @@
 ### Git 提交流程
 
 - `/git-push`
+- `/staged-review`
 
-适合希望把提交和推送流程标准化的用户。
+适合希望在 commit 前先 review staged，再完成提交和推送的用户。
 
 ### 改动收尾流程
 
 - `/lint-fix`
+- `/test-plan`
+- `/staged-review`
 - `/git-push`
 
-适合先修复当前改动的 lint，再完成提交和推送的用户。
+适合先修复当前改动的 lint，再补测试思路与风险审查，最后完成提交和推送的用户。
+
+### PR 整理流程
+
+- `/staged-review`
+- `/test-plan`
+- `/pr-summary`
+
+适合在分支收尾阶段，把风险、测试计划和 PR 摘要一次整理好的用户。
+
+### 文档刷新流程
+
+- `/readme-refresh`
+- `/migration-note`
+- `/pr-summary`
+
+适合一边更新代码一边同步 README、变更说明和 PR 描述的用户。
+
+### 风险与交接流程
+
+- `/risk-scan`
+- `/diff-summary`
+- `/migration-note`
+
+适合在发布前、交接前或做兼容性梳理时，快速整理风险、摘要和迁移信息的用户。

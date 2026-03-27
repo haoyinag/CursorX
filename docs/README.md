@@ -5,6 +5,7 @@
 ## 文档列表
 
 - [快速开始](./getting-started.md)
+- [内容地图](./content-map.md)
 - [Editor Commands 开发规范](./command-development.md)
 - [Slash Commands 开发规范](./slash-command-development.md)
 - [仓库策略说明](./repo-strategy.md)
@@ -16,8 +17,9 @@
 如果你是使用者：
 
 1. 先看 [快速开始](./getting-started.md)
-2. 再看 [`slash-commands/README.md`](../slash-commands/README.md)
-3. 按需查看 [`commands/README.md`](../commands/README.md)
+2. 再看 [内容地图](./content-map.md)
+3. 再看 [`slash-commands/README.md`](../slash-commands/README.md)
+4. 按需查看 [`commands/README.md`](../commands/README.md)
 
 如果你是贡献者：
 

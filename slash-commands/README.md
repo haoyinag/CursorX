@@ -137,8 +137,25 @@ node scripts/install-slash-command.mjs --command lint-fix --scope project --repo
 
 - `/git-push`
 - `/lint-fix`
+- `/staged-review`
+- `/test-plan`
+- `/pr-summary`
+- `/readme-refresh`
+- `/risk-scan`
+- `/diff-summary`
+- `/migration-note`
 
 详细说明见 [catalog.md](catalog.md)。
+
+推荐按工作流理解这些命令：
+
+- Git 收尾：`/lint-fix` -> `/staged-review` -> `/git-push`
+- 提测前整理：`/test-plan` -> `/staged-review`
+- PR 提交前：`/pr-summary`
+- 文档同步：`/readme-refresh`
+- 风险梳理：`/risk-scan`
+- 交接摘要：`/diff-summary`
+- 升级说明：`/migration-note`
 
 ## 与 `commands/` 的区别
 

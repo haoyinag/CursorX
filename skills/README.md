@@ -38,6 +38,19 @@ skills/
 
 更详细的约定见 [Skills 开发说明](../docs/skill-development.md)。
 
+## 当前收录
+
+### 推荐项
+
+- [Repo Onboarding Skill](./recommended/repo-onboarding-skill.md)
+
+### 自定义草案
+
+- [Staged Review Skill](./custom/staged-review-skill.md)
+- [Doc Refresh Skill](./custom/doc-refresh-skill.md)
+
+这些条目当前以“说明文档 + 提示词骨架”为主，更适合先做评估和二次整理，再决定是否纳入你的长期工作流。
+
 ## 许可证
 
 本目录内容遵循项目根目录的 [MIT License](../LICENSE)。

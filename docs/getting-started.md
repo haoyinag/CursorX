@@ -12,11 +12,12 @@
 
 1. 阅读 [`slash-commands/README.md`](../slash-commands/README.md)
 2. 浏览 [`slash-commands/catalog.md`](../slash-commands/catalog.md)
-3. 了解 CLI 原型：[`packages/cursorx-cli/README.md`](../packages/cursorx-cli/README.md)
-4. 优先尝试 `node packages/cursorx-cli/bin/cursorx.js list`
-5. 通过 CLI、安装脚本或手动复制安装目标 slash command
-6. 安装后执行 `cursorx doctor` 或 `cursorx verify <command-id> --scope ...`
-7. 再按需查看 [`commands/README.md`](../commands/README.md) 中的 editor commands
+3. 阅读 [`content-map.md`](./content-map.md) 判断接下来该进入哪一层
+4. 了解 CLI 原型：[`packages/cursorx-cli/README.md`](../packages/cursorx-cli/README.md)
+5. 优先尝试 `node packages/cursorx-cli/bin/cursorx.js list`
+6. 通过 CLI、安装脚本或手动复制安装目标 slash command
+7. 安装后执行 `cursorx doctor` 或 `cursorx verify <command-id> --scope ...`
+8. 再按需查看 [`commands/README.md`](../commands/README.md)、[`skills/README.md`](../skills/README.md)、[`tips/README.md`](../tips/README.md)、[`configs/README.md`](../configs/README.md)
 
 当前命名策略：
 
@@ -44,6 +45,15 @@
 
 - Git 提交与推送流程
 - 当前改动的 lint 修复流程
+
+如果你希望继续体验第二批工作流内容，可以再看：
+
+- [`slash-commands/global/staged-review.md`](../slash-commands/global/staged-review.md)
+- [`slash-commands/global/test-plan.md`](../slash-commands/global/test-plan.md)
+- [`slash-commands/global/pr-summary.md`](../slash-commands/global/pr-summary.md)
+- [`slash-commands/global/risk-scan.md`](../slash-commands/global/risk-scan.md)
+- [`slash-commands/global/diff-summary.md`](../slash-commands/global/diff-summary.md)
+- [`slash-commands/global/migration-note.md`](../slash-commands/global/migration-note.md)
 
 ## 关于安装方式
 
