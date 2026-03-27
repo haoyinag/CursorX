@@ -175,6 +175,8 @@ CursorX/
 - [路线图状态](docs/roadmap-status.md)
 - [发布流程](docs/release-process.md)
 - [P2 进入前检查](docs/p2-readiness.md)
+- [P2 路线选项](docs/p2-options.md)
+- [P2 当前决策](docs/p2-decision.md)
 - [CLI 规划](packages/cursorx-cli/README.md)
 - [仓库 Changelog](CHANGELOG.md)
 - [editor commands 规范](docs/command-development.md)

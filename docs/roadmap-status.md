@@ -64,9 +64,9 @@
 
 ### P2
 
-状态：未开始
+状态：评估中
 
-待未来评估：
+当前评估范围：
 
 - 是否进入更明确的 release 节奏管理
 - 是否拆出更独立的产品仓或 changelog 体系
@@ -84,5 +84,7 @@
 - [`./content-map.md`](./content-map.md)
 - [`./repo-strategy.md`](./repo-strategy.md)
 - [`./p2-readiness.md`](./p2-readiness.md)
+- [`./p2-options.md`](./p2-options.md)
+- [`./p2-decision.md`](./p2-decision.md)
 - [`../slash-commands/README.md`](../slash-commands/README.md)
 - [`../CHANGELOG.md`](../CHANGELOG.md)

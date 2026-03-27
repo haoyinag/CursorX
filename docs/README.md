@@ -9,6 +9,8 @@
 - [路线图状态](./roadmap-status.md)
 - [发布流程](./release-process.md)
 - [P2 进入前检查](./p2-readiness.md)
+- [P2 路线选项](./p2-options.md)
+- [P2 当前决策](./p2-decision.md)
 - [Editor Commands 开发规范](./command-development.md)
 - [Slash Commands 开发规范](./slash-command-development.md)
 - [仓库策略说明](./repo-strategy.md)
