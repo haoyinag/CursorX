@@ -35,6 +35,22 @@ Repository-level milestones. User-visible changes, not a full commit dump.
 - `P1` marked complete
 - Root navigation adds release process and `P2` readiness
 
+## 0.3.3 - 2026-03-27
+
+### Added
+
+- [`workflows/`](workflows/README.en.md): scenario-based workflow layer connecting commands, tips, and configs into complete processes
+- 9 bilingual workflows: daily commit, feature completion, PR preparation, doc update, risk handoff, release cycle, new project onboarding, code review, debug and fix
+
+### Changed
+
+- Navigation restructured: README, content map, getting started now lead with "find a workflow" over "install a command"
+- `slash-commands/catalog.md`: each command cross-references its workflows; suggested bundles link to full workflow guides
+
+### Notes
+
+- `cursorx-cli@0.3.3` ships with updated slash-commands data
+
 ## 0.3.2 - 2026-03-27
 
 ### Added

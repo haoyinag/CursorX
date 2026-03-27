@@ -4,7 +4,7 @@
 
 `cursorx-cli` 用来把 CursorX 的 slash commands 安装到 Cursor 识别的目录里，并提供安装后的验证命令。
 
-当前版本：**`cursorx-cli@0.3.2`**
+当前版本：**`cursorx-cli@0.3.3`**
 
 命名：
 

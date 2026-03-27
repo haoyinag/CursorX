@@ -4,6 +4,12 @@
 
 Changes to the **`cursorx-cli`** npm package only.
 
+## 0.3.3 - 2026-03-27
+
+### Changed in 0.3.3
+
+- Updated bundled `slash-commands/` data: each command now cross-references its workflows; suggested bundles link to full workflow guides
+
 ## 0.3.2 - 2026-03-27
 
 ### Changed in 0.3.2

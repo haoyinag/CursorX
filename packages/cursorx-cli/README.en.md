@@ -4,7 +4,7 @@
 
 `cursorx-cli` installs CursorX slash commands into the directories Cursor already reads, and provides verification commands after install.
 
-Current version: **`cursorx-cli@0.3.2`**
+Current version: **`cursorx-cli@0.3.3`**
 
 Naming:
 
