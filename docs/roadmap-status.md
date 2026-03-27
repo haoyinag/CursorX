@@ -34,7 +34,7 @@
 
 ### P1
 
-状态：接近收口
+状态：完成
 
 已完成内容：
 
@@ -44,12 +44,13 @@
 - 内容层从骨架推进到多批可复用样板
 - `commands/` 已扩充到更可依赖的参考层，覆盖导航、布局、终端、文档和问题修复入口
 
-剩余重点：
+收口判断：
 
-- 继续把 `commands/` 做厚为更可信的参考层，但提高新增门槛
-- 给 `skills/`、`tips/`、`configs/` 补少量真正高频内容，而不是继续横向铺开
-- 把 changelog / release notes / upgrade guidance 固化成更稳定的发布流程
-- 判断是否还存在明显缺失的核心工作流空白
+- `slash-commands/` 已覆盖从开发、review、文档到发布的一条完整核心工作流
+- `commands/` 已形成可复用的核心参考层
+- `skills/`、`tips/`、`configs/` 都已从样板推进到可持续浏览的内容层
+- `CHANGELOG`、`release notes`、`upgrade guidance` 与发布流程已开始成体系
+- 继续新增内容的门槛已经明显提高，不再适合为了数量继续扩充
 
 ### P1 收口标准
 
@@ -73,12 +74,15 @@
 
 ## 当前建议
 
-在进入 `P2` 之前，优先继续完成 `P1` 的剩余项，不要过早扩展到新的产品形态。
+当前更适合从“继续补内容”切换到“评估是否进入 P2”。
+
+在真正进入 `P2` 之前，优先做门槛检查，而不是立即切换产品形态。
 
 ## 相关文档
 
 - [`../README.md`](../README.md)
 - [`./content-map.md`](./content-map.md)
 - [`./repo-strategy.md`](./repo-strategy.md)
+- [`./p2-readiness.md`](./p2-readiness.md)
 - [`../slash-commands/README.md`](../slash-commands/README.md)
 - [`../CHANGELOG.md`](../CHANGELOG.md)

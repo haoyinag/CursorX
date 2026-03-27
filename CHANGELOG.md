@@ -26,6 +26,19 @@
 
 - `cursorx-cli` 将随本次命令数据更新同步发布，保证 npm 包与仓库中的命令集保持一致
 
+## 0.3.1 - 2026-03-27
+
+### Added in 0.3.1
+
+- 新增 [`docs/release-process.md`](docs/release-process.md)，固定仓库内容与 npm 包的发布流程
+- 新增 [`docs/p2-readiness.md`](docs/p2-readiness.md)，作为进入下一阶段前的门槛检查
+- 新增包级 [`packages/cursorx-cli/CHANGELOG.md`](packages/cursorx-cli/CHANGELOG.md)
+
+### Changed in 0.3.1
+
+- `P1` 路线状态正式调整为“完成”
+- 文档导航增加对发布流程与 `P2` 门槛检查的入口
+
 ## 0.2.0 - 2026-03-27
 
 ### Added in 0.2.0
