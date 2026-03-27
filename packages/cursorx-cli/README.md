@@ -2,7 +2,7 @@
 
 `cursorx-cli` 是 `CursorX` 的最小可运行 CLI 原型，用来验证未来的统一安装入口。
 
-当前它已经具备“可打包、可继续推进到 npm”的基本形态，并且 `cursorx-cli@0.3.0` 对应当前这批安装、自检与命令数据能力。
+当前它已经具备“可打包、可继续推进到 npm”的基本形态，并且 `cursorx-cli@0.3.1` 对应当前这批安装、自检与命令数据能力。
 
 命名策略已经固定：
 
@@ -126,6 +126,10 @@ cursorx verify git-push --scope global
 npm run list
 npm run check
 ```
+
+如果你想看包级版本记录，可继续阅读：
+
+- [`CHANGELOG.md`](./CHANGELOG.md)
 
 ## 何时值得从这里演进为独立包
 
