@@ -1,15 +1,38 @@
-[中文](README.md) · English
-
 # cursorx-cli
 
-`cursorx-cli` is CursorX’s **minimal runnable CLI**—a proving ground for a future unified install entry. It is packable and npm-ready today; **`cursorx-cli@0.3.2`** matches the current install, self-check, and command-data behavior.
+[中文](README.md) · English
 
-Naming is fixed:
+`cursorx-cli` installs CursorX slash commands into the directories Cursor already reads, and provides verification commands after install.
+
+Current version: **`cursorx-cli@0.3.2`**
+
+Naming:
 
 - npm package: `cursorx-cli`
 - CLI binary: `cursorx`
 
-## Usage (from the repo)
+## Use it directly
+
+Recommended:
+
+```bash
+npx cursorx-cli list
+npx cursorx-cli doctor
+npx cursorx-cli install git-push --scope global
+npx cursorx-cli verify git-push --scope global
+```
+
+For regular use, a global install is also fine:
+
+```bash
+npm i -g cursorx-cli
+cursorx list
+cursorx doctor
+cursorx install lint-fix --scope project --repo D:/work/code/my-repo --with-scripts
+cursorx verify lint-fix --scope project --repo D:/work/code/my-repo
+```
+
+## Run from the repo
 
 At the repository root:
 
@@ -25,40 +48,14 @@ node packages/cursorx-cli/bin/cursorx.js verify lint-fix --scope project --repo 
 
 `help`, `list`, `doctor`, `install`, and `verify` output is tuned for terminals and degrades on narrow or colorless environments.
 
-After npm publish, prefer:
-
-```bash
-npx cursorx-cli list
-npx cursorx-cli doctor
-npx cursorx-cli install git-push --scope global
-npx cursorx-cli verify git-push --scope global
-```
-
-Or global install:
-
-```bash
-npm i -g cursorx-cli
-cursorx list
-cursorx doctor
-cursorx install lint-fix --scope project --repo D:/work/code/my-repo --with-scripts
-cursorx verify lint-fix --scope project --repo D:/work/code/my-repo
-```
-
 **Do not** `npm install cursorx-cli` inside app projects: this is a command installer, not a runtime dependency—it pollutes `package.json`, lockfiles, and `node_modules` without helping the app.
 
-## Why it is closer to a real package
+## Common commands
 
-- Standalone `package.json`, `bin/`, `src/`
-- Packaged with its own `slash-commands/` data
-- `prepack` syncs latest command data from the repo root (see root scripts)
-
-## Responsibilities (now and next)
-
-- Read [`slash-commands/index.json`](../../slash-commands/index.json)
-- Unified installs, e.g. `cursorx install git-push --scope global`
-- List commands, install to global or project scope, sync helper scripts
-- Post-install checks: `cursorx doctor`, `cursorx verify <command-id> --scope <global|project> [--repo <path>]`
-- Evolve in-repo installers—no second command source
+- List available commands
+- Install into `global` or `project`
+- Sync helper scripts when a command needs them
+- Run post-install checks: `cursorx doctor`, `cursorx verify <command-id> --scope <global|project> [--repo <path>]`
 
 ## Self-checks
 
@@ -81,30 +78,19 @@ Compatibility scripts remain:
 - [`scripts/install-slash-command.mjs`](../../scripts/install-slash-command.mjs)
 - [`scripts/install-slash-command.ps1`](../../scripts/install-slash-command.ps1)
 
-`packages/cursorx-cli/` is the new CLI; `install-slash-command.mjs` wraps older call paths. Both share the same command index and install semantics.
+If you need release or strategy details, see:
 
-## After publish, good next steps
+- [`../../docs/repo-strategy.en.md`](../../docs/repo-strategy.en.md)
+- [`../../docs/release-process.en.md`](../../docs/release-process.en.md)
 
-1. Exercise `doctor` / `verify` in more clean environments  
-2. Add high-value slash commands  
-3. Clearer changelog / release notes  
-4. Revisit Plugin / Marketplace shape  
-
-Package scripts:
+## Package scripts
 
 ```bash
 npm run list
 npm run check
 ```
 
-History: [`CHANGELOG.md`](./CHANGELOG.md).
-
-## When a standalone npm package is justified
-
-- You need a dedicated version line and changelog  
-- The installer ships more often than content  
-- Users treat “install commands” as its own product  
-- You need `npx`, `npm i -g`, or CI distribution  
+History: [`CHANGELOG.en.md`](./CHANGELOG.en.md).
 
 ## Layout
 

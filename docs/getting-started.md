@@ -2,24 +2,18 @@
 
 **语言 / Language：** [English](getting-started.en.md)
 
-目标不是堆资料，而是沉淀一套围绕 Cursor、能反复复用的内容。
-
-可以记成：**一个总仓 + 一个主产品**。
-
-- 总仓：`CursorX`
-- 主产品：`slash-commands/`
-- 其余：`commands/`、`skills/`、`tips/`、`configs/`
+第一次来这个仓库，先把它当成一个“安装命令 + 查资料”的入口集合就够了。
 
 ## 建议浏览顺序
 
 1. [`slash-commands/README.md`](../slash-commands/README.md)  
 2. [`slash-commands/catalog.md`](../slash-commands/catalog.md)  
-3. [`content-map.md`](./content-map.md)：接下来进哪一层  
-4. [`packages/cursorx-cli/README.md`](../packages/cursorx-cli/README.md)  
-5. 试跑：`node packages/cursorx-cli/bin/cursorx.js list`  
-6. 用 CLI、安装脚本或手动复制，装目标 slash command  
-7. 装完：`cursorx doctor` 或 `cursorx verify <command-id> --scope ...`  
-8. 按需看 [`commands/README.md`](../commands/README.md)、[`skills/README.md`](../skills/README.md)、[`tips/README.md`](../tips/README.md)、[`configs/README.md`](../configs/README.md)  
+3. [`packages/cursorx-cli/README.md`](../packages/cursorx-cli/README.md)  
+4. 试跑：`npx cursorx-cli list`  
+5. 用 CLI、安装脚本或手动复制，装目标 slash command  
+6. 装完：`cursorx doctor` 或 `cursorx verify <command-id> --scope ...`  
+7. 按需看 [`commands/README.md`](../commands/README.md)、[`skills/README.md`](../skills/README.md)、[`tips/README.md`](../tips/README.md)、[`configs/README.md`](../configs/README.md)  
+8. 需要看目录分布时，再读 [`content-map.md`](./content-map.md)  
 
 命名：npm `cursorx-cli`，命令 `cursorx`。
 
@@ -73,7 +67,7 @@
 
 不要在业务项目里 `npm install cursorx-cli`（安装器，非业务依赖）。
 
-CLI 与统一入口的长期打算见 [`repo-strategy.md`](./repo-strategy.md)。
+如果你关心仓库结构、发布节奏或后续策略，再看 [`repo-strategy.md`](./repo-strategy.md)。
 
 ## 准备贡献
 

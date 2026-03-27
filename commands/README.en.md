@@ -2,16 +2,12 @@
 
 Language: [中文](README.md)
 
-`commands/` holds **JSON wrappers for editor commands**—a library of actions and reference material.
+`commands/` holds **JSON wrappers for editor commands**. Use it as a library of action snippets and reference examples.
 
-This is **not** the same as [`slash-commands/`](../slash-commands/README.en.md):
+This is different from [`slash-commands/`](../slash-commands/README.en.md):
 
-| | `slash-commands/` | `commands/` |
-|---|-------------------|-------------|
-| Form | Native slash commands; global or project install | Editor command wrappers |
-| Use | `/command` in chat or Agent | Command palette, keybindings, etc. |
-
-In this repo’s policy, this layer is **not** the main product or the CLI’s primary distribution target.
+- `slash-commands/`: native slash commands; install to global or project scope
+- `commands/`: editor command wrappers, mostly for command palette or keybinding use
 
 ## Layout
 
@@ -41,7 +37,7 @@ commands/
 
 ## Installation
 
-**This is not the repo’s main install path.** The `.json` files depend on Cursor/editor command IDs, which vary by version; there is no unified, battle-tested install story like slash commands here.
+There is no single install flow for this directory. The `.json` files depend on Cursor and underlying command IDs, and those vary across versions.
 
 For **stable reuse** across repos, use [`slash-commands/`](../slash-commands/README.en.md).
 
@@ -98,13 +94,6 @@ node scripts/validate-commands.mjs
 ```
 
 Details: [editor commands development guide](../docs/command-development.md).
-
-## Direction (priority)
-
-- Git workflows  
-- Refactoring and quality  
-- Doc generation  
-- High-frequency editing  
 
 ## License
 

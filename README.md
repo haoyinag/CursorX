@@ -2,15 +2,14 @@
 
 **语言 / Language：** [English](README.en.md)
 
-`CursorX` 是围绕 Cursor 的资源总仓。
+`CursorX` 收集了围绕 Cursor 的可安装命令、编辑器动作、使用技巧和配套说明。
 
-当前结构可以记成：**主产品 + 内容层**。
+如果你只是想尽快开始，用这两个入口就够了：
 
-- 主产品：`slash-commands/`
-- CLI 原型：`packages/cursorx-cli/`
-- 内容层：`commands/`、`skills/`、`tips/`、`configs/`、`docs/`
+- 安装命令：[`slash-commands/README.md`](slash-commands/README.md)
+- 安装器：[`packages/cursorx-cli/README.md`](packages/cursorx-cli/README.md)
 
-想「装完就用」，从 `slash-commands/` 和 `cursorx-cli` 进；想「先搞清楚东西在哪」，看 [docs/content-map.md](docs/content-map.md)。
+如果你想先看目录分布，再读 [docs/content-map.md](docs/content-map.md)。
 
 ## 快速开始
 
@@ -19,7 +18,16 @@
 - [slash-commands/README.md](slash-commands/README.md)
 - [slash-commands/catalog.md](slash-commands/catalog.md)
 
-本地直接跑 CLI（仓库内）：
+直接使用：
+
+```bash
+npx cursorx-cli list
+npx cursorx-cli doctor
+npx cursorx-cli install git-push --scope global
+npx cursorx-cli verify git-push --scope global
+```
+
+也可以先在仓库内直接跑 CLI：
 
 ```bash
 node packages/cursorx-cli/bin/cursorx.js list
@@ -31,16 +39,7 @@ node packages/cursorx-cli/bin/cursorx.js install lint-fix --scope project --repo
 
 命名：npm 包 `cursorx-cli`，命令行入口 `cursorx`。
 
-发布到 npm 之后推荐：
-
-```bash
-npx cursorx-cli list
-npx cursorx-cli doctor
-npx cursorx-cli install git-push --scope global
-npx cursorx-cli verify git-push --scope global
-```
-
-常用可全局安装：
+常用的话也可以全局安装：
 
 ```bash
 npm i -g cursorx-cli
@@ -66,20 +65,17 @@ cursorx verify git-push --scope global
 node scripts/install-slash-command.mjs --command git-push --scope global
 ```
 
-## 分层
+## 还有什么
 
-### 主产品
+- [`slash-commands/`](slash-commands/README.md)：可安装的 `/命令`
+- [`packages/cursorx-cli/`](packages/cursorx-cli/README.md)：安装、验证和排查命令
+- [`commands/`](commands/README.md)：`.json` 形式的编辑器动作素材
+- [`skills/`](skills/README.md)：可复用的 AI 工作流说明
+- [`tips/`](tips/README.md)：使用节奏和协作技巧
+- [`configs/`](configs/README.md)：配置片段
+- [`docs/`](docs/README.md)：开发、发布和策略文档
 
-- `slash-commands/`：当前唯一主安装入口
-- `packages/cursorx-cli/`：npm CLI 的最小可运行版
-
-### 内容
-
-- `commands/`：Editor Command 素材
-- `skills/`、`tips/`、`configs/`：技能、技巧、配置
-- `docs/`：规范与说明
-
-## 目录示意
+## 目录
 
 ```text
 CursorX/
@@ -109,28 +105,14 @@ CursorX/
 └── README.md
 ```
 
-## 两种「命令」
-
-**`slash-commands/`**
-
-仓库里唯一承诺的主安装源；`cursorx-cli` 和安装脚本都认这里的索引和目录。
-
-**`commands/`**
-
-放 `.json` 形式的编辑器动作封装（如开文件、Quick Chat、SCM 等）。偏资料库，安装方式不统一；要可移植、可安装给别人用，优先走 `slash-commands/`。
-
-## 方向（当前）
-
-Git 工作流、Lint/测试、可复用 AI 入口、重构与质量、文档整理、日常高频动作。
-
 ## 常用入口
 
-直接用：
+装命令：
 
 - [slash-commands 说明](slash-commands/README.md)
 - [slash-commands 目录](slash-commands/catalog.md)
 
-从内容层逛：
+按需继续看：
 
 - [commands](commands/README.md)
 - [skills](skills/README.md)

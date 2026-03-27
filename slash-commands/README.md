@@ -2,14 +2,13 @@
 
 语言：[English](README.en.md)
 
-`slash-commands/` 是 CursorX **当前唯一主安装入口**：聊天 / Agent 输入框里用 `/命令名`。
+`slash-commands/` 用来放可安装的 `/命令`，适合直接在 Cursor 聊天或 Agent 输入框里使用。
 
-和仓库里的 `commands/*.json` 不同，这里是 **Markdown 原生 slash**，更适合：
+和仓库里的 `commands/*.json` 不同，这里是 **Markdown 原生 slash commands**，适合：
 
 - 全局安装，自用  
 - 项目安装，跟仓库走  
 - 复制到别的仓库继续用  
-- 作为未来 CLI 的稳定命令源  
 
 ## 目录
 
@@ -47,7 +46,7 @@ node packages/cursorx-cli/bin/cursorx.js verify git-push --scope global
 node packages/cursorx-cli/bin/cursorx.js install lint-fix --scope project --repo D:/work/code/my-repo --with-scripts
 ```
 
-发布后可用 `npx cursorx-cli …`；包名 `cursorx-cli`，入口名 `cursorx`。长期使用可 `npm i -g cursorx-cli`。
+直接用 `npx cursorx-cli …`；包名 `cursorx-cli`，入口名 `cursorx`。长期使用可 `npm i -g cursorx-cli`。
 
 **不要在业务项目里** `npm install cursorx-cli` 当依赖——它的职责是把命令装进 Cursor 目录，不参与应用构建。
 
@@ -65,7 +64,7 @@ PowerShell：
 ./scripts/install-slash-command.ps1 -Command lint-fix -Scope project -RepoPath D:\work\code\my-repo -WithScripts
 ```
 
-`packages/cursorx-cli/` 与 `scripts/install-slash-command.*` 都是把文件拷到 Cursor 实际识别的目录；`doctor` / `verify` 做装后自检。
+`packages/cursorx-cli/` 与 `scripts/install-slash-command.*` 都会把文件拷到 Cursor 识别的目录；`doctor` / `verify` 用来做装后自检。
 
 **最小验证：** `cursorx install git-push --scope global` → `verify` → 在 Chat 里输入 `/git-push`。
 
@@ -102,6 +101,6 @@ PowerShell：
 
 要稳定复用到别的仓库，**优先 slash**。
 
-## 与 CLI
+## CLI
 
-CLI 说明见 [`packages/cursorx-cli/README.md`](../packages/cursorx-cli/README.md)。规划上 CLI 读 [`slash-commands/index.json`](index.json) —— **命令源在 `slash-commands/`，CLI 是安装与分发层**，不是第二套命令体系。
+安装器说明见 [`packages/cursorx-cli/README.md`](../packages/cursorx-cli/README.md)。

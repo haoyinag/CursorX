@@ -2,24 +2,18 @@
 
 **Language / 语言：** [中文](getting-started.md)
 
-The goal is a reusable Cursor-focused content library, not a pile of one-offs.
-
-Think **one repo, one main product**:
-
-- Repo: `CursorX`
-- Main product: `slash-commands/`
-- Everything else: `commands/`, `skills/`, `tips/`, `configs/`
+If this is your first visit, treat the repo as one place to install commands and look up supporting material.
 
 ## Suggested order
 
-1. [`slash-commands/README.md`](../slash-commands/README.md)  
-2. [`slash-commands/catalog.md`](../slash-commands/catalog.md)  
-3. [`content-map.en.md`](./content-map.en.md): which layer to open next  
-4. [`packages/cursorx-cli/README.md`](../packages/cursorx-cli/README.md)  
-5. Run: `node packages/cursorx-cli/bin/cursorx.js list`  
-6. Install the slash command via CLI, install script, or copy  
-7. Then: `cursorx doctor` or `cursorx verify <command-id> --scope ...`  
-8. As needed: [`commands/README.md`](../commands/README.md), [`skills/README.md`](../skills/README.md), [`tips/README.md`](../tips/README.md), [`configs/README.md`](../configs/README.md)  
+1. [`slash-commands/README.en.md`](../slash-commands/README.en.md)  
+2. [`slash-commands/catalog.en.md`](../slash-commands/catalog.en.md)  
+3. [`packages/cursorx-cli/README.en.md`](../packages/cursorx-cli/README.en.md)  
+4. Run: `npx cursorx-cli list`  
+5. Install the slash command via CLI, install script, or copy  
+6. Then run: `cursorx doctor` or `cursorx verify <command-id> --scope ...`  
+7. As needed: [`commands/README.en.md`](../commands/README.en.md), [`skills/README.en.md`](../skills/README.en.md), [`tips/README.en.md`](../tips/README.en.md), [`configs/README.en.md`](../configs/README.en.md)  
+8. If you need the directory map, read [`content-map.en.md`](./content-map.en.md)  
 
 Naming: npm package `cursorx-cli`, binary `cursorx`.
 
@@ -73,7 +67,7 @@ Suggested flow:
 
 Do not `npm install cursorx-cli` inside application repos (installer, not a runtime dep).
 
-Longer-term CLI and entry-point notes: [`repo-strategy.md`](./repo-strategy.md).
+If you need structure, release, or strategy notes, see [`repo-strategy.en.md`](./repo-strategy.en.md).
 
 ## Contributing
 

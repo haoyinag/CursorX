@@ -2,16 +2,12 @@
 
 语言：[English](README.en.md)
 
-`commands/` 里放的是 **`.json` 形式的编辑器命令封装**，当作动作素材库和补充能力参考用。
+`commands/` 里放的是 **`.json` 形式的编辑器命令封装**，适合当作动作素材库和参考示例来用。
 
-和 [`slash-commands/`](../slash-commands/README.md) 不是一类东西：
+和 [`slash-commands/`](../slash-commands/README.md) 的区别：
 
-| | `slash-commands/` | `commands/` |
-|---|-------------------|-------------|
-| 形态 | 原生 slash，可装全局或项目 | 编辑器命令封装 |
-| 用途 | 聊天/Agent 里 `/命令名` | 命令面板、快捷键等 |
-
-本仓库策略里，这一层**不是主产品**，也不是 CLI 的首要分发对象。
+- `slash-commands/`：原生 slash，可装全局或项目
+- `commands/`：编辑器命令封装，更多用于命令面板、快捷键等
 
 ## 目录
 
@@ -41,7 +37,7 @@ commands/
 
 ## 安装
 
-**这里不作为仓库主安装入口。** 原因是：`.json` 依赖 Cursor/底层命令 ID，版本差异大，仓库里也没有像 slash 那样统一、已跑通的安装语义。
+这里没有统一的安装流。原因很简单：`.json` 依赖 Cursor 和底层命令 ID，不同版本差异会比较大。
 
 若要在别的仓库里**稳定复用**，请用 [`slash-commands/`](../slash-commands/README.md)。
 
@@ -98,13 +94,6 @@ node scripts/validate-commands.mjs
 ```
 
 细则见 [editor commands 开发规范](../docs/command-development.md)。
-
-## 方向（优先补）
-
-- Git 工作流  
-- 重构与质量  
-- 文档生成  
-- 高频编辑操作  
 
 ## 许可证
 

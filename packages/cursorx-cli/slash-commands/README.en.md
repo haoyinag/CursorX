@@ -2,14 +2,13 @@
 
 Language: [中文](README.md)
 
-`slash-commands/` is CursorX’s **only primary install path** for `/command` usage in chat and the Agent input.
+`slash-commands/` is where installable `/commands` live for Cursor chat and the Agent input.
 
-Unlike `commands/*.json`, these are **native Markdown slash commands**, better for:
+Unlike `commands/*.json`, these are **native Markdown slash commands**, which work well for:
 
 - Global install, personal use  
 - Project install, shipped with the repo  
 - Copying to other repos  
-- Serving as the stable source for the future CLI  
 
 ## Layout
 
@@ -47,7 +46,7 @@ node packages/cursorx-cli/bin/cursorx.js verify git-push --scope global
 node packages/cursorx-cli/bin/cursorx.js install lint-fix --scope project --repo D:/work/code/my-repo --with-scripts
 ```
 
-After npm publish, use `npx cursorx-cli …`; package `cursorx-cli`, binary `cursorx`. For daily use: `npm i -g cursorx-cli`.
+Use `npx cursorx-cli …`; package `cursorx-cli`, binary `cursorx`. For daily use: `npm i -g cursorx-cli`.
 
 **Do not** add `cursorx-cli` as an app dependency—the installer targets Cursor’s command folders, not your build.
 
@@ -65,7 +64,7 @@ PowerShell:
 ./scripts/install-slash-command.ps1 -Command lint-fix -Scope project -RepoPath D:\work\code\my-repo -WithScripts
 ```
 
-`packages/cursorx-cli/` and `scripts/install-slash-command.*` both copy into Cursor’s recognized paths; `doctor` / `verify` post-check.
+`packages/cursorx-cli/` and `scripts/install-slash-command.*` both copy files into Cursor’s recognized paths; `doctor` / `verify` handle post-install checks.
 
 **Minimal check:** `cursorx install git-push --scope global` → `verify` → type `/git-push` in Chat.
 
@@ -102,6 +101,6 @@ Details: [catalog.md](catalog.en.md).
 
 For stable reuse elsewhere, **prefer slash commands**.
 
-## CLI relationship
+## CLI
 
-See [`packages/cursorx-cli/README.md`](../packages/cursorx-cli/README.md). The CLI is planned to read [`slash-commands/index.json`](index.json)—**source of truth is `slash-commands/`**; the CLI installs and distributes, it is not a parallel command system.
+Installer details: [`packages/cursorx-cli/README.en.md`](../packages/cursorx-cli/README.en.md).
