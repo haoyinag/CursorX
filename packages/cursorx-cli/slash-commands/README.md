@@ -56,9 +56,21 @@ slash-commands/
 当前仓库已经提供最小可运行版本：
 
 ```bash
-node packages/cursorx-cli/bin/cursorx.mjs list
-node packages/cursorx-cli/bin/cursorx.mjs install git-push --scope global
-node packages/cursorx-cli/bin/cursorx.mjs install lint-fix --scope project --repo D:/work/code/my-repo --with-scripts
+node packages/cursorx-cli/bin/cursorx.js list
+node packages/cursorx-cli/bin/cursorx.js install git-push --scope global
+node packages/cursorx-cli/bin/cursorx.js install lint-fix --scope project --repo D:/work/code/my-repo --with-scripts
+```
+
+命名策略：
+
+- npm 包名：`cursorx-cli`
+- 命令行入口：`cursorx`
+
+未来发布到 npm 后，可直接使用：
+
+```bash
+npx cursorx-cli list
+npx cursorx-cli install git-push --scope global
 ```
 
 ### 方式二：使用安装脚本

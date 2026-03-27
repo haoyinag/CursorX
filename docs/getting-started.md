@@ -13,9 +13,15 @@
 1. 阅读 [`slash-commands/README.md`](../slash-commands/README.md)
 2. 浏览 [`slash-commands/catalog.md`](../slash-commands/catalog.md)
 3. 了解 CLI 原型：[`packages/cursorx-cli/README.md`](../packages/cursorx-cli/README.md)
-4. 优先尝试 `node packages/cursorx-cli/bin/cursorx.mjs list`
+4. 优先尝试 `node packages/cursorx-cli/bin/cursorx.js list`
 5. 通过 CLI、安装脚本或手动复制安装目标 slash command
-6. 再按需查看 [`commands/README.md`](../commands/README.md) 中的 editor commands
+6. 安装后执行 `cursorx doctor` 或 `cursorx verify <command-id> --scope ...`
+7. 再按需查看 [`commands/README.md`](../commands/README.md) 中的 editor commands
+
+当前命名策略：
+
+- npm 包名：`cursorx-cli`
+- 命令行入口：`cursorx`
 
 ## 如何挑选命令
 
@@ -49,9 +55,14 @@
 推荐你采用下面的做法：
 
 1. 优先从 `slash-commands/` 里挑选命令
-2. 决定安装为 `global` 还是 `project`
-3. 运行仓库自带安装脚本，或手动复制到对应 `.cursor/commands/`
-4. 如果命令依赖脚本，再同步复制 `.cursor/scripts/`
+2. 优先使用 `npx cursorx-cli ...`
+3. 如果会长期使用，再考虑 `npm i -g cursorx-cli`
+4. 决定安装为 `global` 还是 `project`
+5. 如果命令依赖脚本，再同步复制 `.cursor/scripts/`
+6. 安装后执行 `cursorx verify <command-id> --scope ...`
+7. 最后去 Cursor chat 里输入对应 `/命令名`
+
+不推荐在业务项目里执行 `npm install cursorx-cli`，因为它是安装器而不是业务依赖。
 
 如果你关心未来是否会有统一 CLI 安装入口，继续阅读：
 

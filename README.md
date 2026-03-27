@@ -20,10 +20,52 @@
 当前可直接运行的 CLI 原型：
 
 ```bash
-node packages/cursorx-cli/bin/cursorx.mjs list
-node packages/cursorx-cli/bin/cursorx.mjs install git-push --scope global
-node packages/cursorx-cli/bin/cursorx.mjs install lint-fix --scope project --repo D:/work/code/my-repo --with-scripts
+node packages/cursorx-cli/bin/cursorx.js list
+node packages/cursorx-cli/bin/cursorx.js doctor
+node packages/cursorx-cli/bin/cursorx.js install git-push --scope global
+node packages/cursorx-cli/bin/cursorx.js verify git-push --scope global
+node packages/cursorx-cli/bin/cursorx.js install lint-fix --scope project --repo D:/work/code/my-repo --with-scripts
 ```
+
+命名策略：
+
+- npm 包名：`cursorx-cli`
+- 命令行入口：`cursorx`
+
+未来发布到 npm 后，推荐使用：
+
+```bash
+npx cursorx-cli list
+npx cursorx-cli doctor
+npx cursorx-cli install git-push --scope global
+npx cursorx-cli verify git-push --scope global
+```
+
+如果你会长期使用，也可以全局安装：
+
+```bash
+npm i -g cursorx-cli
+cursorx list
+cursorx doctor
+cursorx install git-push --scope global
+cursorx verify git-push --scope global
+```
+
+不推荐在业务项目里执行：
+
+```bash
+npm install cursorx-cli
+```
+
+因为 `cursorx-cli` 是安装器，不是项目运行时依赖。更推荐 `npx` 或全局安装，以避免污染项目的 `package.json` 和锁文件。
+
+安装后推荐立刻做一次自检：
+
+```bash
+cursorx verify git-push --scope global
+```
+
+如果验证通过，再去 Cursor chat 里输入 `/git-push` 做最终确认。
 
 兼容旧安装方式：
 
