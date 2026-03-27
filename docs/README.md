@@ -11,6 +11,7 @@
 - [P2 进入前检查](./p2-readiness.md)
 - [P2 路线选项](./p2-options.md)
 - [P2 当前决策](./p2-decision.md)
+- [路线 B 启动条件与最小实验](./p2-route-b-thresholds.md)
 - [Editor Commands 开发规范](./command-development.md)
 - [Slash Commands 开发规范](./slash-command-development.md)
 - [仓库策略说明](./repo-strategy.md)

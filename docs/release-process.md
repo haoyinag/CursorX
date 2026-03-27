@@ -19,6 +19,16 @@
 
 如果这 3 条里有明显未满足项，优先补齐，再进入发布动作。
 
+## 先做变化归类
+
+进入具体发布步骤前，建议先把本次变化归到下面三类之一：
+
+- `repo-only`：只影响内容层、导航或仓库说明，不影响 `cursorx-cli` 对外能力
+- `cli-coupled`：变化来自 `slash-commands/`，需要同步进入 `cursorx-cli` 分发内容
+- `cli-native`：变化主要发生在 `packages/cursorx-cli/`，即使不新增命令内容也值得独立评估是否发包
+
+如果连续多次出现 `cli-native`，建议结合 [`p2-route-b-thresholds.md`](./p2-route-b-thresholds.md) 重新评估路线 B 是否值得启动。
+
 ## 仓库内容发布流程
 
 适合场景：
