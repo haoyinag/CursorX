@@ -1,170 +1,142 @@
-# 路线 B 启动条件与最小实验
+[English](./p2-route-b-thresholds.en.md)
 
-这份文档用于回答两个问题：
+# 路线 B：启动条件与最小实验
 
-1. 什么时候值得让 `cursorx-cli` 进入更独立治理
-2. 在不拆仓的前提下，路线 B 最小应该先实验什么
+回答两件事：**何时**值得让 `cursorx-cli` 进入更独立治理；在 **不拆仓** 前提下，路线 B **最小**应先试什么。
 
 ## 当前判断
 
-基于当前仓库状态，暂时看不到必须立刻切到路线 B 的结构性问题。
+就现有仓库状态，**没有**必须立刻切到路线 B 的结构性问题。更接近：
 
-当前更像是：
+- `slash-commands/` 仍是唯一主产品层，语义清楚  
+- `cursorx-cli` 已是分发层，但尚未完全脱离总仓主叙事  
+- 压力主要来自 **发布治理**，而非「仓库边界已失效」  
 
-- `slash-commands/` 仍是唯一主产品层，语义清晰
-- `cursorx-cli` 已经成立为分发层，但还没有完全脱离总仓主叙事
-- 当前压力主要来自发布治理，而不是仓库边界已经失效
+因此：**默认继续路线 A**；为路线 B 写明启动阈值；先做 **最小实验**，不先拆仓。
 
-所以当前结论应是：
+## 何谓「值得启动路线 B」
 
-- 继续以路线 A 作为默认主线
-- 为路线 B 明确启动阈值
-- 先做最小实验，而不是直接拆仓
-
-## 什么叫“真正值得启动路线 B”
-
-只有当 `cursorx-cli` 开始表现出明确的独立治理压力时，才建议从“观察”进入“启动路线 B”。
-
-建议至少满足下面 4 组条件中的 3 组，再启动：
+仅当 `cursorx-cli` 出现 **明确的独立治理压力** 时，才建议从「观察」进入「启动路线 B」。建议 **4 组条件中至少满足 3 组** 再启动。
 
 ### 1. 发布节奏开始分化
 
-满足任一条即可视为这一组成立：
+以下 **任一** 成立即算本组命中：
 
-- 连续 2 个自然月内，`cursorx-cli` 发版次数明显高于仓库级内容发布次数
-- 连续 3 次包发布中，至少 2 次主要变更发生在 `packages/cursorx-cli/`，而不是内容层
-- 包级修复或兼容性更新开始独立出现，而不依赖 `slash-commands/` 新内容
+- 连续 2 个自然月内，`cursorx-cli` 发版次数 **明显高于** 仓库级内容发布次数  
+- 连续 3 次包发布中，至少 2 次主要变更在 `packages/cursorx-cli/`，而非内容层  
+- 包级修复或兼容性更新开始 **独立** 出现，而不依赖 `slash-commands/` 新内容  
 
 ### 2. 包级治理需求开始独立
 
-满足任一条即可视为这一组成立：
+以下 **任一** 成立即算本组命中：
 
-- `packages/cursorx-cli/CHANGELOG.md` 连续 3 个版本都需要单独描述用户可感知变化
-- 包级 README、安装说明、自检说明开始频繁独立更新
-- `cursorx-cli` 的 bugfix、兼容性问题或安装问题开始成为独立议题
+- `packages/cursorx-cli/CHANGELOG.md` **连续 3 个版本** 都需单独描述用户可感知变化  
+- 包级 README、安装说明、自检说明 **频繁** 独立更新  
+- `cursorx-cli` 的 bugfix、兼容性或安装问题 **单独成议题**  
 
 ### 3. 用户心智开始分化
 
-满足任一条即可视为这一组成立：
+以下 **任一** 成立即算本组命中：
 
-- 新进入仓库的用户更常从 `cursorx-cli` 用法进入，而不是先看内容层
-- 外部沟通中开始需要把“安装器能力”和“资源仓库内容”分开描述
-- 出现一类明确用户只关心 `install / verify / doctor`，不关心 `commands/`、`tips/`、`configs/`
+- 新用户更常从 `cursorx-cli` 用法进入，而非先看内容层  
+- 对外沟通需把「安装器能力」与「资源仓库内容」 **分开说**  
+- 出现明确用户 **只** 关心 `install / verify / doctor`，不关心 `commands/`、`tips/`、`configs/`  
 
 ### 4. 单仓协同成本明显上升
 
-满足任一条即可视为这一组成立：
+以下 **任一** 成立即算本组命中：
 
-- 同一轮发布中，经常需要同时改仓库 README、包 README、仓库 changelog、包 changelog
-- 包版本、npm 页面说明和仓库主导航开始反复脱节
-- 发布检查已经不只是“同步内容”，而是要处理越来越多包级规则
+- 同一轮发布经常要同时改仓库 README、包 README、仓库 changelog、包 changelog  
+- 包版本、npm 页说明与仓库主导航 **反复脱节**  
+- 发布检查已不只是「同步内容」，而是越来越多 **包级规则**  
 
-## 明确不应启动路线 B 的情况
+## 明确不应仅因以下原因启动路线 B
 
-只出现下面这些现象时，还不应该启动路线 B：
-
-- 只是新增了几次命令内容，需要顺手同步 CLI 数据
-- 只是已经有 npm 包，不代表它已经是独立产品
-- 只是觉得拆分后“结构更好看”，但没有真实治理压力
-- Plugin / Marketplace 方向看起来更像未来入口，但当前证据仍不足
+- 只是多同步了几次命令内容、顺手改了 CLI 数据  
+- 「已有 npm 包」≠ 已是独立产品  
+- 仅因拆分后「更好看」，而无真实治理压力  
+- Plugin / Marketplace 像未来入口，但 **当前证据仍不足**  
 
 ## 路线 B 的最小实验边界
 
-路线 B 的最小实验，目标不是拆仓，而是验证“更独立治理”是否真的能降低成本。
+目标 **不是** 拆仓，而是验证「更独立治理」是否真能 **降成本**。建议把实验收在以下 4 点：
 
-当前建议把实验边界收在这 4 件事里：
+1. 明确 **包级变化** 与 **仓库级变化** 的判定规则  
+2. 固化 `cursorx-cli` 的 **独立发布检查表**  
+3. 包级文档叙事更完整，但仍保留 `slash-commands/` 为 **唯一命令源**  
+4. 观察一段后再决定是否要独立 issue / release 页 / 仓库  
 
-1. 明确包级变化和仓库级变化的判定规则
-2. 固化 `cursorx-cli` 的独立发布检查表
-3. 让包级文档叙事更完整，但仍保留 `slash-commands/` 为唯一命令源
-4. 观察一段时间，再决定是否需要独立 issue / release 页面 / 仓库
-
-### 实验中不做的事
-
-- 不拆仓
-- 不复制第二套命令索引
-- 不把 `cursorx-cli` 重新定义成第二主产品层
-- 不把 Plugin / Marketplace 提前变成主线
+**实验中不做**：拆仓；复制第二套命令索引；把 `cursorx-cli` 升格为第二主产品层；把 Plugin / Marketplace **提前** 当主线。
 
 ## 最小实验方案
 
-### 实验目标
+### 目标
 
-验证下面这件事是否成立：
+验证：`cursorx-cli` 是否已值得 **更清晰的独立治理叙事**，同时仍 **强依赖** `slash-commands/`。
 
-`cursorx-cli` 是否已经值得拥有更明确的独立治理叙事，但仍保持对 `slash-commands/` 的强依赖。
+### 周期
 
-### 实验周期
+建议观察 **4～8 周**，或至少覆盖 **连续 3 次** `cursorx-cli` 相关变更。
 
-建议先观察 4 到 8 周，或者至少覆盖连续 3 次 `cursorx-cli` 相关变更。
+### 动作
 
-### 实验动作
+#### 1. 每次变化先归类
 
-#### 1. 给每次变化先归类
+每次准备改动或发布，标记为：
 
-每次准备改动或发布时，先把变化标记为下面三类之一：
+- `repo-only`：只影响内容层或仓库导航，**不**影响 `cursorx-cli` 对外能力  
+- `cli-coupled`：变更来自 `slash-commands/`，需同步进包分发  
+- `cli-native`：变更主要在 `packages/cursorx-cli/`，即使不新增命令内容也值得发版  
 
-- `repo-only`：只影响内容层或仓库导航，不影响 `cursorx-cli` 对外能力
-- `cli-coupled`：改动来自 `slash-commands/`，需要同步进入包分发
-- `cli-native`：改动主要发生在 `packages/cursorx-cli/`，即使不新增命令内容也值得发版
+若 `cli-native` **连续多次** 出现，路线 B 压力在增强。
 
-如果连续多次出现 `cli-native`，就说明路线 B 压力正在增强。
+#### 2. 记录最小指标
 
-#### 2. 记录最小观测指标
-
-建议在实验期持续记录这 4 个指标：
-
-- `cursorx-cli` 发版次数
-- 仓库级内容发布次数
-- 包级 README / CHANGELOG 的独立修改次数
-- 仅因 CLI 逻辑或安装体验触发的修复次数
-
-这些指标不需要先做复杂自动化，先手工记录也足够。
+实验期持续记 4 项：`cursorx-cli` 发版次数；仓库级内容发布次数；包级 README/CHANGELOG **独立**修改次数；**仅**因 CLI 或安装体验的修复次数。不必先自动化，手工即可。可直接用 [`p2-observation-template.md`](./p2-observation-template.md)。
 
 #### 3. 强化包级发布自检
 
-在现有 [`release-process.md`](./release-process.md) 基础上，后续每次涉及 `cursorx-cli` 时，额外确认：
+在现有 [`release-process.md`](./release-process.md) 上，每次涉及 `cursorx-cli` 时额外确认：是否 `cli-native` 或 `cli-coupled`；是否需更新包 README/changelog；是否 **值得** 发 npm，而非只更仓库。目的是让路线 B 的压力 **可见**，而不是混在仓库级发布里。
 
-- 这次是否属于 `cli-native` 或 `cli-coupled`
-- 是否需要更新包级 README
-- 是否需要更新包级 changelog
-- 是否真的值得发 npm，而不是只更新仓库内容
+#### 4. 命令源保持单一
 
-这一步的目标是让路线 B 的治理压力可见，而不是继续混在仓库级发布里。
+实验期内仍须：`slash-commands/index.json` **唯一命令源**；`cursorx-cli` 仍为安装器与分发层；`commands/` 仍为参考层。这样才能验证「治理更独立」本身是否有价值，而不被结构大改干扰结论。
 
-#### 4. 保持命令源单一
+## 启动路线 B 之后的第一步
 
-即使进入实验期，也必须保持：
+阈值触发后，**第一步仍不是拆仓**，而是：
 
-- `slash-commands/index.json` 仍是唯一命令源
-- `cursorx-cli` 继续作为安装器和分发层
-- `commands/` 继续保持参考层定位
+1. 将 `cursorx-cli` 相关变化统一按 `cli-native` / `cli-coupled` / `repo-only` 归类  
+2. 收紧包级 changelog 与 release notes 规则  
+3. 观察包级议题是否已值得单独管理  
+4. 仅当上述动作已带来 **持续的独立节奏** 时，再评估是否拆仓  
 
-这样才能验证“治理更独立”本身是否有价值，而不是被结构变化干扰结论。
+## 何时复核
 
-## 启动后的第一步应该是什么
+默认在 **任一** 满足时正式复核：
 
-如果路线 B 启动阈值被触发，优先做的第一步不是拆仓，而是：
+1. 连续观察满 4～8 周  
+2. 累计 3 次 `cursorx-cli` 相关变化  
 
-1. 把 `cursorx-cli` 相关变化统一按 `cli-native / cli-coupled / repo-only` 归类
-2. 收紧包级 changelog 与 release notes 规则
-3. 观察包级议题是否已经值得单独管理
-4. 只有在这些动作都已经持续带来独立节奏后，再评估是否拆仓
+复核顺序建议：
 
-## 当前建议结论
+1. 回看 [`p2-observation-template.md`](./p2-observation-template.md) 中的实验期记录  
+2. 对照本文 4 组启动条件，数命中组数  
+3. 更新 [`p2-decision.md`](./p2-decision.md) 中的正式结论  
 
-截至当前状态，更合理的执行方式是：
+## 当前执行建议
 
-1. 维持路线 A 为主线
-2. 采用本文阈值继续观察
-3. 立即启动“单仓内的路线 B 最小实验”
-4. 不继续横向扩内容层，优先把治理证据积累起来
+1. 维持路线 A 为主线  
+2. 按本文阈值继续观察  
+3. 立即在单仓内启动「路线 B 最小实验」  
+4. 不继续横向堆内容层，优先积累治理证据  
 
 ## 相关文档
 
-- [`./p2-readiness.md`](./p2-readiness.md)
-- [`./p2-options.md`](./p2-options.md)
-- [`./p2-decision.md`](./p2-decision.md)
-- [`./release-process.md`](./release-process.md)
-- [`./repo-strategy.md`](./repo-strategy.md)
-- [`../packages/cursorx-cli/README.md`](../packages/cursorx-cli/README.md)
+- [`./p2-readiness.md`](./p2-readiness.md)  
+- [`./p2-options.md`](./p2-options.md)  
+- [`./p2-decision.md`](./p2-decision.md)  
+- [`./release-process.md`](./release-process.md)  
+- [`./p2-observation-template.md`](./p2-observation-template.md)  
+- [`./repo-strategy.md`](./repo-strategy.md)  
+- [`../packages/cursorx-cli/README.md`](../packages/cursorx-cli/README.md)  

@@ -1,49 +1,38 @@
-# Editor Commands 开发规范
+[English](./command-development.en.md)
 
-这份文档定义 `CursorX` 中 `.json` 形式 editor commands 的组织方式、最小格式要求和提交流程。
+# Editor Commands 开发约定
 
-如果你要开发的是原生 Cursor slash commands，请改看：
+约定 `CursorX` 里以 `.json` 描述的 editor commands：目录、最小字段、索引与提交流程。若要做的是 Cursor 原生 slash commands，请看 [`slash-commands/README.md`](../slash-commands/README.md) 与 [`slash-command-development.md`](./slash-command-development.md)。
 
-- [`slash-commands/README.md`](../slash-commands/README.md)
-- [`docs/slash-command-development.md`](./slash-command-development.md)
+## 原则
 
-## 设计原则
+- 一文件一命令  
+- 运行时 JSON 尽量小，优先兼容与可复制  
+- 仓库级元数据集中在 [`commands/index.json`](../commands/index.json)  
+- 命令要有明确场景；不要提交仅个人可用的封装  
 
-- 一个文件只描述一个命令
-- 运行时 JSON 保持最小化，优先保证兼容和可复制使用
-- 仓库级元数据统一维护在 [`commands/index.json`](../commands/index.json)
-- 命令必须有明确的适用场景，避免提交仅自己能用的私有封装
+## 目录
 
-## 放置位置
+按用途放入其一：
 
-按用途放入以下目录之一：
+- [`commands/development/`](../commands/development/)  
+- [`commands/productivity/`](../commands/productivity/)  
+- [`commands/ai-assistant/`](../commands/ai-assistant/)  
+- [`commands/general/`](../commands/general/)  
 
-- [`commands/development/`](../commands/development/)
-- [`commands/productivity/`](../commands/productivity/)
-- [`commands/ai-assistant/`](../commands/ai-assistant/)
-- [`commands/general/`](../commands/general/)
+跨场景通用时优先用 `tags` 表达，而不是新开分类。
 
-如果一个命令跨多个场景通用，优先通过 `tags` 表达复用性，而不是随意新增分类。
+## 命名
 
-## 文件命名
+- 英文 kebab-case  
+- 文件名体现用途  
+- 避免 `helper`、`tool` 等模糊名  
 
-- 使用英文 kebab-case
-- 文件名应该体现用途
-- 避免使用 `helper`、`tool` 这类含义模糊的名字
+示例：`git-smart-commit.json`、`review-selected-code.json`。避免：`my-command.json`、`awesome-tool.json`。
 
-推荐：
+## 运行时 JSON 形态
 
-- `git-smart-commit.json`
-- `review-selected-code.json`
-
-不推荐：
-
-- `my-command.json`
-- `awesome-tool.json`
-
-## 运行时命令格式
-
-推荐模板：
+推荐骨架：
 
 ```json
 {
@@ -58,61 +47,31 @@
 }
 ```
 
-字段约定：
+字段：`title`（面板展示）、`description`、`command`（Cursor 命令 id）、`args`、`when`（上下文）、`tags`（筛选与维护）。
 
-- `title`：用户在命令面板里看到的标题
-- `description`：说明用途和使用场景
-- `command`：Cursor 命令标识符
-- `args`：底层命令参数
-- `when`：可用上下文
-- `tags`：便于筛选和维护
+## 索引
 
-## 索引维护要求
+新增命令必须更新 [`commands/index.json`](../commands/index.json)。每条至少含：`id`、`title`、`category`、`path`、`summary`、`tags`、`platform`、`requires`。
 
-新增 editor command 时，必须同步更新 [`commands/index.json`](../commands/index.json)。
+## 目录清单
 
-每个索引条目至少包含：
+同时更新 [`commands/catalog.md`](../commands/catalog.md)，至少：文件路径、场景、前置条件、主要价值。
 
-- `id`
-- `title`
-- `category`
-- `path`
-- `summary`
-- `tags`
-- `platform`
-- `requires`
+## 提交前
 
-## 目录清单维护要求
+1. JSON 合法  
+2. 文件名与用途一致  
+3. `description` 具体  
+4. `when` 符合场景  
+5. `tags` 可检索  
+6. `index.json` 与 `catalog.md` 已同步  
 
-新增 editor command 时，必须同步更新 [`commands/catalog.md`](../commands/catalog.md)，至少补齐：
-
-- 命令文件路径
-- 适用场景
-- 前置条件
-- 主要价值
-
-## 提交前检查
-
-提交前请至少完成这些检查：
-
-1. JSON 格式正确
-2. 文件名与命令用途一致
-3. `description` 不是空泛描述
-4. `when` 表达式符合预期场景
-5. `tags` 能帮助检索，而不是随意堆词
-6. `index.json` 和 `catalog.md` 已同步更新
-
-推荐再执行一次仓库自带校验脚本：
+建议再跑：
 
 ```bash
 node scripts/validate-commands.mjs
 ```
 
-## 审核标准
+## 收录倾向
 
-优先收录满足以下条件的 editor commands：
-
-- 能减少重复操作
-- 能沉淀稳定工作流
-- 对其他用户也有复用价值
-- 不依赖私有路径、私有项目或私有上下文
+优先：减少重复、沉淀稳定工作流、对他人可复用、不依赖私有路径或上下文。

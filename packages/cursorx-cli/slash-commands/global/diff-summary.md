@@ -1,53 +1,42 @@
 # 总结当前改动
 
-目标：把当前 staged 改动、工作区改动或分支差异整理成一份短而准的变更摘要，适合用于任务交接、日报、周报或聊天同步。
+语言：[English](diff-summary.en.md)
 
-用户可以在命令后补充摘要用途，例如：
+目标：把 **staged**、工作区或分支差异整理成短而准的摘要，用于交接、日报、周报或聊天同步。
+
+可补充用途，例如：
 
 - `/diff-summary`
 - `/diff-summary write a handoff note for the team`
 
-其中 `${user_input}` 是这份摘要的目标用途或强调点，可以为空。
+`${user_input}` 为摘要用途或语气，可为空。
 
 ## 必须遵守
 
-1. 先判断摘要范围：
-   - 有 staged 改动时，优先总结 staged
-   - 否则总结当前工作区改动
-2. 先执行文件列表和具体 diff，不要只看文件名。
-3. 摘要必须包含：
-   - 改了什么
-   - 为什么值得关注
-   - 还有什么未完成或待验证
-4. 如果 `${user_input}` 非空，应按照该用途调整语气和粒度。
-5. 如果没有任何改动，明确提示“当前没有可总结的改动”。
+1. 范围：有 staged 时**优先 staged**；否则总结工作区改动。  
+2. 须看文件列表与具体 diff，不能只看文件名。  
+3. 摘要须包含：改了什么、为何值得关注、未完成或待验证项。  
+4. `${user_input}` 非空时按该用途调语气与粒度。  
+5. 无任何改动时明确提示无可总结内容。  
 
 ## 执行步骤
 
-1. 执行 `git diff --cached --name-only`。
-2. 若 staged 非空：
-   - 执行 `git diff --cached`
-   - 基于 staged 生成摘要
-3. 若 staged 为空：
-   - 执行 `git status -sb`
-   - 执行 `git diff --name-only`
-   - 若仍为空，则停止
-   - 否则执行 `git diff`
-4. 输出适合直接发送的简要总结。
+1. `git diff --cached --name-only`  
+2. staged 非空：`git diff --cached`，基于 staged 生成摘要。  
+3. staged 为空：`git status -sb`、`git diff --name-only`；仍为空则停止；否则 `git diff`。  
+4. 输出可直接发送的短总结。  
 
-## 输出格式要求
+## 输出格式
 
 - `Summary`
 - `Key changes`
 - `Open items`
 
-其中：
+- Summary：2～3 句概括  
+- Key changes：bullet 核心点  
+- Open items：待验证、待补文档、待确认  
 
-- `Summary` 用 2 到 3 句概括全局变化
-- `Key changes` 用 bullet 列出核心改动点
-- `Open items` 写待验证、待补文档或待确认事项
+## 边界
 
-## 适用边界
-
-- 适合日常同步、任务交接和阶段性汇报
-- 不替代正式 PR 描述；如果用户要 PR 文案，请优先使用 `/pr-summary`
+- 日常同步、交接、阶段汇报  
+- 不替代正式 PR 描述；PR 文案用 `/pr-summary`  

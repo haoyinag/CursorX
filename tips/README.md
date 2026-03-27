@@ -1,49 +1,46 @@
+[English](README.en.md) · 中文
+
 # Cursor 使用技巧
 
-这个目录收集了 Cursor 编辑器的实用技巧和最佳实践。
+本目录放一些我们在日常用 Cursor 时觉得靠谱的用法，偏实操，不堆概念。
 
-## 技巧分类
+## 分类
 
-### 编辑技巧
+### 编辑与结构
 
-- [小批次重构，比一次性大改更稳](./small-batch-refactor.md)
-- [先写可分享命令，再写项目私有规则](./shareable-command-design.md)
-- [让布局切换也形成节奏](./layout-rhythm.md)
+- [小步重构，别一次改太大](./small-batch-refactor.md)
+- [先写能复用的命令，再写项目私货](./shareable-command-design.md)
+- [让切布局也有固定节奏](./layout-rhythm.md)
 
-### AI 助手使用
+### 和 AI 配合
 
-- [先选中，再提问](./selection-first-prompts.md)
-- [长对话后及时做上下文交接](./context-handoff.md)
+- [先选中再问](./selection-first-prompts.md)
+- [长对话该收尾就收尾](./context-handoff.md)
 
-### 生产力提升
+### 效率与发布
 
-- 推荐先把高频动作沉淀成固定命令或提示词，再考虑更重的自动化
-- [发版前先做一次发布卫生检查](./release-hygiene.md)
-- [先保存，再验证](./save-before-verify.md)
-- [先看 Problems，再决定修法](./problems-first-triage.md)
-- [分享前先做一次预览](./preview-before-share.md)
+- 高频动作先固化成命令或固定提示，再上自动化
+- [发布前过一遍清单](./release-hygiene.md)
+- [先保存再跑检查](./save-before-verify.md)
+- [先看 Problems 再动手修](./problems-first-triage.md)
+- [对外发之前先预览](./preview-before-share.md)
 
-## 推荐阅读顺序
+## 建议阅读顺序
 
-1. 先看 [先选中，再提问](./selection-first-prompts.md)
-2. 再看 [长对话后及时做上下文交接](./context-handoff.md)
-3. 再看 [小批次重构，比一次性大改更稳](./small-batch-refactor.md)
-4. 如果你准备发布内容，再看 [发版前先做一次发布卫生检查](./release-hygiene.md)
-5. 如果你经常切布局，再看 [让布局切换也形成节奏](./layout-rhythm.md)
+1. [先选中再问](./selection-first-prompts.md)
+2. [长对话该收尾就收尾](./context-handoff.md)
+3. [小步重构](./small-batch-refactor.md)
+4. 若要发版：[发布前过一遍清单](./release-hygiene.md)
+5. 若常切面板：[让切布局也有固定节奏](./layout-rhythm.md)
 
 ## 贡献
 
-欢迎分享你发现的 Cursor 使用技巧！
+欢迎补你认为值得固化的习惯；尽量写清**场景、步骤、预期**，别只丢一句口号。
 
-## 格式规范
+## 单篇结构建议
 
-每个技巧文件应包含：
-- 技巧标题
-- 适用场景
-- 具体步骤
-- 效果说明
-- 相关截图（可选）
+标题、适用场景、具体步骤、效果、可选截图。
 
 ## 许可证
 
-本项目采用 MIT 许可证。
+MIT（见仓库根目录 [LICENSE](../LICENSE)）。

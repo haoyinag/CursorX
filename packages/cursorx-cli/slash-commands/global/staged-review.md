@@ -1,46 +1,44 @@
 # 审查当前 staged 改动
 
-目标：只围绕当前已暂存的改动做一次高信号审查，优先发现行为回归、遗漏测试、边界条件和明显风险。
+语言：[English](staged-review.en.md)
 
-用户可以在命令后补充审查重点，例如：
+目标：只审**已暂存**改动，优先抓行为回归、漏测、边界与明显风险。
+
+可追加关注点，例如：
 
 - `/staged-review`
 - `/staged-review focus auth and cache invalidation`
 
-其中 `${user_input}` 是本次额外关注点，可以为空。
+`${user_input}` 为额外关注点，可为空。
 
 ## 必须遵守
 
-1. 只审查当前 staged 改动，不要把未暂存改动混进结论。
-2. 先执行 `git diff --cached --name-only`；如果为空，停止并提示用户先暂存改动。
-3. 再执行 `git diff --cached` 阅读完整改动内容。
-4. 审查时默认使用 code review 视角，优先输出：
-   - 明确 bug 风险
-   - 行为回归
-   - 缺失测试
-   - 不完整的文档或配置更新
-5. 如果 `${user_input}` 非空，把它当作重点审查范围，但不要忽略更严重的问题。
-6. 输出结果时必须先给 findings，再给简短总结。
+1. 只审 staged，不要把未暂存混进结论。  
+2. 先 `git diff --cached --name-only`；为空则停止，提示先暂存。  
+3. 再 `git diff --cached` 读全量 diff。  
+4. 默认 review 视角，优先：明确 bug 风险、行为回归、缺测、文档/配置未跟上。  
+5. `${user_input}` 非空时作为重点，但不忽略更严重问题。  
+6. 输出：**先 findings，再短总结**。  
 
 ## 执行步骤
 
-1. 执行 `git diff --cached --name-only` 读取 staged 文件列表。
-2. 若为空：提示“当前没有 staged 改动，请先执行 git add 或使用 Source Control 暂存文件”，并停止。
-3. 执行 `git diff --cached` 查看完整 staged diff。
-4. 按严重程度审查 staged 改动：
-   - `high`：可能导致错误、数据不一致、明显逻辑回归
-   - `medium`：容易引入维护成本、遗漏边界或验证不足
-   - `low`：文档、命名、提示信息、可读性问题
-5. 如发现风险，逐条指出原因、影响面和建议修复方式。
-6. 如未发现明确问题，必须明确写“未发现明确问题”，同时补充残余风险或建议测试点。
+1. `git diff --cached --name-only`  
+2. 为空：提示先 `git add` 或用 SCM 暂存，停止。  
+3. `git diff --cached`  
+4. 按严重度归类：  
+   - `high`：错误、数据不一致、明显逻辑回归  
+   - `medium`：维护成本、边界或验证不足  
+   - `low`：文档、命名、可读性  
+5. 有风险则逐条：原因、影响、建议修复。  
+6. 无明显问题须写「未发现明确问题」，并补残余风险或建议测点。  
 
-## 输出格式要求
+## 输出格式
 
-- Findings first
-- 每条 finding 尽量指出对应文件
-- 如果没有 finding，也要写出建议验证的测试场景
+- Findings first  
+- 每条尽量带文件  
+- 无 finding 也要写建议验证场景  
 
-## 适用边界
+## 边界
 
-- 适合 commit 前的 staged review
-- 不适合完整分支 review 或 PR review；如果用户要总结分支内容，请改用 `/pr-summary`
+- 适合 commit 前 staged review  
+- 不适合整分支或整 PR；分支摘要用 `/pr-summary`  

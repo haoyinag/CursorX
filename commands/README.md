@@ -1,129 +1,111 @@
-# Cursor Editor Commands
+# Cursor 编辑器命令
 
-`commands/` 存放的是 `.json` 形式的编辑器命令包装与快捷动作素材库。
+语言：[English](README.en.md)
 
-它和 [`slash-commands/`](../slash-commands/README.md) 不是同一种东西：
+`commands/` 里放的是 **`.json` 形式的编辑器命令封装**，当作动作素材库和补充能力参考用。
 
-- `slash-commands/`：原生 slash commands，可安装到全局或项目范围
-- `commands/`：编辑器动作封装，更适合作为动作素材库和补充能力参考
+和 [`slash-commands/`](../slash-commands/README.md) 不是一类东西：
 
-在当前仓库策略里，这一层不是主产品，也不是未来 CLI 的首要分发对象。
+| | `slash-commands/` | `commands/` |
+|---|-------------------|-------------|
+| 形态 | 原生 slash，可装全局或项目 | 编辑器命令封装 |
+| 用途 | 聊天/Agent 里 `/命令名` | 命令面板、快捷键等 |
 
-## 目录结构
+本仓库策略里，这一层**不是主产品**，也不是 CLI 的首要分发对象。
+
+## 目录
 
 ```text
 commands/
-├── development/      # 开发流程相关
-├── productivity/     # 通用提效动作
-├── ai-assistant/     # AI 协作增强
-├── general/          # 其他通用命令
-├── index.json        # 机器可读索引
-├── catalog.md        # 人工可读目录
+├── development/   # 开发流程
+├── productivity/  # 提效
+├── ai-assistant/  # AI 协作
+├── general/       # 通用
+├── index.json     # 机器可读索引
+├── catalog.md     # 人工浏览
 └── README.md
 ```
 
-## 目录中每类文件的职责
+## 各文件干什么
 
-- 分类目录下的 `.json`：真正的命令定义文件
-- `index.json`：命令索引、元数据、后续自动化的统一数据源
-- `catalog.md`：给使用者快速浏览和挑选命令
-- 各分类下的 `README.md`：说明这一类命令适合什么场景
+- 分类下的 `.json`：命令定义本体  
+- `index.json`：索引与元数据，给自动化用  
+- `catalog.md`：给人快速挑命令  
+- 各分类 `README.md`：这类命令适合什么场景  
 
-## 推荐使用方式
+## 怎么用
 
-如果你想从这里挑选 editor command，建议按下面顺序操作：
+1. [catalog.md](catalog.md) 扫一眼有哪些命令  
+2. [index.json](index.json) 看标签、分类、`requires`  
+3. 打开具体 JSON，确认底层命令名是否和你当前 Cursor 版本一致  
 
-1. 先看 [catalog.md](catalog.md) 了解现有命令
-2. 再看 [index.json](index.json) 获取标签、分类、前置条件等元数据
-3. 最后打开具体的命令 JSON，确认内容是否符合你的工作流
+## 安装
 
-## 安装说明
+**这里不作为仓库主安装入口。** 原因是：`.json` 依赖 Cursor/底层命令 ID，版本差异大，仓库里也没有像 slash 那样统一、已跑通的安装语义。
 
-这部分内容当前不作为仓库主安装入口。
+若要在别的仓库里**稳定复用**，请用 [`slash-commands/`](../slash-commands/README.md)。
 
-原因：
+仍想试 `commands/` 时建议：
 
-- 这批 `.json` 文件本质上是编辑器命令包装
-- 其导入方式与 Cursor 版本、底层编辑器命令兼容性强相关
-- 当前仓库还没有像 slash commands 那样稳定、已验证的统一安装语义
+1. 从 [catalog.md](catalog.md) 选一个目标  
+2. 读对应 JSON 里的命令与 `when`  
+3. 在你本机 Cursor 里确认有对应入口  
+4. **先少量导入试用**，不要一次全量  
 
-如果你的目标是“在别的仓库复用后立刻可用”，请优先使用 [`slash-commands/`](../slash-commands/README.md)。
+## 手动验证顺序
 
-如果你仍然想试用这部分内容，推荐做法是：
+1. `requires` 是否满足  
+2. 在命令面板搜到底层命令是否存在  
+3. 先试 1～2 个高频的  
+4. 记下：是否省步骤、是否依赖焦点/视图、是否值得团队固化  
 
-1. 从 [catalog.md](catalog.md) 找到目标动作
-2. 打开具体 `.json` 查看底层命令名和适用条件
-3. 在你当前 Cursor 版本里自行验证是否存在对应的命令管理入口
-4. 在自己的环境中小范围试用，而不是直接全量导入
+## 命名
 
-## 手动验证建议
+- 一文件一命令  
+- 英文 kebab-case  
+- 文件名能说明用途，如 `git-smart-commit.json`  
 
-如果你准备把这里的命令当作参考层使用，推荐按下面顺序验证：
+## JSON 形状（运行时）
 
-1. 先确认 `requires` 里提到的前置条件是否满足
-2. 再在 Cursor 里搜索同名或相近底层命令，确认当前版本真的存在
-3. 只挑 1 到 2 个高频命令试用，不要一次性导入全部
-4. 试用后记录：
-   - 是否真的省步骤
-   - 是否依赖特定视图或焦点状态
-   - 是否适合沉淀成团队内固定动作
-
-## 文件命名约定
-
-- 一个文件只放一个命令
-- 文件名使用英文 kebab-case
-- 文件名应能体现用途，例如 `git-smart-commit.json`
-
-## 运行时命令格式
-
-命令文件保持尽量简单，优先保证“复制后就能用”：
+保持简单，便于复制使用：
 
 ```json
 {
   "title": "命令标题",
-  "description": "命令说明",
+  "description": "说明",
   "command": "cursor.command.execute",
-  "args": {
-    "name": "实际执行的命令名"
-  },
-  "when": "条件表达式（可选）",
+  "args": { "name": "实际命令 id" },
+  "when": "可选条件",
   "tags": ["tag-a", "tag-b"]
 }
 ```
 
-说明：
+仓库级说明放在 `index.json`，不要塞进运行时 JSON，减少兼容风险。这些**不是** slash，不能靠 `/名字` 被发现。
 
-- 运行时命令定义尽量只保留命令执行所需字段
-- 仓库级元数据统一维护在 `commands/index.json`
-- 不把仓库说明字段直接混进运行时命令 JSON，可以降低兼容风险
-- 这些文件不是 slash commands，不能通过 `/命令名` 直接被 Cursor 发现
+## 贡献
 
-## 贡献要求
+新增命令时至少：
 
-新增命令时，至少同时更新这些内容：
+1. 新增 JSON  
+2. 更新 `commands/index.json`  
+3. 更新 `commands/catalog.md`  
+4. 写清场景、前置条件、限制  
 
-1. 新增对应的命令 JSON
-2. 更新 `commands/index.json`
-3. 更新 `commands/catalog.md`
-4. 补充使用场景、前置条件和限制说明
-
-完成后建议运行：
+然后执行：
 
 ```bash
 node scripts/validate-commands.mjs
 ```
 
-更详细的规范见 [editor commands 开发规范](../docs/command-development.md)。
+细则见 [editor commands 开发规范](../docs/command-development.md)。
 
-## 当前方向
+## 方向（优先补）
 
-优先补齐这几类高价值命令：
-
-- Git 工作流
-- 重构与代码质量
-- 文档生成
-- 高频编辑操作
+- Git 工作流  
+- 重构与质量  
+- 文档生成  
+- 高频编辑操作  
 
 ## 许可证
 
-本目录内容遵循项目根目录的 [MIT License](../LICENSE)。
+本目录随项目根目录 [MIT License](../LICENSE)。

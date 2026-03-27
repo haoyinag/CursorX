@@ -1,99 +1,78 @@
+[English](./release-process.en.md)
+
 # 发布流程
 
-这份文档用于固定 `CursorX` 当前的发布节奏，避免仓库内容、CLI 包和 npm 页面再次发生明显脱节。
+固定 `CursorX` 当前的发布节奏，避免仓库内容、CLI 包与 npm 页面脱节。
 
-## 适用范围
+## 范围
 
-当前主要覆盖两类发布动作：
+主要两类动作：
 
-1. 仓库内容发布
-2. `cursorx-cli` npm 包发布
+1. 仓库内容发布  
+2. `cursorx-cli` npm 包发布  
 
 ## 发布前自检
 
-每次准备发布前，先回答这 3 个问题：
+每次发布前先回答：
 
-1. 这次是否真的有用户可感知变化
-2. 变化是否已经同步到 README、目录说明和 changelog
-3. 变化是否仍然符合仓库核心语义、利他属性和实用性
+1. 是否有 **用户可感知** 的变化  
+2. 变化是否已同步到 README、目录说明、changelog  
+3. 是否仍符合仓库核心语义、利他属性与实用性  
 
-如果这 3 条里有明显未满足项，优先补齐，再进入发布动作。
+有明显缺口时先补齐，再执行发布步骤。
 
 ## 先做变化归类
 
-进入具体发布步骤前，建议先把本次变化归到下面三类之一：
+发布前把本次变更归到一类（定义见下文与 [`p2-route-b-thresholds.md`](./p2-route-b-thresholds.md)）：
 
-- `repo-only`：只影响内容层、导航或仓库说明，不影响 `cursorx-cli` 对外能力
-- `cli-coupled`：变化来自 `slash-commands/`，需要同步进入 `cursorx-cli` 分发内容
-- `cli-native`：变化主要发生在 `packages/cursorx-cli/`，即使不新增命令内容也值得独立评估是否发包
+- `repo-only`：只影响内容层、导航或仓库说明，**不**改变 `cursorx-cli` 对外能力  
+- `cli-coupled`：变更来自 `slash-commands/`，需同步进 `cursorx-cli` 的分发内容  
+- `cli-native`：变更主要在 `packages/cursorx-cli/`，即使不新增命令内容也值得单独评估是否发包  
 
-如果连续多次出现 `cli-native`，建议结合 [`p2-route-b-thresholds.md`](./p2-route-b-thresholds.md) 重新评估路线 B 是否值得启动。
+若连续多次出现 `cli-native`，结合 [`p2-route-b-thresholds.md`](./p2-route-b-thresholds.md) 评估是否启动路线 B。建议在 [`p2-observation-template.md`](./p2-observation-template.md) 记一条观察，避免只剩「发没发包」而没有证据。
 
-## 仓库内容发布流程
+## 仓库内容发布
 
-适合场景：
+**适合**：`slash-commands/` 新增高价值命令；`commands/`、`skills/`、`tips/`、`configs/` 新增可复用资产；导航、路线图或目录结构显著变化。
 
-- `slash-commands/` 新增高价值命令
-- `commands/`、`skills/`、`tips/`、`configs/` 新增可复用资产
-- 导航文档、路线图状态或目录结构有显著变化
+**建议步骤**：
 
-推荐步骤：
+1. 更新相关目录索引与 README  
+2. 更新 [`CHANGELOG.md`](../CHANGELOG.md)  
+3. 若阶段状态变化明显，更新 [`roadmap-status.md`](./roadmap-status.md)  
+4. 最小校验：`node scripts/validate-commands.mjs`；若涉及 CLI 数据，同步 `slash-commands/`  
+5. 若本次含 `cli-coupled` 或 `cli-native` 信号，补一条 P2 观察记录  
+6. git commit 与 push  
 
-1. 更新相关目录索引与 README
-2. 更新 [`CHANGELOG.md`](../CHANGELOG.md)
-3. 若阶段状态变化明显，再更新 [`roadmap-status.md`](./roadmap-status.md)
-4. 执行最小校验：
-   - `node scripts/validate-commands.mjs`
-   - 如涉及 CLI 数据，同步 `slash-commands/`
-5. 完成 git commit 和 push
+## `cursorx-cli` 发布
 
-## `cursorx-cli` 发布流程
+**适合**：`packages/cursorx-cli/` 自身逻辑变化；`slash-commands/` 作为包内命令数据变化；npm 页需与仓库一致。
 
-适合场景：
+**建议步骤**：
 
-- `packages/cursorx-cli/` 自身逻辑发生变化
-- `slash-commands/` 作为包内命令数据发生变化
-- npm 页面展示内容需要与仓库保持一致
+1. 确认 `packages/cursorx-cli/package.json` 版本号  
+2. 更新 [`packages/cursorx-cli/CHANGELOG.md`](../packages/cursorx-cli/CHANGELOG.md)  
+3. 必要时更新 [`packages/cursorx-cli/README.md`](../packages/cursorx-cli/README.md)  
+4. 在 [`p2-observation-template.md`](./p2-observation-template.md) 标注本次为 `cli-coupled` 或 `cli-native`  
+5. 在包目录执行：`npm run check`  
+6. 发布：`npm publish`  
+7. 发布后验证：`npm view cursorx-cli@<version> version`  
 
-推荐步骤：
+## 版本号建议
 
-1. 确认 `packages/cursorx-cli/package.json` 版本号
-1. 更新 [`packages/cursorx-cli/CHANGELOG.md`](../packages/cursorx-cli/CHANGELOG.md)
-1. 必要时更新 [`packages/cursorx-cli/README.md`](../packages/cursorx-cli/README.md)
-1. 在包目录执行：
+- **patch**：文档、元数据、小范围兼容修复  
+- **minor**：新增用户可直接使用的命令、自检能力，或命令数据明显扩展  
+- **major**：安装语义、主入口或命令体系发生不兼容变化  
 
-```bash
-npm run check
-```
+## 原则
 
-1. 发布：
-
-```bash
-npm publish
-```
-
-1. 发布后验证：
-
-```bash
-npm view cursorx-cli@<version> version
-```
-
-## 版本建议
-
-当前推荐这样判断：
-
-- `patch`：文档修正、元数据修正、小范围兼容修复
-- `minor`：新增用户可直接使用的命令、自检能力或明显扩展的命令数据
-- `major`：安装语义、主入口或命令体系发生不兼容变化
-
-## 当前原则
-
-- 先保证仓库内容和 npm 包语义一致，再追求更快发布
-- 若只是仓库内容变动但不影响 CLI 包对外内容，可不必强行发 npm
-- 若包内 README、版本或命令数据已经与 npm 页面脱节，优先补一次包发布
+- 先保证仓库内容与 npm 语义一致，再追求发得更勤  
+- 仅仓库内容变动且不影响 CLI 对外物时，不必强行发 npm  
+- 若包 README、版本或命令数据已与 npm 页脱节，优先补一次包发布  
 
 ## 相关文档
 
-- [`../CHANGELOG.md`](../CHANGELOG.md)
-- [`./roadmap-status.md`](./roadmap-status.md)
-- [`../packages/cursorx-cli/README.md`](../packages/cursorx-cli/README.md)
+- [`../CHANGELOG.md`](../CHANGELOG.md)  
+- [`./roadmap-status.md`](./roadmap-status.md)  
+- [`../packages/cursorx-cli/README.md`](../packages/cursorx-cli/README.md)  
+- [`./p2-observation-template.md`](./p2-observation-template.md)  

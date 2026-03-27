@@ -1,89 +1,81 @@
 # 快速开始
 
-这个仓库的目标不是提供一堆零散资料，而是逐步沉淀成一套围绕 Cursor 的可复用内容库。
+**语言 / Language：** [English](getting-started.en.md)
 
-如果你第一次进入仓库，建议把它理解为“一个总仓库 + 一个主产品”：
+目标不是堆资料，而是沉淀一套围绕 Cursor、能反复复用的内容。
 
-- 总仓库：`CursorX`
+可以记成：**一个总仓 + 一个主产品**。
+
+- 总仓：`CursorX`
 - 主产品：`slash-commands/`
-- 补充内容：`commands/`、`skills/`、`tips/`、`configs/`
+- 其余：`commands/`、`skills/`、`tips/`、`configs/`
 
-## 推荐浏览顺序
+## 建议浏览顺序
 
-1. 阅读 [`slash-commands/README.md`](../slash-commands/README.md)
-2. 浏览 [`slash-commands/catalog.md`](../slash-commands/catalog.md)
-3. 阅读 [`content-map.md`](./content-map.md) 判断接下来该进入哪一层
-4. 了解 CLI 原型：[`packages/cursorx-cli/README.md`](../packages/cursorx-cli/README.md)
-5. 优先尝试 `node packages/cursorx-cli/bin/cursorx.js list`
-6. 通过 CLI、安装脚本或手动复制安装目标 slash command
-7. 安装后执行 `cursorx doctor` 或 `cursorx verify <command-id> --scope ...`
-8. 再按需查看 [`commands/README.md`](../commands/README.md)、[`skills/README.md`](../skills/README.md)、[`tips/README.md`](../tips/README.md)、[`configs/README.md`](../configs/README.md)
+1. [`slash-commands/README.md`](../slash-commands/README.md)  
+2. [`slash-commands/catalog.md`](../slash-commands/catalog.md)  
+3. [`content-map.md`](./content-map.md)：接下来进哪一层  
+4. [`packages/cursorx-cli/README.md`](../packages/cursorx-cli/README.md)  
+5. 试跑：`node packages/cursorx-cli/bin/cursorx.js list`  
+6. 用 CLI、安装脚本或手动复制，装目标 slash command  
+7. 装完：`cursorx doctor` 或 `cursorx verify <command-id> --scope ...`  
+8. 按需看 [`commands/README.md`](../commands/README.md)、[`skills/README.md`](../skills/README.md)、[`tips/README.md`](../tips/README.md)、[`configs/README.md`](../configs/README.md)  
 
-当前命名策略：
+命名：npm `cursorx-cli`，命令 `cursorx`。
 
-- npm 包名：`cursorx-cli`
-- 命令行入口：`cursorx`
+## 怎么选命令
 
-## 如何挑选命令
+先想 **要解决什么问题**，再翻目录。
 
-不要先看“这个仓库有什么”，而是先看“你想解决什么问题”。
+常见出发点：
 
-推荐从这些问题出发：
+- 全局只给自己装  
+- 给当前仓库、随项目带走  
+- 把编辑器动作收成可搜索的快捷方式  
 
-- 想把某个命令安装到全局，只给自己用
-- 想把某个命令安装到当前仓库，随项目复用
-- 想把某个编辑器动作包装成可搜索的快捷入口
+## 最小体验（slash）
 
-## 推荐的最小体验路径
+先试两条：
 
-如果你只想快速感受这个仓库的价值，推荐先尝试这两个 slash commands：
+- [`slash-commands/global/git-push.md`](../slash-commands/global/git-push.md)  
+- [`slash-commands/global/lint-fix.md`](../slash-commands/global/lint-fix.md)  
 
-- [`slash-commands/global/git-push.md`](../slash-commands/global/git-push.md)
-- [`slash-commands/global/lint-fix.md`](../slash-commands/global/lint-fix.md)
+分别对应：提交/推送流程、当前改动的 lint 修复。
 
-这样可以分别覆盖：
+第二批工作流可继续看：
 
-- Git 提交与推送流程
-- 当前改动的 lint 修复流程
+- [`staged-review`](../slash-commands/global/staged-review.md)  
+- [`test-plan`](../slash-commands/global/test-plan.md)  
+- [`pr-summary`](../slash-commands/global/pr-summary.md)  
+- [`risk-scan`](../slash-commands/global/risk-scan.md)  
+- [`diff-summary`](../slash-commands/global/diff-summary.md)  
+- [`migration-note`](../slash-commands/global/migration-note.md)  
+- [`release-notes`](../slash-commands/global/release-notes.md)  
+- [`changelog-entry`](../slash-commands/global/changelog-entry.md)  
+- [`upgrade-checklist`](../slash-commands/global/upgrade-checklist.md)  
 
-如果你希望继续体验第二批工作流内容，可以再看：
+## 安装方式
 
-- [`slash-commands/global/staged-review.md`](../slash-commands/global/staged-review.md)
-- [`slash-commands/global/test-plan.md`](../slash-commands/global/test-plan.md)
-- [`slash-commands/global/pr-summary.md`](../slash-commands/global/pr-summary.md)
-- [`slash-commands/global/risk-scan.md`](../slash-commands/global/risk-scan.md)
-- [`slash-commands/global/diff-summary.md`](../slash-commands/global/diff-summary.md)
-- [`slash-commands/global/migration-note.md`](../slash-commands/global/migration-note.md)
-- [`slash-commands/global/release-notes.md`](../slash-commands/global/release-notes.md)
-- [`slash-commands/global/changelog-entry.md`](../slash-commands/global/changelog-entry.md)
-- [`slash-commands/global/upgrade-checklist.md`](../slash-commands/global/upgrade-checklist.md)
+两种形态：
 
-## 关于安装方式
+- **`slash-commands/`**：`global` / `project` 安装清晰  
+- **`commands/`**：editor command 素材为主  
 
-本仓库现在区分两种命令形态：
+建议：
 
-- `slash-commands/`：支持明确的 `global` / `project` 安装
-- `commands/`：主要作为 editor commands 素材库维护
+1. 命令从 `slash-commands/` 挑  
+2. 优先 `npx cursorx-cli ...`  
+3. 常用再 `npm i -g cursorx-cli`  
+4. 定 `global` 还是 `project`  
+5. 依赖脚本则同步 `.cursor/scripts/`  
+6. 装完 `cursorx verify <command-id> --scope ...`  
+7. 在 Cursor 里输入 `/命令名`  
 
-推荐你采用下面的做法：
+不要在业务项目里 `npm install cursorx-cli`（安装器，非业务依赖）。
 
-1. 优先从 `slash-commands/` 里挑选命令
-2. 优先使用 `npx cursorx-cli ...`
-3. 如果会长期使用，再考虑 `npm i -g cursorx-cli`
-4. 决定安装为 `global` 还是 `project`
-5. 如果命令依赖脚本，再同步复制 `.cursor/scripts/`
-6. 安装后执行 `cursorx verify <command-id> --scope ...`
-7. 最后去 Cursor chat 里输入对应 `/命令名`
+CLI 与统一入口的长期打算见 [`repo-strategy.md`](./repo-strategy.md)。
 
-不推荐在业务项目里执行 `npm install cursorx-cli`，因为它是安装器而不是业务依赖。
+## 准备贡献
 
-如果你关心未来是否会有统一 CLI 安装入口，继续阅读：
-
-- [`docs/repo-strategy.md`](./repo-strategy.md)
-
-## 如果你准备贡献
-
-请继续阅读：
-
-- [项目贡献指南](../CONTRIBUTING.md)
-- [命令开发规范](./command-development.md)
+- [贡献指南](../CONTRIBUTING.md)  
+- [命令开发规范](./command-development.md)  

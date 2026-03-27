@@ -1,50 +1,46 @@
 # 生成当前分支的 PR 摘要
 
-目标：基于当前分支相对默认基线分支的差异，生成适合直接放进 Pull Request 的摘要、风险说明和测试计划。
+语言：[English](pr-summary.en.md)
 
-用户可以在命令后补充 PR 重点，例如：
+目标：相对默认基线分支，生成可直接贴进 PR 的摘要、风险与测试计划。
+
+可补充强调点，例如：
 
 - `/pr-summary`
 - `/pr-summary emphasize why install verification matters`
 
-其中 `${user_input}` 是摘要时需要额外强调的内容，可以为空。
+`${user_input}` 为额外强调内容，可为空。
 
 ## 必须遵守
 
-1. 先识别远端默认分支，再计算当前分支与默认分支的差异。
-2. 至少执行以下检查：
-   - `git branch --show-current`
-   - `git status -sb`
-   - `git log --oneline <base>..HEAD`
-   - `git diff --stat <base>...HEAD`
-3. 如果当前就在默认分支上，且没有可形成 PR 的分支差异，则改为总结当前工作区改动并明确说明。
-4. 输出时不要只复述文件列表，要说明“为什么改”和“影响什么”。
-5. 如果 `${user_input}` 非空，摘要中应优先体现该重点。
+1. 先识别远端默认分支，再算当前分支相对基线的差异。  
+2. 至少：`git branch --show-current`、`git status -sb`、`git log --oneline <base>..HEAD`、`git diff --stat <base>...HEAD`。  
+3. 若当前就在默认分支且无分支差异，则总结**工作区**改动并说明情况。  
+4. 输出不要只列文件，要说明**为什么改、影响什么**。  
+5. `${user_input}` 非空时摘要中优先体现。  
 
 ## 执行步骤
 
-1. 执行 `git branch --show-current` 获取当前分支。
-2. 尝试通过 `git symbolic-ref refs/remotes/origin/HEAD` 识别默认远端分支；若失败，再结合仓库状态合理判断基线分支。
-3. 执行 `git status -sb` 查看当前工作区状态。
-4. 执行 `git log --oneline <base>..HEAD` 阅读当前分支提交列表。
-5. 执行 `git diff --stat <base>...HEAD` 获取变更范围。
-6. 必要时执行 `git diff <base>...HEAD` 查看具体改动。
-7. 输出可直接用于 PR 的内容。
+1. `git branch --show-current`  
+2. 用 `git symbolic-ref refs/remotes/origin/HEAD` 等识别默认基线；失败则合理推断。  
+3. `git status -sb`  
+4. `git log --oneline <base>..HEAD`  
+5. `git diff --stat <base>...HEAD`  
+6. 需要时 `git diff <base>...HEAD` 看细节。  
+7. 输出可直接用于 PR 的文案。  
 
-## 输出格式要求
+## 输出格式
 
 - `## Summary`
 - `## Risks`
 - `## Test Plan`
 
-其中：
+- Summary：2～4 条 bullet，核心价值  
+- Risks：影响面、依赖、未充分验证处  
+- Test Plan：checklist，已做或建议  
 
-- `Summary` 用 2 到 4 条 bullet 说明本次改动的核心价值
-- `Risks` 说明潜在影响面、依赖、未完全验证部分
-- `Test Plan` 用 checklist 形式列出已做或建议做的验证
+## 边界
 
-## 适用边界
-
-- 适合提交 PR 前整理摘要
-- 不适合替代正式 code review
-- 如果用户只想看 staged 改动的审查结论，请优先使用 `/staged-review`
+- 适合 PR 前整理  
+- 不替代正式 code review  
+- 只看 staged 审查结论用 `/staged-review`  

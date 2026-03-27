@@ -1,19 +1,16 @@
 # AI 协作命令
 
-这个分类预留给强化 Cursor AI 协作体验的命令，例如：
+语言：[English](README.en.md)
 
-- 会话切换
-- 提示词模板
-- 上下文整理
-- 审查、解释、重构等场景入口
+强化 Cursor AI 使用体验的入口，例如：会话切换、提示模板、上下文整理、审查/解释/重构等。
 
-收录原则：
+**收录原则：**
 
-- 优先收录可以明显改善 AI 使用流程的命令
-- 避免放入只在单一项目中成立的私有命令
-- 说明清楚依赖的 Cursor 能力和适用版本
+- 能明显改善 AI 使用路径  
+- 不要塞只适用于单个项目的私有命令  
+- 写清依赖的 Cursor 能力与版本  
 
-当前已收录：
+当前条目：
 
 - [`open-chat-panel.json`](open-chat-panel.json)
 - [`focus-chat-and-new-context.json`](focus-chat-and-new-context.json)

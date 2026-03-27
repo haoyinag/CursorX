@@ -1,106 +1,78 @@
 # 贡献指南
 
-`CursorX` 欢迎贡献，但这个仓库不追求“内容越多越好”，而是优先追求“内容可复用、说明完整、结构稳定”。
+**语言 / Language：** [English](CONTRIBUTING.en.md)
 
-## 贡献前先了解这三个原则
+欢迎贡献。本仓不堆量：优先 **可复用、说明齐全、结构别乱**。
 
-- 先保证内容能直接用，再追求数量
-- 先补说明、索引和适用场景，再补文件
-- 同类内容尽量遵循统一结构，避免仓库长成资料堆
+## 三条原则
 
-## 贡献类型
+1. 先能直接用，再谈数量  
+2. 先补说明、索引、适用场景，再堆文件  
+3. 同类内容结构对齐，避免变成杂物间  
 
-### 自定义命令
+## 可以贡献什么
 
-命令相关贡献是当前最优先的方向。
+### 命令（优先）
 
-要求：
+先分清你改的是 **`slash-commands`** 还是 **`commands`**。
 
-1. 先区分你提交的是 `slash-commands` 还是 `commands`
-2. `slash-commands` 遵循 [Slash Commands 开发规范](./docs/slash-command-development.md)
-3. `commands` 遵循 [Editor Commands 开发规范](./docs/command-development.md)
-4. 同步更新对应目录下的索引和目录清单
-5. 写清使用场景、前置条件和主要价值
+1. `slash-commands` 跟 [Slash Commands 开发规范](./docs/slash-command-development.md)  
+2. `commands` 跟 [Editor Commands 开发规范](./docs/command-development.md)  
+3. 更新对应目录的索引和目录清单  
+4. 写清场景、前置条件、价值  
 
-如果你的改动涉及仓库定位、安装入口或未来 CLI 方向，也请同步检查：
+若动到仓库定位、安装入口或 CLI 方向，对照：
 
-- [仓库策略说明](./docs/repo-strategy.md)
-- [CLI 预留目录说明](./packages/cursorx-cli/README.md)
+- [仓库策略](./docs/repo-strategy.md)
+- [CLI 说明](./packages/cursorx-cli/README.md)
 
-### Skills 推荐
+### Skills
 
-适合提交到 `skills/` 的内容应当具备这些信息：
+`skills/` 里建议写清：来源、场景、能力、怎么用。详见 [Skills 开发说明](./docs/skill-development.md)。
 
-- 来源
-- 适用场景
-- 核心能力
-- 使用说明
+### 技巧
 
-参考文档：
+`tips/`：有具体场景、能照着做，别只写概念。
 
-- [Skills 开发说明](./docs/skill-development.md)
+### 配置
 
-### 使用技巧
+`configs/`：平台/版本、影响、冲突或注意点。
 
-放在 `tips/` 的内容，建议满足：
+## 提交流程
 
-- 有具体场景
-- 有可操作步骤
-- 不只是概念性描述
+1. Fork → 分支 → 改完  
+2. 自己过一遍结构、链接、说明  
+3. 开 PR  
 
-### 配置分享
-
-放在 `configs/` 的内容，建议满足：
-
-- 说明适用平台或版本
-- 说明配置影响
-- 说明潜在冲突或注意事项
-
-## 推荐提交流程
-
-1. Fork 本仓库
-2. 创建分支
-3. 完成内容修改
-4. 自查结构、链接和说明
-5. 提交 Pull Request
-
-如果涉及 `commands/`，建议在提交前运行：
+涉及 `commands/` 可先跑：
 
 ```bash
 node scripts/validate-commands.mjs
 ```
 
-如果涉及 `slash-commands/`，建议至少实际试一次安装脚本：
+涉及 `slash-commands/` 建议本地试装：
 
 ```bash
 node scripts/install-slash-command.mjs --list
 ```
 
-## 对命令贡献者的额外要求
+## 命令类 PR 多检查这几项
 
-如果你提交的是命令，请特别检查：
+1. 文件名是否一眼能懂  
+2. 形态选对：slash 还是 editor command  
+3. editor：`JSON` 合法  
+4. slash：安装路径、配套脚本是否写清  
+5. 目录清单、索引是否同步  
 
-1. 命令文件名是否清晰
-2. 是否选对了命令形态：slash command 还是 editor command
-3. 对于 editor commands，JSON 是否有效
-4. 对于 slash commands，安装路径和配套脚本是否说明清楚
-5. 目录清单与索引是否同步更新
+## Commit 消息
 
-## Commit 消息建议
-
-建议采用 Conventional Commits 风格：
+建议 [Conventional Commits](https://www.conventionalcommits.org/)：
 
 ```text
 type(scope): description
 ```
 
-常见类型：
-
-- `feat`
-- `fix`
-- `docs`
-- `refactor`
-- `chore`
+常用 `type`：`feat`、`fix`、`docs`、`refactor`、`chore`。
 
 示例：
 
@@ -110,13 +82,13 @@ feat(commands): add quick chat editor command
 docs(repo): clarify slash vs editor commands
 ```
 
-## 提交被接受的常见特征
+## 容易合并的改动
 
-- 能解决真实问题
-- 其他用户可以复用
-- 文档和文件同步更新
-- 不依赖私有环境
+- 解决真实问题  
+- 别人能复用  
+- 文档和文件一起更新  
+- 不依赖私有环境  
 
 ## 许可证
 
-通过贡献代码，你同意你的贡献将采用项目当前的 [MIT License](./LICENSE)。
+贡献即表示你同意以当前项目的 [MIT License](./LICENSE) 授权。

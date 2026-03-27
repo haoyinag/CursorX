@@ -1,8 +1,10 @@
 # 文档
 
-这个目录用于放置 `CursorX` 的项目说明、开发规范和贡献参考。
+**语言 / Language：** [English](README.en.md)
 
-## 文档列表
+项目说明、开发规范、贡献时查阅的材料，都放在本目录。
+
+## 索引
 
 - [快速开始](./getting-started.md)
 - [内容地图](./content-map.md)
@@ -12,29 +14,30 @@
 - [P2 路线选项](./p2-options.md)
 - [P2 当前决策](./p2-decision.md)
 - [路线 B 启动条件与最小实验](./p2-route-b-thresholds.md)
+- [P2 观察记录模板](./p2-observation-template.md)
 - [Editor Commands 开发规范](./command-development.md)
 - [Slash Commands 开发规范](./slash-command-development.md)
-- [仓库策略说明](./repo-strategy.md)
+- [仓库策略](./repo-strategy.md)
 - [Skills 开发说明](./skill-development.md)
-- [项目贡献指南](../CONTRIBUTING.md)
+- [贡献指南](../CONTRIBUTING.md)
 
-## 建议阅读顺序
+## 阅读顺序
 
-如果你是使用者：
+**使用者**
 
-1. 先看 [快速开始](./getting-started.md)
-2. 再看 [内容地图](./content-map.md)
-3. 再看 [`slash-commands/README.md`](../slash-commands/README.md)
-4. 按需查看 [`commands/README.md`](../commands/README.md)
+1. [快速开始](./getting-started.md)  
+2. [内容地图](./content-map.md)  
+3. [`slash-commands/README.md`](../slash-commands/README.md)  
+4. 需要时看 [`commands/README.md`](../commands/README.md)  
 
-如果你是贡献者：
+**贡献者**
 
-1. 先看 [项目贡献指南](../CONTRIBUTING.md)
-2. 再根据命令类型阅读 [Slash Commands 开发规范](./slash-command-development.md) 或 [Editor Commands 开发规范](./command-development.md)
-3. 如果涉及 Skills，再看 [Skills 开发说明](./skill-development.md)
+1. [贡献指南](../CONTRIBUTING.md)  
+2. 按命令类型读 [Slash Commands](./slash-command-development.md) 或 [Editor Commands](./command-development.md)  
+3. 涉及 Skills 再看 [Skills 开发](./skill-development.md)  
 
-## 维护原则
+## 维护约定
 
-- 文档必须和当前仓库实际结构保持一致
-- 文档中出现的相对路径必须可点击且真实存在
-- 优先写“如何使用”和“何时适用”，再写概念性说明
+- 与仓库真实结构一致  
+- 相对链接可点、目标存在  
+- 先写「怎么用、何时用」，再铺概念  
