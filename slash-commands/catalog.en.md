@@ -13,6 +13,7 @@ For people installing commands into Cursor for daily use.
 - Scenario: Standardized pull, stage, exclude files, commit, push  
 - Value: Solidifies the common commit/push flow  
 - Scripts: none  
+- Workflows: [Daily commit](../workflows/daily-commit.en.md), [Feature completion](../workflows/feature-completion.en.md), [Debug and fix](../workflows/debug-and-fix.en.md)  
 
 ### `/lint-fix`
 
@@ -21,6 +22,7 @@ For people installing commands into Cursor for daily use.
 - Scenario: ESLint / Stylelint auto-fix **only on current Git changes**  
 - Value: Avoids whole-repo lint fix every time  
 - Script: [`slash-commands/scripts/lint-fix-changed.mjs`](scripts/lint-fix-changed.mjs)
+- Workflows: [Feature completion](../workflows/feature-completion.en.md)
 
 ### `/staged-review`
 
@@ -29,6 +31,7 @@ For people installing commands into Cursor for daily use.
 - Scenario: Pre-commit review of **staged** diff only  
 - Value: Catches bugs, regressions, test gaps early  
 - Scripts: none  
+- Workflows: [Daily commit](../workflows/daily-commit.en.md), [Feature completion](../workflows/feature-completion.en.md), [PR preparation](../workflows/pr-preparation.en.md), [Code review](../workflows/code-review-as-reviewer.en.md), [Debug and fix](../workflows/debug-and-fix.en.md)  
 
 ### `/test-plan`
 
@@ -37,6 +40,7 @@ For people installing commands into Cursor for daily use.
 - Scenario: From staged changes, outline smoke, regression, edge-case tests  
 - Value: Moves test thinking earlier  
 - Scripts: none  
+- Workflows: [Feature completion](../workflows/feature-completion.en.md), [PR preparation](../workflows/pr-preparation.en.md), [Debug and fix](../workflows/debug-and-fix.en.md)  
 
 ### `/pr-summary`
 
@@ -45,6 +49,7 @@ For people installing commands into Cursor for daily use.
 - Scenario: Before opening a PR—summary, risks, test plan  
 - Value: PR text explains *why* and *impact*, not only files  
 - Scripts: none  
+- Workflows: [PR preparation](../workflows/pr-preparation.en.md), [Doc update](../workflows/doc-update.en.md)  
 
 ### `/readme-refresh`
 
@@ -53,6 +58,7 @@ For people installing commands into Cursor for daily use.
 - Scenario: Refresh README/docs from code, tree, or diff  
 - Value: Docs stay closer to reality  
 - Scripts: none  
+- Workflows: [Doc update](../workflows/doc-update.en.md)  
 
 ### `/risk-scan`
 
@@ -61,6 +67,7 @@ For people installing commands into Cursor for daily use.
 - Scenario: Before commit/QA/merge—surface high-risk spots  
 - Value: Risk identification earlier  
 - Scripts: none  
+- Workflows: [Risk handoff](../workflows/risk-handoff.en.md), [Code review](../workflows/code-review-as-reviewer.en.md)  
 
 ### `/diff-summary`
 
@@ -69,6 +76,7 @@ For people installing commands into Cursor for daily use.
 - Scenario: Turn staged or working-tree diff into handoff/sync/daily notes  
 - Value: Less manual change narration  
 - Scripts: none  
+- Workflows: [Risk handoff](../workflows/risk-handoff.en.md)  
 
 ### `/migration-note`
 
@@ -77,6 +85,7 @@ For people installing commands into Cursor for daily use.
 - Scenario: After changing entrypoints, install paths, config layout, or structure  
 - Value: Clearer upgrade path for users  
 - Scripts: none  
+- Workflows: [Doc update](../workflows/doc-update.en.md), [Risk handoff](../workflows/risk-handoff.en.md)  
 
 ### `/release-notes`
 
@@ -85,6 +94,7 @@ For people installing commands into Cursor for daily use.
 - Scenario: External-facing notes after package or workflow upgrades  
 - Value: States what the release delivers  
 - Scripts: none  
+- Workflows: [Release cycle](../workflows/release-cycle.en.md)  
 
 ### `/changelog-entry`
 
@@ -93,6 +103,7 @@ For people installing commands into Cursor for daily use.
 - Scenario: Structured changelog entry for a version or change set  
 - Value: Traceable increments  
 - Scripts: none  
+- Workflows: [Release cycle](../workflows/release-cycle.en.md)  
 
 ### `/upgrade-checklist`
 
@@ -101,6 +112,7 @@ For people installing commands into Cursor for daily use.
 - Scenario: After installer or config changes—user upgrade steps  
 - Value: Makes “what users do next” explicit  
 - Scripts: none  
+- Workflows: [Release cycle](../workflows/release-cycle.en.md)
 
 ## Project template
 
@@ -112,9 +124,13 @@ For people installing commands into Cursor for daily use.
 
 ## Suggested bundles
 
-- **Git:** `/git-push` + `/staged-review`  
-- **Change wrap-up:** `/lint-fix` → `/test-plan` → `/staged-review` → `/git-push`  
-- **PR:** `/staged-review` → `/test-plan` → `/pr-summary`  
-- **Docs:** `/readme-refresh` → `/migration-note` → `/pr-summary`  
-- **Risk & handoff:** `/risk-scan` → `/diff-summary` → `/migration-note`  
-- **Release:** `/changelog-entry` → `/release-notes` → `/upgrade-checklist`  
+Each bundle has a full workflow guide with steps, tips, and variations:
+
+- **Git:** `/git-push` + `/staged-review` → [Daily commit workflow](../workflows/daily-commit.en.md)  
+- **Change wrap-up:** `/lint-fix` → `/test-plan` → `/staged-review` → `/git-push` → [Feature completion workflow](../workflows/feature-completion.en.md)  
+- **PR:** `/staged-review` → `/test-plan` → `/pr-summary` → [PR preparation workflow](../workflows/pr-preparation.en.md)  
+- **Docs:** `/readme-refresh` → `/migration-note` → `/pr-summary` → [Doc update workflow](../workflows/doc-update.en.md)  
+- **Risk & handoff:** `/risk-scan` → `/diff-summary` → `/migration-note` → [Risk handoff workflow](../workflows/risk-handoff.en.md)  
+- **Release:** `/changelog-entry` → `/release-notes` → `/upgrade-checklist` → [Release cycle workflow](../workflows/release-cycle.en.md)
+
+More workflows at [workflows/catalog.en.md](../workflows/catalog.en.md).  

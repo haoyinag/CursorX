@@ -13,6 +13,7 @@
 - 场景：标准化 pull、暂存、排除文件、commit、push  
 - 价值：高频提交流程固化  
 - 脚本：无  
+- 工作流：[每日提交](../workflows/daily-commit.md)、[功能收尾](../workflows/feature-completion.md)、[排查与修复](../workflows/debug-and-fix.md)  
 
 ### `/lint-fix`
 
@@ -21,6 +22,7 @@
 - 场景：只对当前 Git 改动跑 ESLint / Stylelint 自动修复  
 - 价值：不必每次整仓库 lint fix  
 - 脚本：[`slash-commands/scripts/lint-fix-changed.mjs`](scripts/lint-fix-changed.mjs)
+- 工作流：[功能收尾](../workflows/feature-completion.md)
 
 ### `/staged-review`
 
@@ -29,6 +31,7 @@
 - 场景：提交前只审 staged  
 - 价值：先发现 bug、回归、测缺  
 - 脚本：无  
+- 工作流：[每日提交](../workflows/daily-commit.md)、[功能收尾](../workflows/feature-completion.md)、[PR 准备](../workflows/pr-preparation.md)、[代码审查](../workflows/code-review-as-reviewer.md)、[排查与修复](../workflows/debug-and-fix.md)  
 
 ### `/test-plan`
 
@@ -37,6 +40,7 @@
 - 场景：按 staged 改动列 smoke、回归、边界测法  
 - 价值：测试思考前移  
 - 脚本：无  
+- 工作流：[功能收尾](../workflows/feature-completion.md)、[PR 准备](../workflows/pr-preparation.md)、[排查与修复](../workflows/debug-and-fix.md)  
 
 ### `/pr-summary`
 
@@ -45,6 +49,7 @@
 - 场景：PR 前写分支摘要、风险、测试计划  
 - 价值：PR 从「列文件」变成「讲清为什么、影响什么」  
 - 脚本：无  
+- 工作流：[PR 准备](../workflows/pr-preparation.md)、[文档更新](../workflows/doc-update.md)  
 
 ### `/readme-refresh`
 
@@ -53,6 +58,7 @@
 - 场景：按代码/目录/diff 刷新 README 与说明  
 - 价值：文档少掉队  
 - 脚本：无  
+- 工作流：[文档更新](../workflows/doc-update.md)  
 
 ### `/risk-scan`
 
@@ -61,6 +67,7 @@
 - 场景：提交/提测/合并前扫高风险点  
 - 价值：风险前移  
 - 脚本：无  
+- 工作流：[风险交接](../workflows/risk-handoff.md)、[代码审查](../workflows/code-review-as-reviewer.md)  
 
 ### `/diff-summary`
 
@@ -69,6 +76,7 @@
 - 场景：staged 或工作区 diff 整理成交接/同步/日报  
 - 价值：少手写变更说明  
 - 脚本：无  
+- 工作流：[风险交接](../workflows/risk-handoff.md)  
 
 ### `/migration-note`
 
@@ -77,6 +85,7 @@
 - 场景：命令入口、安装、配置路径或目录结构变化后写迁移说明  
 - 价值：升级路径可读  
 - 脚本：无  
+- 工作流：[文档更新](../workflows/doc-update.md)、[风险交接](../workflows/risk-handoff.md)  
 
 ### `/release-notes`
 
@@ -85,6 +94,7 @@
 - 场景：包或工作流升级后写对外版本说明  
 - 价值：说清楚「这版带来什么」  
 - 脚本：无  
+- 工作流：[发布周期](../workflows/release-cycle.md)  
 
 ### `/changelog-entry`
 
@@ -93,6 +103,7 @@
 - 场景：为当前版本或一组改动写结构化 changelog 条目  
 - 价值：迭代可追踪  
 - 脚本：无  
+- 工作流：[发布周期](../workflows/release-cycle.md)  
 
 ### `/upgrade-checklist`
 
@@ -101,6 +112,7 @@
 - 场景：安装方式或配置变后列用户升级步骤  
 - 价值：「用户接下来要做什么」显式化  
 - 脚本：无  
+- 工作流：[发布周期](../workflows/release-cycle.md)  
 
 ## 项目模板
 
@@ -112,9 +124,13 @@
 
 ## 推荐组合
 
-- **Git 提交：** `/git-push` + `/staged-review`  
-- **改动收尾：** `/lint-fix` → `/test-plan` → `/staged-review` → `/git-push`  
-- **PR：** `/staged-review` → `/test-plan` → `/pr-summary`  
-- **文档：** `/readme-refresh` → `/migration-note` → `/pr-summary`  
-- **风险与交接：** `/risk-scan` → `/diff-summary` → `/migration-note`  
-- **发布：** `/changelog-entry` → `/release-notes` → `/upgrade-checklist`  
+每个组合都有对应的完整工作流文档，包含步骤、技巧和变体：
+
+- **Git 提交：** `/git-push` + `/staged-review` → [每日提交工作流](../workflows/daily-commit.md)  
+- **改动收尾：** `/lint-fix` → `/test-plan` → `/staged-review` → `/git-push` → [功能收尾工作流](../workflows/feature-completion.md)  
+- **PR：** `/staged-review` → `/test-plan` → `/pr-summary` → [PR 准备工作流](../workflows/pr-preparation.md)  
+- **文档：** `/readme-refresh` → `/migration-note` → `/pr-summary` → [文档更新工作流](../workflows/doc-update.md)  
+- **风险与交接：** `/risk-scan` → `/diff-summary` → `/migration-note` → [风险交接工作流](../workflows/risk-handoff.md)  
+- **发布：** `/changelog-entry` → `/release-notes` → `/upgrade-checklist` → [发布周期工作流](../workflows/release-cycle.md)
+
+更多工作流见 [workflows/catalog.md](../workflows/catalog.md)。  

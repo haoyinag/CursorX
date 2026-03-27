@@ -2,10 +2,11 @@
 
 **Language / 语言：** [中文](README.md)
 
-`CursorX` collects installable Cursor commands, editor action snippets, workflow notes, and supporting docs.
+`CursorX` collects installable Cursor commands, editor action snippets, workflow notes, and supporting docs, and connects them into **ready-to-follow workflows**.
 
-If you just want to get started, use these two entry points:
+Start from what you want to accomplish:
 
+- Workflows: [workflows README](workflows/README.en.md)
 - Installable commands: [slash-commands README](slash-commands/README.en.md)
 - Installer: [cursorx-cli README](packages/cursorx-cli/README.en.md)
 
@@ -67,6 +68,7 @@ node scripts/install-slash-command.mjs --command git-push --scope global
 
 ## What else is here
 
+- [workflows](workflows/README.en.md): **scenario-based workflows** connecting commands, tips, and configs
 - [slash-commands](slash-commands/README.en.md): installable `/commands`
 - [packages/cursorx-cli](packages/cursorx-cli/README.en.md): install, verify, and troubleshooting commands
 - [commands](commands/README.en.md): JSON editor-action snippets
@@ -79,6 +81,10 @@ node scripts/install-slash-command.mjs --command git-push --scope global
 
 ```text
 CursorX/
+├── workflows/          # Scenario-based workflows
+│   ├── catalog.md
+│   ├── index.json
+│   └── README.md
 ├── slash-commands/
 │   ├── global/
 │   ├── project/
@@ -107,6 +113,11 @@ CursorX/
 
 ## Entry points
 
+Find a workflow:
+
+- [Workflow catalog](workflows/catalog.en.md)
+- [New project onboarding](workflows/onboarding-new-project.en.md)
+
 Install commands:
 
 - [slash-commands README](slash-commands/README.en.md)
@@ -123,6 +134,7 @@ Browse more:
 
 ## Doc index
 
+- [Workflows](workflows/README.en.md)
 - [slash-commands README](slash-commands/README.en.md)
 - [Content map](docs/content-map.en.md)
 - [Roadmap status](docs/roadmap-status.en.md)

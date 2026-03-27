@@ -4,6 +4,15 @@
 
 One question: after you land in `CursorX`, **which layer do you open first**.
 
+## Find a workflow
+
+Start with:
+
+- [`workflows/README.md`](../workflows/README.md)  
+- [`workflows/catalog.md`](../workflows/catalog.md)  
+
+Use when you want a scenario-based guide — committing, PR prep, releases, debugging, handoffs, etc. Each workflow tells you which commands to install and in what order.
+
 ## Install and run
 
 Start with:
@@ -42,11 +51,12 @@ See:
 
 ## First visit: short path
 
-1. [`slash-commands/README.md`](../slash-commands/README.md)  
-2. [`getting-started.en.md`](./getting-started.en.md)  
+1. [`workflows/README.md`](../workflows/README.md) — find a workflow by scenario  
+2. [`getting-started.en.md`](./getting-started.en.md) — install your first commands  
 3. Then:  
-   - Commands you can ship → `cursorx-cli`  
+   - Full workflows → `workflows/`  
+   - Individual commands → `slash-commands/` + `cursorx-cli`  
    - Snippets → `commands/`  
-   - Workflows → `tips/`  
+   - Habits → `tips/`  
    - Config → `configs/`  
    - Skills → `skills/`  

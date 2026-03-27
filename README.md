@@ -2,10 +2,11 @@
 
 **语言 / Language：** [English](README.en.md)
 
-`CursorX` 收集了围绕 Cursor 的可安装命令、编辑器动作、使用技巧和配套说明。
+`CursorX` 收集了围绕 Cursor 的可安装命令、编辑器动作、使用技巧和配套说明，并把它们串成**可直接跟着走的工作流**。
 
-如果你只是想尽快开始，用这两个入口就够了：
+先想你要做什么，再找对应工作流：
 
+- 工作流：[`workflows/README.md`](workflows/README.md)
 - 安装命令：[`slash-commands/README.md`](slash-commands/README.md)
 - 安装器：[`packages/cursorx-cli/README.md`](packages/cursorx-cli/README.md)
 
@@ -67,6 +68,7 @@ node scripts/install-slash-command.mjs --command git-push --scope global
 
 ## 还有什么
 
+- [`workflows/`](workflows/README.md)：**场景化工作流**，串联命令、技巧和配置
 - [`slash-commands/`](slash-commands/README.md)：可安装的 `/命令`
 - [`packages/cursorx-cli/`](packages/cursorx-cli/README.md)：安装、验证和排查命令
 - [`commands/`](commands/README.md)：`.json` 形式的编辑器动作素材
@@ -79,6 +81,10 @@ node scripts/install-slash-command.mjs --command git-push --scope global
 
 ```text
 CursorX/
+├── workflows/          # 场景化工作流
+│   ├── catalog.md
+│   ├── index.json
+│   └── README.md
 ├── slash-commands/
 │   ├── global/
 │   ├── project/
@@ -107,6 +113,11 @@ CursorX/
 
 ## 常用入口
 
+找工作流：
+
+- [工作流目录](workflows/catalog.md)
+- [新项目接入](workflows/onboarding-new-project.md)
+
 装命令：
 
 - [slash-commands 说明](slash-commands/README.md)
@@ -123,6 +134,7 @@ CursorX/
 
 ## 文档索引
 
+- [工作流](workflows/README.md)
 - [slash-commands 说明](slash-commands/README.md)
 - [内容地图](docs/content-map.md)
 - [路线图状态](docs/roadmap-status.md)

@@ -2,16 +2,16 @@
 
 **语言 / Language：** [English](getting-started.en.md)
 
-第一次来这个仓库，先把它当成一个“安装命令 + 查资料”的入口集合就够了。
+第一次来这个仓库，先想「我要做什么」，再找对应的工作流。
 
 ## 建议浏览顺序
 
-1. [`slash-commands/README.md`](../slash-commands/README.md)  
-2. [`slash-commands/catalog.md`](../slash-commands/catalog.md)  
-3. [`packages/cursorx-cli/README.md`](../packages/cursorx-cli/README.md)  
-4. 试跑：`npx cursorx-cli list`  
-5. 用 CLI、安装脚本或手动复制，装目标 slash command  
-6. 装完：`cursorx doctor` 或 `cursorx verify <command-id> --scope ...`  
+1. [`workflows/README.md`](../workflows/README.md) — 按场景找工作流  
+2. [`workflows/onboarding-new-project.md`](../workflows/onboarding-new-project.md) — 如果是第一次装  
+3. [`slash-commands/catalog.md`](../slash-commands/catalog.md) — 浏览所有可安装命令  
+4. [`packages/cursorx-cli/README.md`](../packages/cursorx-cli/README.md) — CLI 使用说明  
+5. 试跑：`npx cursorx-cli list`  
+6. 按工作流要求装命令，装完验证  
 7. 按需看 [`commands/README.md`](../commands/README.md)、[`skills/README.md`](../skills/README.md)、[`tips/README.md`](../tips/README.md)、[`configs/README.md`](../configs/README.md)  
 8. 需要看目录分布时，再读 [`content-map.md`](./content-map.md)  
 
@@ -19,9 +19,19 @@
 
 ## 怎么选命令
 
-先想 **要解决什么问题**，再翻目录。
+先想 **要解决什么问题**，再找工作流，工作流会告诉你该装哪些命令。
 
-常见出发点：
+常见场景对应的工作流：
+
+| 场景 | 工作流 |
+|------|--------|
+| 写完代码要推送 | [每日提交](../workflows/daily-commit.md) |
+| 功能做完要提交 | [功能收尾](../workflows/feature-completion.md) |
+| 要提 PR | [PR 准备](../workflows/pr-preparation.md) |
+| 要发版 | [发布周期](../workflows/release-cycle.md) |
+| 要修 bug | [排查与修复](../workflows/debug-and-fix.md) |
+
+如果只想装单条命令：
 
 - 全局只给自己装  
 - 给当前仓库、随项目带走  

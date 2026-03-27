@@ -1,0 +1,24 @@
+lockfileVersion: '9.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+importers:
+
+  .:
+    dependencies:
+      cursorx-cli:
+        specifier: ^0.3.2
+        version: 0.3.2
+
+packages:
+
+  cursorx-cli@0.3.2:
+    resolution: {integrity: sha512-y3cIIMhCFOoCaIV/BBx0A8vB7DI1LyNcdyK/850VM5dypYnO8VT7z1W9XBfK4LlW3qW7BYM0yhumZZDihoOozg==}
+    engines: {node: '>=18'}
+    hasBin: true
+
+snapshots:
+
+  cursorx-cli@0.3.2: {}

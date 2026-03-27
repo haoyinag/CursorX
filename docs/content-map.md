@@ -4,6 +4,15 @@
 
 回答一件事：进 `CursorX` 以后，**先去哪一层**。
 
+## 要找完整工作流
+
+看：
+
+- [`workflows/README.md`](../workflows/README.md)  
+- [`workflows/catalog.md`](../workflows/catalog.md)  
+
+适合：想按场景找「我要做 XX 该怎么走」——提交、PR、发版、排查、交接等。工作流会告诉你该装哪些命令、按什么顺序用。
+
 ## 要装完就用
 
 看：
@@ -42,10 +51,11 @@
 
 ## 第一次来：最短路径
 
-1. [`slash-commands/README.md`](../slash-commands/README.md)  
-2. [`getting-started.md`](./getting-started.md)  
+1. [`workflows/README.md`](../workflows/README.md) — 按场景找工作流  
+2. [`getting-started.md`](./getting-started.md) — 装好第一批命令  
 3. 按需：  
-   - 直接用命令 → `cursorx-cli`  
+   - 完整工作流 → `workflows/`  
+   - 单条命令 → `slash-commands/` + `cursorx-cli`  
    - 素材 → `commands/`  
    - 方法 → `tips/`  
    - 配置 → `configs/`  

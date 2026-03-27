@@ -2,16 +2,16 @@
 
 **Language / 语言：** [中文](getting-started.md)
 
-If this is your first visit, treat the repo as one place to install commands and look up supporting material.
+If this is your first visit, start from what you want to accomplish, then find the matching workflow.
 
 ## Suggested order
 
-1. [`slash-commands/README.en.md`](../slash-commands/README.en.md)  
-2. [`slash-commands/catalog.en.md`](../slash-commands/catalog.en.md)  
-3. [`packages/cursorx-cli/README.en.md`](../packages/cursorx-cli/README.en.md)  
-4. Run: `npx cursorx-cli list`  
-5. Install the slash command via CLI, install script, or copy  
-6. Then run: `cursorx doctor` or `cursorx verify <command-id> --scope ...`  
+1. [`workflows/README.en.md`](../workflows/README.en.md) — find a workflow by scenario  
+2. [`workflows/onboarding-new-project.en.md`](../workflows/onboarding-new-project.en.md) — if this is your first setup  
+3. [`slash-commands/catalog.en.md`](../slash-commands/catalog.en.md) — browse all installable commands  
+4. [`packages/cursorx-cli/README.en.md`](../packages/cursorx-cli/README.en.md) — CLI usage  
+5. Run: `npx cursorx-cli list`  
+6. Install commands as the workflow requires, then verify  
 7. As needed: [`commands/README.en.md`](../commands/README.en.md), [`skills/README.en.md`](../skills/README.en.md), [`tips/README.en.md`](../tips/README.en.md), [`configs/README.en.md`](../configs/README.en.md)  
 8. If you need the directory map, read [`content-map.en.md`](./content-map.en.md)  
 
@@ -19,9 +19,19 @@ Naming: npm package `cursorx-cli`, binary `cursorx`.
 
 ## Choosing commands
 
-Start from **the problem**, not the file tree.
+Start from **the problem**, then find a workflow — each workflow tells you which commands to install.
 
-Typical drivers:
+Common scenarios and their workflows:
+
+| Scenario | Workflow |
+|----------|----------|
+| Push after coding | [Daily commit](../workflows/daily-commit.en.md) |
+| Feature done, ready to commit | [Feature completion](../workflows/feature-completion.en.md) |
+| Ready to open a PR | [PR preparation](../workflows/pr-preparation.en.md) |
+| Publishing a release | [Release cycle](../workflows/release-cycle.en.md) |
+| Fixing a bug | [Debug and fix](../workflows/debug-and-fix.en.md) |
+
+If you just want a single command:
 
 - Install globally for yourself  
 - Install into the current repo for the team  

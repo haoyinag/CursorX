@@ -1,0 +1,87 @@
+{
+  "version": 1,
+  "library": "CursorX Workflows",
+  "workflows": [
+    {
+      "id": "daily-commit",
+      "title": "每日提交",
+      "path": "workflows/daily-commit.md",
+      "summary": "改完代码到推送的最短路径：审查 staged、提交、推送。",
+      "commands": ["staged-review", "git-push"],
+      "category": "daily",
+      "tags": ["git", "commit", "push", "daily"]
+    },
+    {
+      "id": "feature-completion",
+      "title": "功能收尾",
+      "path": "workflows/feature-completion.md",
+      "summary": "功能写完后从 lint 修复到测试计划到审查到提交的完整闭环。",
+      "commands": ["lint-fix", "test-plan", "staged-review", "git-push"],
+      "category": "daily",
+      "tags": ["feature", "lint", "test", "commit", "workflow"]
+    },
+    {
+      "id": "pr-preparation",
+      "title": "PR 准备",
+      "path": "workflows/pr-preparation.md",
+      "summary": "提 PR 前一次做完审查、测试计划和摘要。",
+      "commands": ["staged-review", "test-plan", "pr-summary"],
+      "category": "collaboration",
+      "tags": ["pull-request", "review", "test", "summary"]
+    },
+    {
+      "id": "doc-update",
+      "title": "文档更新",
+      "path": "workflows/doc-update.md",
+      "summary": "代码改完后刷新文档、补迁移说明、写 PR 描述。",
+      "commands": ["readme-refresh", "migration-note", "pr-summary"],
+      "category": "docs",
+      "tags": ["docs", "readme", "migration", "workflow"]
+    },
+    {
+      "id": "risk-handoff",
+      "title": "风险交接",
+      "path": "workflows/risk-handoff.md",
+      "summary": "提测或合并前扫风险、写变更摘要、留迁移说明。",
+      "commands": ["risk-scan", "diff-summary", "migration-note"],
+      "category": "collaboration",
+      "tags": ["risk", "handoff", "diff", "migration"]
+    },
+    {
+      "id": "release-cycle",
+      "title": "发布周期",
+      "path": "workflows/release-cycle.md",
+      "summary": "发版时写 changelog、release notes 和升级清单。",
+      "commands": ["changelog-entry", "release-notes", "upgrade-checklist"],
+      "category": "docs",
+      "tags": ["release", "changelog", "notes", "upgrade"]
+    },
+    {
+      "id": "onboarding-new-project",
+      "title": "新项目接入",
+      "path": "workflows/onboarding-new-project.md",
+      "summary": "在新仓库装好 CursorX 并跑通第一条工作流。",
+      "commands": [],
+      "category": "onboarding",
+      "tags": ["setup", "install", "onboarding"]
+    },
+    {
+      "id": "code-review-as-reviewer",
+      "title": "代码审查（作为 reviewer）",
+      "path": "workflows/code-review-as-reviewer.md",
+      "summary": "用 AI 辅助审查别人的 PR，聚焦风险和测试缺口。",
+      "commands": ["staged-review", "risk-scan"],
+      "category": "collaboration",
+      "tags": ["review", "pull-request", "risk", "quality"]
+    },
+    {
+      "id": "debug-and-fix",
+      "title": "排查与修复",
+      "path": "workflows/debug-and-fix.md",
+      "summary": "从发现问题到定位、修复、验证的完整流程。",
+      "commands": ["staged-review", "test-plan", "git-push"],
+      "category": "daily",
+      "tags": ["debug", "fix", "problems", "workflow"]
+    }
+  ]
+}
