@@ -16,11 +16,16 @@
 
 要求：
 
-1. 将命令放入 `commands/` 对应分类目录
-2. 遵循 [命令开发规范](./docs/command-development.md)
-3. 同步更新 `commands/index.json`
-4. 同步更新 `commands/catalog.md`
+1. 先区分你提交的是 `slash-commands` 还是 `commands`
+2. `slash-commands` 遵循 [Slash Commands 开发规范](./docs/slash-command-development.md)
+3. `commands` 遵循 [Editor Commands 开发规范](./docs/command-development.md)
+4. 同步更新对应目录下的索引和目录清单
 5. 写清使用场景、前置条件和主要价值
+
+如果你的改动涉及仓库定位、安装入口或未来 CLI 方向，也请同步检查：
+
+- [仓库策略说明](./docs/repo-strategy.md)
+- [CLI 预留目录说明](./packages/cursorx-cli/README.md)
 
 ### Skills 推荐
 
@@ -65,14 +70,20 @@
 node scripts/validate-commands.mjs
 ```
 
+如果涉及 `slash-commands/`，建议至少实际试一次安装脚本：
+
+```bash
+node scripts/install-slash-command.mjs --list
+```
+
 ## 对命令贡献者的额外要求
 
 如果你提交的是命令，请特别检查：
 
 1. 命令文件名是否清晰
-2. JSON 是否有效
-3. `description` 是否说明了真实用途
-4. `when` 是否与目标场景一致
+2. 是否选对了命令形态：slash command 还是 editor command
+3. 对于 editor commands，JSON 是否有效
+4. 对于 slash commands，安装路径和配套脚本是否说明清楚
 5. 目录清单与索引是否同步更新
 
 ## Commit 消息建议
@@ -94,8 +105,9 @@ type(scope): description
 示例：
 
 ```text
-feat(commands): add git workflow command index
-docs(repo): rewrite command library documentation
+feat(slash-commands): add lint-fix installer support
+feat(commands): add quick chat editor command
+docs(repo): clarify slash vs editor commands
 ```
 
 ## 提交被接受的常见特征

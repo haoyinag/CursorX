@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "library": "CursorX Slash Commands",
+  "commands": [
+    {
+      "id": "git-push",
+      "title": "/git-push",
+      "path": "slash-commands/global/git-push.md",
+      "installAs": "git-push.md",
+      "summary": "执行标准化的 pull、暂存、勾选排除、commit 和 push 流程。",
+      "scopes": ["global", "project"],
+      "scripts": [],
+      "tags": ["git", "push", "commit", "workflow"]
+    },
+    {
+      "id": "lint-fix",
+      "title": "/lint-fix",
+      "path": "slash-commands/global/lint-fix.md",
+      "installAs": "lint-fix.md",
+      "summary": "只对当前 Git 改动文件执行 ESLint 和 Stylelint 自动修复。",
+      "scopes": ["global", "project"],
+      "scripts": [
+        {
+          "source": "slash-commands/scripts/lint-fix-changed.mjs",
+          "installAs": "lint-fix-changed.mjs"
+        }
+      ],
+      "tags": ["lint", "eslint", "stylelint", "workflow"]
+    }
+  ],
+  "templates": [
+    {
+      "id": "git-push-project-template",
+      "title": "项目级 git-push 模板",
+      "path": "slash-commands/project/git-push.project-template.md",
+      "summary": "用于定制项目专属排除规则和目录拆分规则的模板。",
+      "tags": ["git", "project", "template"]
+    }
+  ]
+}

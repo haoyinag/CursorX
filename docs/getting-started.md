@@ -2,14 +2,20 @@
 
 这个仓库的目标不是提供一堆零散资料，而是逐步沉淀成一套围绕 Cursor 的可复用内容库。
 
-如果你第一次进入仓库，建议优先关注 `commands/`。
+如果你第一次进入仓库，建议把它理解为“一个总仓库 + 一个主产品”：
+
+- 总仓库：`CursorX`
+- 主产品：`slash-commands/`
+- 补充内容：`commands/`、`skills/`、`tips/`、`configs/`
 
 ## 推荐浏览顺序
 
-1. 阅读 [`commands/README.md`](../commands/README.md)
-2. 浏览 [`commands/catalog.md`](../commands/catalog.md)
-3. 打开你感兴趣的命令 JSON
-4. 根据当前 Cursor 版本支持的方式导入到你的自定义命令列表
+1. 阅读 [`slash-commands/README.md`](../slash-commands/README.md)
+2. 浏览 [`slash-commands/catalog.md`](../slash-commands/catalog.md)
+3. 了解 CLI 原型：[`packages/cursorx-cli/README.md`](../packages/cursorx-cli/README.md)
+4. 优先尝试 `node packages/cursorx-cli/bin/cursorx.mjs list`
+5. 通过 CLI、安装脚本或手动复制安装目标 slash command
+6. 再按需查看 [`commands/README.md`](../commands/README.md) 中的 editor commands
 
 ## 如何挑选命令
 
@@ -17,32 +23,39 @@
 
 推荐从这些问题出发：
 
-- 想更快完成 Git 提交
-- 想把 AI 重构动作变成一个固定入口
-- 想把常用工作流做成稳定的可搜索命令
+- 想把某个命令安装到全局，只给自己用
+- 想把某个命令安装到当前仓库，随项目复用
+- 想把某个编辑器动作包装成可搜索的快捷入口
 
 ## 推荐的最小体验路径
 
-如果你只想快速感受这个仓库的价值，推荐先尝试这两个命令：
+如果你只想快速感受这个仓库的价值，推荐先尝试这两个 slash commands：
 
-- [`commands/development/git-smart-commit.json`](../commands/development/git-smart-commit.json)
-- [`commands/productivity/code-refactor-assistant.json`](../commands/productivity/code-refactor-assistant.json)
+- [`slash-commands/global/git-push.md`](../slash-commands/global/git-push.md)
+- [`slash-commands/global/lint-fix.md`](../slash-commands/global/lint-fix.md)
 
 这样可以分别覆盖：
 
-- Git 提交流程
-- AI 重构协作流程
+- Git 提交与推送流程
+- 当前改动的 lint 修复流程
 
 ## 关于安装方式
 
-由于 Cursor 不同版本的自定义命令管理方式可能不同，本仓库不把安装步骤绑定到某一个固定文件路径。
+本仓库现在区分两种命令形态：
 
-建议你采用下面的做法：
+- `slash-commands/`：支持明确的 `global` / `project` 安装
+- `commands/`：主要作为 editor commands 素材库维护
 
-1. 先在当前 Cursor 版本中确认自定义命令的管理入口
-2. 从本仓库复制选中的命令定义
-3. 导入或同步到你自己的命令配置
-4. 重载窗口并通过命令面板搜索验证
+推荐你采用下面的做法：
+
+1. 优先从 `slash-commands/` 里挑选命令
+2. 决定安装为 `global` 还是 `project`
+3. 运行仓库自带安装脚本，或手动复制到对应 `.cursor/commands/`
+4. 如果命令依赖脚本，再同步复制 `.cursor/scripts/`
+
+如果你关心未来是否会有统一 CLI 安装入口，继续阅读：
+
+- [`docs/repo-strategy.md`](./repo-strategy.md)
 
 ## 如果你准备贡献
 

@@ -1,0 +1,31 @@
+{
+  "name": "cursorx-cli",
+  "version": "0.1.0",
+  "description": "CLI for installing CursorX slash commands",
+  "type": "module",
+  "keywords": [
+    "cursor",
+    "cursor-commands",
+    "slash-commands",
+    "cli"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "bin": {
+    "cursorx": "./bin/cursorx.mjs"
+  },
+  "scripts": {
+    "list": "node ./bin/cursorx.mjs list",
+    "check": "node ./bin/cursorx.mjs list && npm pack --dry-run",
+    "sync-data": "node ../../scripts/sync-cursorx-cli-data.mjs",
+    "prepack": "node ../../scripts/sync-cursorx-cli-data.mjs"
+  },
+  "files": [
+    "bin",
+    "src",
+    "slash-commands",
+    "README.md"
+  ],
+  "license": "MIT"
+}

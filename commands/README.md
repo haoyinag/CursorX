@@ -1,6 +1,13 @@
-# Cursor 自定义命令库
+# Cursor Editor Commands
 
-`commands/` 是 `CursorX` 当前最核心的内容目录，目标不是简单存放若干 JSON，而是沉淀一个可以持续扩展、方便筛选、适合直接复用的命令库。
+`commands/` 存放的是 `.json` 形式的编辑器命令包装与快捷动作素材库。
+
+它和 [`slash-commands/`](../slash-commands/README.md) 不是同一种东西：
+
+- `slash-commands/`：原生 slash commands，可安装到全局或项目范围
+- `commands/`：编辑器动作封装，更适合作为动作素材库和补充能力参考
+
+在当前仓库策略里，这一层不是主产品，也不是未来 CLI 的首要分发对象。
 
 ## 目录结构
 
@@ -24,7 +31,7 @@ commands/
 
 ## 推荐使用方式
 
-如果你想从仓库中挑选命令，建议按下面顺序操作：
+如果你想从这里挑选 editor command，建议按下面顺序操作：
 
 1. 先看 [catalog.md](catalog.md) 了解现有命令
 2. 再看 [index.json](index.json) 获取标签、分类、前置条件等元数据
@@ -32,16 +39,22 @@ commands/
 
 ## 安装说明
 
-由于 Cursor 不同版本对自定义命令的管理入口可能不同，这个仓库不强依赖某一个固定文件路径，而采用“命令内容与命令导入流程分离”的方式维护。
+这部分内容当前不作为仓库主安装入口。
 
-推荐安装方式：
+原因：
 
-1. 在 Cursor 中打开当前版本的命令管理入口，例如 `/commands` 或其他自定义命令入口
-2. 从本仓库复制你需要的命令定义内容
-3. 导入或同步到你自己的 Cursor 命令配置中
-4. 重载窗口后，使用 Command Palette 搜索命令标题
+- 这批 `.json` 文件本质上是编辑器命令包装
+- 其导入方式与 Cursor 版本、底层编辑器命令兼容性强相关
+- 当前仓库还没有像 slash commands 那样稳定、已验证的统一安装语义
 
-如果你的 Cursor 版本支持通过文件系统维护自定义命令，也建议只同步你真正需要的命令文件，而不是无脑全量复制整个目录。
+如果你的目标是“在别的仓库复用后立刻可用”，请优先使用 [`slash-commands/`](../slash-commands/README.md)。
+
+如果你仍然想试用这部分内容，推荐做法是：
+
+1. 从 [catalog.md](catalog.md) 找到目标动作
+2. 打开具体 `.json` 查看底层命令名和适用条件
+3. 在你当前 Cursor 版本里自行验证是否存在对应的命令管理入口
+4. 在自己的环境中小范围试用，而不是直接全量导入
 
 ## 文件命名约定
 
@@ -71,6 +84,7 @@ commands/
 - 运行时命令定义尽量只保留命令执行所需字段
 - 仓库级元数据统一维护在 `commands/index.json`
 - 不把仓库说明字段直接混进运行时命令 JSON，可以降低兼容风险
+- 这些文件不是 slash commands，不能通过 `/命令名` 直接被 Cursor 发现
 
 ## 贡献要求
 
@@ -87,7 +101,7 @@ commands/
 node scripts/validate-commands.mjs
 ```
 
-更详细的规范见 [命令开发规范](../docs/command-development.md)。
+更详细的规范见 [editor commands 开发规范](../docs/command-development.md)。
 
 ## 当前方向
 

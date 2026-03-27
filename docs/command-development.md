@@ -1,6 +1,11 @@
-# 命令开发规范
+# Editor Commands 开发规范
 
-这份文档定义 `CursorX` 中自定义命令的组织方式、最小格式要求和提交流程。
+这份文档定义 `CursorX` 中 `.json` 形式 editor commands 的组织方式、最小格式要求和提交流程。
+
+如果你要开发的是原生 Cursor slash commands，请改看：
+
+- [`slash-commands/README.md`](../slash-commands/README.md)
+- [`docs/slash-command-development.md`](./slash-command-development.md)
 
 ## 设计原则
 
@@ -64,7 +69,7 @@
 
 ## 索引维护要求
 
-新增命令时，必须同步更新 [`commands/index.json`](../commands/index.json)。
+新增 editor command 时，必须同步更新 [`commands/index.json`](../commands/index.json)。
 
 每个索引条目至少包含：
 
@@ -79,7 +84,7 @@
 
 ## 目录清单维护要求
 
-新增命令时，必须同步更新 [`commands/catalog.md`](../commands/catalog.md)，至少补齐：
+新增 editor command 时，必须同步更新 [`commands/catalog.md`](../commands/catalog.md)，至少补齐：
 
 - 命令文件路径
 - 适用场景
@@ -105,7 +110,7 @@ node scripts/validate-commands.mjs
 
 ## 审核标准
 
-优先收录满足以下条件的命令：
+优先收录满足以下条件的 editor commands：
 
 - 能减少重复操作
 - 能沉淀稳定工作流

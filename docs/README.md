@@ -5,7 +5,9 @@
 ## 文档列表
 
 - [快速开始](./getting-started.md)
-- [命令开发规范](./command-development.md)
+- [Editor Commands 开发规范](./command-development.md)
+- [Slash Commands 开发规范](./slash-command-development.md)
+- [仓库策略说明](./repo-strategy.md)
 - [Skills 开发说明](./skill-development.md)
 - [项目贡献指南](../CONTRIBUTING.md)
 
@@ -14,13 +16,13 @@
 如果你是使用者：
 
 1. 先看 [快速开始](./getting-started.md)
-2. 再看 [`commands/README.md`](../commands/README.md)
-3. 最后按需查看具体分类和命令文件
+2. 再看 [`slash-commands/README.md`](../slash-commands/README.md)
+3. 按需查看 [`commands/README.md`](../commands/README.md)
 
 如果你是贡献者：
 
 1. 先看 [项目贡献指南](../CONTRIBUTING.md)
-2. 再看 [命令开发规范](./command-development.md)
+2. 再根据命令类型阅读 [Slash Commands 开发规范](./slash-command-development.md) 或 [Editor Commands 开发规范](./command-development.md)
 3. 如果涉及 Skills，再看 [Skills 开发说明](./skill-development.md)
 
 ## 维护原则
